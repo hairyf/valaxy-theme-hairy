@@ -1,0 +1,31 @@
+@use "valaxy/client/styles/mixins" as *;
+
+.markdown-body {
+  --c-toc-link: var(--va-c-text-light);
+}
+
+html.dark {
+  .markdown-body {
+    --c-toc-link: var(--va-c-text-dark);
+  }
+}
+
+.markdown-body {
+  word-wrap: break-word;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--va-font-serif);
+    font-weight: 900;
+  }
+
+  ul {
+    li > p {
+      margin-bottom: 0;
+    }
+  }
+}
