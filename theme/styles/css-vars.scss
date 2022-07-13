@@ -1,17 +1,45 @@
-@use "./vars" as *;
-@use "valaxy/client/styles/mixins" as * with($namespace: "st");
-
 :root {
-  --un-prose-links: var(--st-c-link);
+  --hy-c-primary: #1bc9a6;
+  --hy-c-primary-light: #14d6af;
+  --hy-c-primary-lighter: #15e8be;
+  --hy-c-primary-dark: #1aaa8d;
+  --hy-c-primary-darker: #0b755f;
+  --hy-c-primary-dimm-1: rgba(27, 201, 166, 0.5);
+  --hy-c-primary-dimm-2: rgba(27, 201, 166, 0.25);
+  --hy-c-primary-dimm-3: rgba(27, 201, 166, 0.05);
+}
 
-  @include set-css-var-from-map($common);
-  @include set-css-var-from-map($z-index, "z");
+.dark {
+  --hy-c-primary: #8fe6d5;
+  --hy-c-primary-light: #a8ffee;
+  --hy-c-primary-lighter: #bafef1;
+  --hy-c-primary-dark: #66ccb8;
+  --hy-c-primary-darker: #24a188;
+  --hy-c-primary-dimm-1: rgba(143, 230, 213, 0.5);
+  --hy-c-primary-dimm-2: rgba(143, 230, 213, 0.25);
+  --hy-c-primary-dimm-3: rgba(143, 230, 213, 0.05);
 }
 
 :root {
-  @include set-css-var-from-map($light);
+  --hy-c-waves-dimm: var(--va-c-bg);
+  --hy-c-waves-dimm-1: rgba(255, 255, 255, 0.7);
+  --hy-c-waves-dimm-2: rgba(255, 255, 255, 0.5);
+  --hy-c-waves-dimm-3: rgba(255, 255, 255, 0.3);
 }
 
-html.dark {
-  @include set-css-var-from-map($dark);
+.dark {
+  --hy-c-waves-dimm-1: rgba(34, 34, 34, 0.7);
+  --hy-c-waves-dimm-2: rgba(34, 34, 34, 0.5);
+  --hy-c-waves-dimm-3: rgba(34, 34, 34, 0.3);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --hy-font-family-seto: Seto;
+  --hy-font-family-modesty: Modesty;
+  --hy-font-family-christmas: MountainsofChristmas;
+  --hy-font-family-frederick: FrederickatheGreat;
 }

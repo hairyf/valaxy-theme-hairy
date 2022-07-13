@@ -1,2 +1,5 @@
-@use './layout' as *;
-@use './markdown' as *;
+@import "./font-face.scss";
+
+body {
+  font-family: var(--hy-font-family-seto) !important;
+}
