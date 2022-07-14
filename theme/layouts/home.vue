@@ -1,3 +1,4 @@
 <template>
-  <hairyHeader />
+  <HairyHeader />
+  <HairyNav />
 </template>

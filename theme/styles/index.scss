@@ -3,3 +3,11 @@
 body {
   font-family: var(--hy-font-family-seto) !important;
 }
+
+* {
+  transition: background 0.35s;
+}
+
+a {
+  color: var(--hy-c-primary)
+}

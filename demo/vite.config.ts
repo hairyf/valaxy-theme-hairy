@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 const safelist = [
   'i-ri-home-line',
+  'i-ri-github-line',
 ]
 
 export default defineConfig({

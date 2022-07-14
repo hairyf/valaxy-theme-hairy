@@ -7,6 +7,38 @@
   --hy-c-primary-dimm-1: rgba(27, 201, 166, 0.5);
   --hy-c-primary-dimm-2: rgba(27, 201, 166, 0.25);
   --hy-c-primary-dimm-3: rgba(27, 201, 166, 0.05);
+
+
+  --hy-c-black: #1a1a1a;
+  --hy-c-black-pure: #000000;
+  --hy-c-black-soft: #242424;
+  --hy-c-black-mute: #2f2f2f;
+
+  --hy-c-white: #ffffff;
+  --hy-c-white-soft: #f9f9f9;
+  --hy-c-white-mute: #f1f1f1;
+
+  --hy-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --hy-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --hy-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --hy-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --hy-c-text-light-1: var(--hy-c-indigo);
+  --hy-c-text-light-2: rgba(60, 60, 60, 0.70);
+  --hy-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --hy-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --hy-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --hy-c-text-dark-2: rgba(235, 235, 235, 0.60);
+  --hy-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --hy-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --hy-c-indigo: #213547;
+  --hy-c-indigo-soft: #476582;
+  --hy-c-indigo-light: #aac8e4;
+  --hy-c-indigo-lighter: #c9def1;
+  --hy-c-indigo-dark: #1d2f3f;
+  --hy-c-indigo-darker: #14212e;
 }
 
 .dark {
@@ -42,4 +74,66 @@
   --hy-font-family-modesty: Modesty;
   --hy-font-family-christmas: MountainsofChristmas;
   --hy-font-family-frederick: FrederickatheGreat;
+}
+
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --hy-c-bg: var(--hy-c-white);
+  --hy-c-bg-soft: var(--hy-c-white-soft);
+  --hy-c-bg-mute: var(--hy-c-white-mute);
+  --hy-c-bg-alt: var(--hy-c-white-soft);
+
+  --hy-c-divider: var(--hy-c-divider-light-1);
+  --hy-c-divider-light: var(--hy-c-divider-light-2);
+
+  --hy-c-divider-inverse: var(--hy-c-divider-dark-1);
+  --hy-c-divider-inverse-light: var(--hy-c-divider-dark-2);
+
+  --hy-c-text-1: var(--hy-c-text-light-1);
+  --hy-c-text-2: var(--hy-c-text-light-2);
+  --hy-c-text-3: var(--hy-c-text-light-3);
+  --hy-c-text-4: var(--hy-c-text-light-4);
+
+  --hy-c-text-inverse-1: var(--hy-c-text-dark-1);
+  --hy-c-text-inverse-2: var(--hy-c-text-dark-2);
+  --hy-c-text-inverse-3: var(--hy-c-text-dark-3);
+  --hy-c-text-inverse-4: var(--hy-c-text-dark-4);
+
+  --hy-c-text-code: var(--hy-c-indigo-soft);
+
+  --hy-c-brand: var(--hy-c-primary);
+  --hy-c-brand-light: var(--hy-c-primary-light);
+  --hy-c-brand-lighter: var(--hy-c-primary-lighter);
+  --hy-c-brand-dark: var(--hy-c-primary-dark);
+  --hy-c-brand-darker: var(--hy-c-primary-darker);
+
+  --hy-c-sponsor: #fd1d7c;
+}
+
+.dark {
+  --hy-c-bg: var(--hy-c-black-soft);
+  --hy-c-bg-soft: var(--hy-c-black-mute);
+  --hy-c-bg-mute: var(--hy-c-gray-dark-3);
+  --hy-c-bg-alt: var(--hy-c-black);
+
+  --hy-c-divider: var(--hy-c-divider-dark-1);
+  --hy-c-divider-light: var(--hy-c-divider-dark-2);
+
+  --hy-c-divider-inverse: var(--hy-c-divider-light-1);
+  --hy-c-divider-inverse-light: var(--hy-c-divider-light-2);
+
+  --hy-c-text-1: var(--hy-c-text-dark-1);
+  --hy-c-text-2: var(--hy-c-text-dark-2);
+  --hy-c-text-3: var(--hy-c-text-dark-3);
+  --hy-c-text-4: var(--hy-c-text-dark-4);
+
+  --hy-c-text-inverse-1: var(--hy-c-text-light-1);
+  --hy-c-text-inverse-2: var(--hy-c-text-light-2);
+  --hy-c-text-inverse-3: var(--hy-c-text-light-3);
+  --hy-c-text-inverse-4: var(--hy-c-text-light-4);
+
+  --hy-c-text-code: var(--hy-c-indigo-lighter);
 }

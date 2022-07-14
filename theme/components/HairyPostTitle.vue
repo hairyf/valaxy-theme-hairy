@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex-center flex-col text-white text-shadow-lg">
+  <div class="flex-center flex-col text-shadow-lg text-white">
     <div v-if="headline" class="font-frederick text-size-3.35em leading-snug">
       {{ headline }}
     </div>

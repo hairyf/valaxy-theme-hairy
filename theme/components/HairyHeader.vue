@@ -1,10 +1,14 @@
 <template>
-  <header class="bg-black">
+  <header class="HairyHeader">
     <div class="h-50vh flex-center">
-      <HairyTitle headline="Hairy's Blog" title="毛先生" description="good evening, how are you doing?" />
+      <HairyPostTitle headline="Hairy's Blog" title="毛先生" description="good evening, how are you doing?" />
     </div>
     <HairyWaves />
   </header>
 </template>
 
-<style lang="scss" scoped></style>
+<style>
+.HairyHeader {
+  background: url(https://tuimao233.gitee.io/mao-blog/background.jpg) center/cover no-repeat;
+}
+</style>
