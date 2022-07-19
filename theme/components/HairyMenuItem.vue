@@ -20,7 +20,7 @@ const toLink = () => {
 
 <template>
   <div class="px-2.5">
-    <div class="flex items-center" :class="[isPointer ? 'cursor-pointer' : 'select-none']" @click="toLink">
+    <div class="flex items-center hover:text-primary" :class="[isPointer ? 'cursor-pointer' : 'select-none']" @click="toLink">
       <div v-if="item.icon" class="mr-1 icon" :class="item.icon" />
       <div class="question">
         {{ item.text }}

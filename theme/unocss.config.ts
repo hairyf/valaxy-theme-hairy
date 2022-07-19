@@ -18,6 +18,7 @@ export default defineConfig({
     ['font-modesty', { 'font-family': 'var(--hy-font-family-modesty)' }],
     ['font-christmas', { 'font-family': 'var(--hy-font-family-christmas)' }],
     ['font-frederick', { 'font-family': 'var(--hy-font-family-frederick)' }],
+    ['text-primary', { color: 'var(--hy-c-primary)' }],
   ],
   shortcuts: [
     ['flex-center', 'flex justify-center items-center'],
