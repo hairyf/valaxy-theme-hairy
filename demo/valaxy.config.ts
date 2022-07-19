@@ -7,11 +7,11 @@ import type { HairyTheme } from 'valaxy-theme-starter'
  */
 export default defineConfig<HairyTheme>({
   lang: 'zh-CN',
-  title: 'Valaxy Theme Starter',
+  title: 'Hairy\'s Blog',
   url: 'https://starter.valaxy.site/',
   author: {
     avatar: 'https://www.yunyoujun.cn/images/avatar.jpg',
-    name: '云游君',
+    name: '毛先生',
   },
   description: 'Valaxy Theme Starter Preview.',
 
@@ -36,11 +36,10 @@ export default defineConfig<HairyTheme>({
       {
         text: 'Home',
         link: '/',
-        icon: 'i-ri-github-line',
       },
       {
         text: 'About',
-        link: '/archives/',
+        link: '/about/',
       },
       {
         text: 'Posts',

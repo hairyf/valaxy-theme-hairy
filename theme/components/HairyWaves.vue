@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="waves relative w-full min-h-100px max-h-150px"
+    class="waves w-full min-h-100px max-h-150px"
     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"
   >
     <defs>

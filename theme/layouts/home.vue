@@ -1,4 +1,5 @@
 <template>
-  <HairyHeader />
   <HairyNav />
+  <HairyHeader />
+  <HairyBody />
 </template>
