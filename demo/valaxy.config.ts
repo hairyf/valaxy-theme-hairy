@@ -33,22 +33,22 @@ export default defineConfig<HairyTheme>({
 
   themeConfig: {
     nav: [
-      // {
-      //   text: 'Home',
-      //   link: '/',
-      // },
-      // {
-      //   text: 'About',
-      //   link: '/about',
-      // },
-      // {
-      //   text: 'Posts',
-      //   link: '/posts/',
-      // },
-      // {
-      //   text: 'Github',
-      //   link: 'https://github.com/YunYouJun/valaxy',
-      // },
+      {
+        text: 'Home',
+        link: '/',
+      },
+      {
+        text: 'About',
+        link: '/about',
+      },
+      {
+        text: 'Posts',
+        link: '/posts/',
+      },
+      {
+        text: 'Github',
+        link: 'https://github.com/YunYouJun/valaxy',
+      },
     ],
     user: {
       name: 'TuiMao',
