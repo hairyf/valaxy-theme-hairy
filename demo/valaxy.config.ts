@@ -10,7 +10,7 @@ export default defineConfig<HairyTheme>({
   title: 'Hairy\'s Blog',
   url: 'https://starter.valaxy.site/',
   author: {
-    avatar: 'https://www.yunyoujun.cn/images/avatar.jpg',
+    avatar: 'https://tuimao233.gitee.io/mao-blog/avatar.png',
     name: '毛先生',
   },
   description: 'Valaxy Theme Starter Preview.',
@@ -33,22 +33,26 @@ export default defineConfig<HairyTheme>({
 
   themeConfig: {
     nav: [
-      {
-        text: 'Home',
-        link: '/',
-      },
-      {
-        text: 'About',
-        link: '/about/',
-      },
-      {
-        text: 'Posts',
-        link: '/posts/',
-      },
-      {
-        text: 'Github',
-        link: 'https://github.com/YunYouJun/valaxy',
-      },
+      // {
+      //   text: 'Home',
+      //   link: '/',
+      // },
+      // {
+      //   text: 'About',
+      //   link: '/about',
+      // },
+      // {
+      //   text: 'Posts',
+      //   link: '/posts/',
+      // },
+      // {
+      //   text: 'Github',
+      //   link: 'https://github.com/YunYouJun/valaxy',
+      // },
     ],
+    user: {
+      name: 'TuiMao',
+      description: 'Mao\'s Notes',
+    },
   },
 })

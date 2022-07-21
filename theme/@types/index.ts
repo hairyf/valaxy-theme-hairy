@@ -1,5 +1,9 @@
 export interface HairyTheme {
   nav?: NavItem[]
+  user?: {
+    name?: string
+    description?: string
+  }
 }
 
 export interface NavItem {

@@ -8,7 +8,6 @@ const safelist = [
 
 export default defineThemePlugin(() => {
   return {
-    vite: {},
     unocss: {
       safelist,
     },

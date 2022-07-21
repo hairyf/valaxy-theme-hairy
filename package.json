@@ -21,5 +21,8 @@
     "typescript": "^4.7.4",
     "valaxy-theme-starter": "workspace:*",
     "vue-tsc": "^0.38.5"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue-jsx": "1.3.10"
   }
 }

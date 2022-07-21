@@ -3,7 +3,5 @@
 </template>
 
 <style>
-.HairyNavBackground {
-  transition: background 0.35s;
-}
+
 </style>
