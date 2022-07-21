@@ -1,5 +1,5 @@
 <template>
-  <StarterPostList />
+  <HairyPostList />
 </template>
 
 <route lang="yaml">

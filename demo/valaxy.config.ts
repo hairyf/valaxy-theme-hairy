@@ -1,6 +1,11 @@
 import { defineConfig } from 'valaxy'
 import type { HairyTheme } from 'valaxy-theme-starter'
+import VitePluginVueJsx from '@vitejs/plugin-vue-jsx'
 
+const safelist = [
+  'i-ri-home-line',
+  'i-ri-github-line',
+]
 /**
  * User Config
  * do not use export const config to avoid defu conflict
@@ -30,7 +35,14 @@ export default defineConfig<HairyTheme>({
       indexName: 'hairy.blog',
     },
   },
-
+  vite: {
+    plugins: [
+      VitePluginVueJsx(),
+    ],
+  },
+  unocss: {
+    safelist,
+  },
   themeConfig: {
     nav: [
       {

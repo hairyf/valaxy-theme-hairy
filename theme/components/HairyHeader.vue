@@ -1,12 +1,15 @@
 <script lang="ts" setup>
-import { useConfig } from 'valaxy'
-const config = useConfig()
+defineProps<{
+  headline?: String
+  title: String
+  description?: string
+}>()
 </script>
 
 <template>
   <header class="HairyHeader">
     <div class="h-50vh flex-center">
-      <HairyPostTitle :headline="config.title" :title="config.author.name" description="good evening, how are you doing?" />
+      <HairyPostTitle v-bind="$props" />
     </div>
     <HairyWaves />
   </header>
