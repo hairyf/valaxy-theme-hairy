@@ -56,7 +56,7 @@ function toTop() {
     height: 2.5rem;
   }
   > div {
-    margin-bottom: -2em;
+    margin-bottom: -2.3em;
   }
 }
 

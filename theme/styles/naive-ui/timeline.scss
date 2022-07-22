@@ -7,6 +7,16 @@
       &:hover {
         --n-circle-border: 3px solid var(--hy-c-primary) !important;
       }
+
+      .n-timeline-item-content {
+        .n-timeline-item-content__content {
+          color: inherit;
+        }
+
+        .n-timeline-item-content__title {
+          color: inherit;
+        }
+      }
     }
   }
 }

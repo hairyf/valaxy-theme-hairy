@@ -54,10 +54,15 @@ const State = defineComponent({
     }
 
     .HairyMenuItem:hover,
-    .HairyMenuItem.active
-    {
+    .HairyMenuItem.active {
       border-top: 1px solid var(--hy-c-primary);
       border-bottom: 1px solid var(--hy-c-primary);
+    }
+    .HairyMenuItem.active + .HairyMenuItem {
+      border-top-color: transparent;
+    }
+    .HairyMenuItem:hover + .HairyMenuItem {
+      border-top-color: transparent;
     }
   }
 </style>
