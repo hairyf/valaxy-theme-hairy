@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 defineProps<{
   headline?: String
-  title: String
+  title?: String
   description?: string
 }>()
 </script>
@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <header class="HairyHeader">
     <div class="h-50vh flex-center">
-      <HairyPostTitle v-bind="$props" />
+      <HairyPostTitle v-if="title" :title="title" v-bind="$props" />
     </div>
     <HairyWaves />
   </header>

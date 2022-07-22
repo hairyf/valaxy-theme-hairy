@@ -13,6 +13,9 @@ export default defineTheme(() => {
     unocss: {
       safelist,
     },
+    // TODO: AUTO GET Title
+    extendMd() {
+    },
   }
 })
 

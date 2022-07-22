@@ -9,7 +9,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "valaxy": "latest",
     "valaxy-theme-starter": "workspace:*"
   },
   "devDependencies": {

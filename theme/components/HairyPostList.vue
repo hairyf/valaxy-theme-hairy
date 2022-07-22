@@ -11,7 +11,6 @@ const props = withDefaults(defineProps<{
 
 const routes = usePostList()
 const posts = computed(() => props.posts || routes.value)
-console.log(posts.value)
 </script>
 
 <template>
