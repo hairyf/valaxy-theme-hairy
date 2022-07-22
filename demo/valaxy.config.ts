@@ -95,7 +95,7 @@ export default defineConfig<HairyTheme>({
       },
       {
         text: 'Posts',
-        link: '/posts/',
+        link: '/archives/',
       },
       {
         text: 'Github',

@@ -47,6 +47,7 @@
     "@vueuse/core": "^8.9.4"
   },
   "devDependencies": {
+    "naive-ui": "^2.31.0",
     "tsup": "^6.1.3"
   }
 }
