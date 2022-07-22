@@ -1,13 +1,15 @@
 <script lang="ts" setup>
+import { useContext } from '../hooks/useContext'
 defineProps<{
   headline?: String
   title?: String
   description?: string
 }>()
+const { headerRef } = useContext()
 </script>
 
 <template>
-  <header class="HairyHeader">
+  <header ref="headerRef" class="HairyHeader">
     <div class="h-50vh flex-center">
       <HairyPostTitle v-if="title" :title="title" v-bind="$props" />
     </div>

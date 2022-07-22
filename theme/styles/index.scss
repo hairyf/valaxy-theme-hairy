@@ -1,4 +1,5 @@
 @import "./font-face.scss";
+@import "./markdown.scss";
 
 body {
   font-family: var(--hy-font-family-seto);
@@ -13,23 +14,7 @@ a {
   color: var(--hy-c-primary)
 }
 
-.markdown-body {
-
-  h2,
-  a {
-    color: var(--hy-c-primary);
-  }
-}
-
-.markdown-body :not(pre)>code {
-  padding: 3px 6px;
-  font-size: 0.85rem;
-  color: var(--hy-c-text-code);
-  background: var(--hy-c-bg-mute);
-  border-radius: 3px;
-}
-
-.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::before,
-.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::after {
-  content: none !important;
+html,
+body {
+  scroll-behavior: smooth;
 }

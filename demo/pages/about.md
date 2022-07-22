@@ -2,15 +2,12 @@
 title: 关于
 ---
 
-<!-- more -->
-
-## 关于我
-
 - 99 后（12月，所以也算 00 后？）
 - 前端打工人（2020 年 6 月专科毕业，正在自考本的路上）
 - 老二次元，跟不上时代的老宅 [#](https://zh.moegirl.org.cn/%E8%80%81%E5%AE%85)
 - 希望有朝一日能活得更轻松一些
 
+<!-- more -->
 ## 兴趣爱好
 
 - 随缘追番，这是我的追番列表：[飞书](https://ngd3d2laaq.feishu.cn/sheets/shtcnr8QsoQKMDTFlZSikjNV4bc)、[哔哩哔哩](https://space.bilibili.com/1490903/bangumi)

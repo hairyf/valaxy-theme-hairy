@@ -1,15 +1,18 @@
-interface HairyTheme {
+import type { ViteSSGContext } from 'vite-ssg'
+
+export interface HairyTheme {
   nav?: NavItem[];
   user?: {
       name?: string;
       description?: string;
   };
 }
-interface NavItem {
+export interface NavItem {
   text: string;
   icon?: string;
   link?: string;
   items?: NavItem[];
 }
 
-export { HairyTheme, NavItem };
+
+export type UserModule = (ctx: ViteSSGContext) => void

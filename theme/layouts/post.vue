@@ -11,5 +11,6 @@ const post = computed<Post>(() => route.meta)
   <HairyHeader :title="post.title" />
   <HairyAside />
   <HairyBody />
+  <HairyBackToTop />
 </template>
 
