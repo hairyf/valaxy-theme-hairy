@@ -1,0 +1,12 @@
+.n-timeline {
+  &.n-timeline--large-size {
+    .n-timeline-item {
+      --n-line-color: red !important;
+      --n-circle-border: 3px solid var(--hy-c-primary) !important;
+
+      &:hover {
+        --n-circle-border: 3px solid var(--hy-c-primary) !important;
+      }
+    }
+  }
+}
