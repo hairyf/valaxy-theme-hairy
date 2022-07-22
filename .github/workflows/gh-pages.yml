@@ -23,9 +23,6 @@ jobs:
       - name: Install
         run: pnpm install
 
-      - name: Build Theme
-        run: pnpm run build
-
       - name: Build Demo
         run: pnpm run build:demo
 

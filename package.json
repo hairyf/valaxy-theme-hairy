@@ -4,10 +4,8 @@
   "homepage": "https://valaxy.site",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "npm -C theme run build",
     "build:demo": "npm -C demo run build",
     "ci:publish": "pnpm -r publish --access public --no-git-checks",
-    "dev": "npm -C theme run dev",
     "demo": "npm -C demo run dev",
     "lint": "eslint .",
     "release": "cd theme && git add -A && bumpp",
