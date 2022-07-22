@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+import { useFrontmatter } from 'valaxy'
+const post = useFrontmatter()
+</script>
+
 <template>
-  <router-view></router-view>
+  <HairyNav />
+  <HairyHeader :title="post.title" />
+  <HairyAside />
+  <HairyBody />
 </template>
+
