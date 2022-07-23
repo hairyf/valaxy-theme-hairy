@@ -89,6 +89,9 @@ export default defineConfig<HairyTheme>({
     ],
   },
   themeConfig: {
+    post: {
+      layout: 'image:slice',
+    },
     nav: [
       {
         text: 'Home',

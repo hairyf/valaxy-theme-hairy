@@ -16,7 +16,7 @@ const posts = computed(() => props.posts || routes.value)
 <template>
   <ul class="divide-y divide-gray-200 dark:divide-gray-700">
     <Transition v-for="post, i in posts" :key="i" name="fade">
-      <HairyArticleText :post="post" />
+      <HairyArticleImage :post="post" />
     </Transition>
   </ul>
 </template>

@@ -9,3 +9,4 @@ export const ejectWindow = (url: string) => {
   link.click()
   link.remove()
 }
+

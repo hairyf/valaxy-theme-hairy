@@ -3,9 +3,12 @@ import type { ViteSSGContext } from 'vite-ssg'
 export interface HairyTheme {
   nav?: NavItem[];
   user?: {
-      name?: string;
-      description?: string;
+    name?: string;
+    description?: string;
   };
+  post?: {
+    layout?: 'text' | 'markdown' | 'image' | 'image:slice' | 'image:slice:reverse'
+  }
 }
 export interface NavItem {
   text: string;

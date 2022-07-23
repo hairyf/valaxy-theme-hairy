@@ -19,7 +19,6 @@
   ],
   "types": "index.d.ts",
   "dependencies": {
-    "element-plus": "^2.2.10",
     "@docsearch/css": "^3.1.1",
     "@docsearch/js": "^3.1.1",
     "@hairy/vue-use": "^1.2.0",
@@ -27,8 +26,11 @@
     "@iconify-json/simple-icons": "^1.1.19",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
     "@vueuse/core": "^8.9.4",
-    "@waline/client": "^2.6.1"
+    "@waline/client": "^2.6.1",
+    "element-plus": "^2.2.10",
+    "yaml": "^2.1.1"
   },
   "devDependencies": {
+    "@types/node": "^18.0.6"
   }
 }

@@ -1,5 +1,11 @@
+<script lang="ts" setup>
+import { usePostLayout } from '../hooks/usePostLayout'
+const layout = usePostLayout()
+</script>
+
 <template>
-  <HairyPostList />
+  <HairyPostImageList v-if="layout.includes('image')" />
+  <HairyPostList v-else />
 </template>
 
 <route lang="yaml">
