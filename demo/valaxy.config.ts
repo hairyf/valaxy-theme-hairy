@@ -68,7 +68,12 @@ export default defineConfig<HairyTheme>({
       color: 'var(--va-c-text)',
     },
   ],
-
+  comment: {
+    waline: {
+      enable: true,
+      serverURL: 'https://te58kr68.api.lncldglobal.com',
+    },
+  },
   search: {
     enable: true,
     algolia: {
