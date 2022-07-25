@@ -10,3 +10,13 @@ export const ejectWindow = (url: string) => {
   link.remove()
 }
 
+export const getArchiveLink = (year?: string, month?: string) => {
+  if (!year)
+    return '/archives/'
+  if (!month)
+    return `/archives/${year}`
+  if (!month)
+    return `/archives/${year}/${month}`
+
+  return ''
+}

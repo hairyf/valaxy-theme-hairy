@@ -2,6 +2,7 @@
 headline: About
 title: Hairy | TuiMao
 description: "hairy self introduction"
+waline: true
 ---
 
 - 99 后（12月，所以也算 00 后？）

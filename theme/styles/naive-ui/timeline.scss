@@ -1,22 +1,15 @@
-.n-timeline {
-  &.n-timeline--large-size {
-    .n-timeline-item {
-      --n-line-color: red !important;
-      --n-circle-border: 3px solid var(--hy-c-primary) !important;
+.el-timeline {
+  .el-timeline-item__content {
+    display: inline-block;
+    color: initial;
+    line-height: 1;
+    font-size: 1.5rem;
+  }
 
-      &:hover {
-        --n-circle-border: 3px solid var(--hy-c-primary) !important;
-      }
+  .el-timeline-item__wrapper {}
 
-      .n-timeline-item-content {
-        .n-timeline-item-content__content {
-          color: inherit;
-        }
-
-        .n-timeline-item-content__title {
-          color: inherit;
-        }
-      }
-    }
+  .el-timeline-item__node--normal,
+  .el-timeline-item__tail {
+    top: 4px;
   }
 }

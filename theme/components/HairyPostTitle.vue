@@ -11,7 +11,6 @@ const post = useFrontmatter()
 
 const headline = computed(() => post.value.headline || props.headline)
 const title = computed(() => post.value.title || props.title)
-const description = computed(() => post.value.description || props.description)
 </script>
 
 <template>
@@ -22,6 +21,9 @@ const description = computed(() => post.value.description || props.description)
     <div class="text-size-2.5em font-bold title tracking-1">
       {{ title }}
     </div>
+    <p v-if="post.description">
+      {{ post.description }}
+    </p>
     <p v-if="description || $slots.description" class="text-size-sm">
       <template v-if="description">
         {{ description }}

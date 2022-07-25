@@ -9,7 +9,7 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
 </script>
 
 <template>
-  <div class="HairyBody min-h-100vh">
+  <div class="HairyBody min-h-50vh">
     <div class="mx-auto container flex">
       <div class="flex-1 pt-2">
         <router-view />

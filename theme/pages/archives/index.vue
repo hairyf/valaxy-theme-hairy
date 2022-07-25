@@ -1,32 +1,41 @@
 <script lang="ts" setup>
-import { NTimeline, NTimelineItem } from 'naive-ui'
+import { ElTimeline, ElTimelineItem } from 'element-plus'
+import { usePostList } from 'valaxy'
+import 'element-plus/es/components/timeline/style/index'
+import 'element-plus/es/components/timeline-item/style/index'
 import { useYearArchives } from '../../hooks/useYearArchives'
-const archives = useYearArchives()
-// TODO
+import { getArchiveLink } from '../../utils'
+const activities = useYearArchives()
+const posts = usePostList()
 </script>
 
 <template>
-  <n-timeline size="large">
-    <n-timeline-item content="啊" />
-    <n-timeline-item
-      title="成功"
-      content="哪里成功"
-      time="2018-04-03 20:46"
-    />
-    <n-timeline-item content="哪里错误" time="2018-04-03 20:46" />
-    <n-timeline-item
-      title="警告"
-      content="哪里警告"
-      time="2018-04-03 20:46"
-    />
-    <n-timeline-item
-      title="信息"
-      content="是的"
-      time="2018-04-03 20:46"
-      line-type="dashed"
-    />
-    <n-timeline-item content="啊" />
-  </n-timeline>
+  <div class="text-size-2.5em mb-5">
+    目前共计 {{ posts.length }} 篇文章
+  </div>
+  <el-timeline>
+    <el-timeline-item
+      v-for="(activity, index) in activities"
+      :key="index"
+      title="awda"
+      hollow
+      size="large"
+    >
+      <div class="inline-flex items-center">
+        <HairyLink @click="$router.push(getArchiveLink(activity.year))">
+          {{ activity.year }}
+        </HairyLink>
+        <span class="text-gray-5 text-size-5 mx-2">/</span>
+        <HairyLink @click="$router.push(getArchiveLink(activity.year, activity.month))">
+          {{ activity.month }}
+        </HairyLink>
+        <span class="text-gray-5 text-size-5 ml-1">({{ activity.count }}篇)</span>
+      </div>
+    </el-timeline-item>
+  </el-timeline>
 </template>
 
-<style lang="scss" scoped></style>
+<route lang="yaml">
+meta:
+  layout: archives
+</route>
