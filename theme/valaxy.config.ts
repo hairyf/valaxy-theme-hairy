@@ -1,18 +1,15 @@
 import { defineTheme } from 'valaxy'
 import type { HairyTheme } from 'theme'
+import { mergeValaxyConfig } from './node/utils'
+import addonHairy from './node/addon-hairy'
+import addonImages from './node/addon-images'
+import addonStatistics from './node/addon-statistics'
 
-export default defineTheme<HairyTheme>(() => {
-  return {
-    // TODO: AUTO GET Title
-    extendMd(ctx) {
-      if (ctx.route.meta.excerpt)
-        ctx.route.meta.frontmatter.text = removeTags(ctx.route.meta.excerpt)
-    },
-  }
+export default defineTheme<HairyTheme>((options) => {
+  return mergeValaxyConfig(
+    addonImages(options),
+    addonHairy(),
+    addonStatistics(),
+  )
 })
 
-function removeTags(str = '') {
-  let content = str.replace(/<\/?[^>]*>/g, '')// 去除标签
-  content = content.replace(/[|]*\n/, '')// 去除行尾空格
-  return content
-}

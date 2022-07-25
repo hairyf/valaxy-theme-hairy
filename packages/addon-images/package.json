@@ -1,5 +1,6 @@
 {
   "name": "valaxy-addon-images",
+  "private": true,
   "version": "0.0.1",
   "author": "TuiMao233",
   "keywords": [
@@ -9,6 +10,5 @@
   "main": "index.ts",
   "dependencies": {
     "yaml": "^2.1.1"
-
   }
 }
