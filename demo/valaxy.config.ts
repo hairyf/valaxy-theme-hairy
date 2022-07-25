@@ -89,8 +89,15 @@ export default defineConfig<HairyTheme>({
     ],
   },
   themeConfig: {
+    home: {
+      images: [],
+    },
     post: {
       layout: 'image:slice:reverse',
+      /**
+       * posts image 数量需要达到 6 个以上才会生效
+       */
+      images: [],
     },
     nav: [
       {

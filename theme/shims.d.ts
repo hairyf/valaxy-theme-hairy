@@ -1,9 +1,8 @@
-declare module 'valaxy' {
-  export interface Post {
-    image: string
-    durations: Omit<import('reading-time').ReadTimeResults, 'text'>
-    length: number
-  }
+declare module '@hairy:images:home' {
+  const images: string[]
+  export default images
 }
-
-export {}
+declare module '@hairy:images:post' {
+  const images: string[]
+  export default images
+}

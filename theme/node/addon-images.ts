@@ -1,20 +1,57 @@
-import path from 'path'
-import fs from 'fs'
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import type { ResolvedValaxyOptions, ValaxyExtendConfig } from 'valaxy'
-import YAML from 'yaml'
+import type { HairyTheme } from '..'
+import defaultImages from '../images.json'
 
 let count = 0
 
-function addonImages(options: ResolvedValaxyOptions): ValaxyExtendConfig {
-  const images = loadImageYaml(options.userRoot, options.themeRoot)
+function addonImages(options: ResolvedValaxyOptions<HairyTheme>): ValaxyExtendConfig {
+  const hairyPrefix = '@hairy'
+  const postConfig = options.config.themeConfig?.post
+  const homeConfig = options.config.themeConfig?.home
+
+  const isEnough = (postConfig?.images?.length || 0) > 6
+
+  const inImages = isEnough ? postConfig?.images! : defaultImages
+
+  const filterInImages = (type: 'large' | 'mw690') => {
+    const inType = type === 'large' ? 'mw690' : 'large'
+    return inImages.filter((image) => {
+      if (image.includes('sinaimg.cn/'))
+        return image.replace(inType, type)
+      return image
+    })
+  }
+
+  const postImages = isEnough ? postConfig?.images! : filterInImages('mw690')
+  const homeImages = homeConfig?.images?.length ? homeConfig?.images : filterInImages('large')
+
   return {
+    vite: {
+      plugins: [
+        {
+          name: 'vite-plugin-hairy:image',
+          resolveId(id) {
+            if (id.startsWith(hairyPrefix))
+              return id
+            return null
+          },
+          load(id) {
+            if (id === '@hairy:images:post')
+              return `export default ${JSON.stringify(postImages)}`
+            if (id === '@hairy:images:home')
+              return `export default ${JSON.stringify(homeImages)}`
+          },
+        },
+      ],
+    },
     extendMd(ctx) {
-      if (images.length >= 6) {
+      if (postImages.length >= 6) {
         if (!ctx.route.meta.frontmatter.image)
-          ctx.route.meta.frontmatter.image = images[count]
-        if (count <= images.length)
+          ctx.route.meta.frontmatter.image = postImages[count]
+        if (count <= postImages.length)
           count++
-        if (count >= images.length)
+        if (count >= postImages.length)
           count = 0
       }
     },
@@ -22,16 +59,3 @@ function addonImages(options: ResolvedValaxyOptions): ValaxyExtendConfig {
 }
 
 export default addonImages
-
-function loadImageYaml(userRoot: string, themeRoot: string): string[] {
-  const imageYaml = path.join(userRoot, 'images.yml')
-  const defaultYaml = path.join(themeRoot, 'images.yml')
-  if (fs.existsSync(imageYaml)) {
-    const images: string[] = YAML.parse(fs.readFileSync(imageYaml, 'utf-8'))
-    if (images.length > 6)
-      return images
-  }
-  const images = YAML.parse(fs.readFileSync(defaultYaml, 'utf-8'))
-  fs.writeFileSync(imageYaml, YAML.stringify(images))
-  return images
-}

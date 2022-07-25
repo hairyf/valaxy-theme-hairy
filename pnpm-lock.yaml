@@ -64,6 +64,7 @@ importers:
       element-plus: ^2.2.10
       lodash: ^4.17.21
       reading-time: ^1.5.0
+      swiper: ^8.3.1
       valaxy-addon-images: workspace:*
       valaxy-addon-statistics: workspace:*
       yaml: ^2.1.1
@@ -80,6 +81,7 @@ importers:
       element-plus: 2.2.10
       lodash: 4.17.21
       reading-time: 1.5.0
+      swiper: 8.3.1
       valaxy-addon-images: link:../packages/addon-images
       valaxy-addon-statistics: link:../packages/addon-statistics
       yaml: 2.1.1
@@ -2180,6 +2182,12 @@ packages:
       domhandler: 4.3.1
       entities: 2.2.0
     dev: true
+
+  /dom7/4.0.4:
+    resolution: {integrity: sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==}
+    dependencies:
+      ssr-window: 4.0.2
+    dev: false
 
   /domelementtype/2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
@@ -4919,6 +4927,10 @@ packages:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
     dev: true
 
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
+
   /star-markdown-css/0.4.0:
     resolution: {integrity: sha512-VK2TDgAfyqfPs6OwTCIY6fZ4GCr/eNQQuvjicu5y6+3oHFExYZ1zSNWkWYlXhQLfvw7FLGuHwdgVYPrxz8WhPg==}
     dev: true
@@ -5033,6 +5045,15 @@ packages:
 
   /svg-tags/1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
+    dev: false
+
+  /swiper/8.3.1:
+    resolution: {integrity: sha512-oASYsulsERlbQVTZ8FjlTDJSN4YZwhp+AkvepOj8EOhgpvxzKoMpWpBPrk7ypkMioQUx6x2NPvkRU0Qv9mpS0A==}
+    engines: {node: '>= 4.7.0'}
+    requiresBuild: true
+    dependencies:
+      dom7: 4.0.4
+      ssr-window: 4.0.2
     dev: false
 
   /symbol-tree/3.2.4:

@@ -12,6 +12,7 @@ const props = defineProps<{
 const router = useRouter()
 const layout = usePostLayout()
 const slice = computed(() => layout.value.includes('slice'))
+const image = computed(() => props.post.image)
 
 const onReadMore = () => {
   if (props.post.path)
@@ -23,7 +24,7 @@ const onReadMore = () => {
   <li class="HairyArticleImage my-10 py-2" :class="[slice && 'slice', reverse && 'reverse']">
     <article>
       <div class="flex justify-between items-center">
-        <a class="text-size-2xl font-bold truncate cursor-pointer" :class="[reverse && 'order-1']" @click="onReadMore">{{ post.title }}</a>
+        <a class="text-size-2xl font-bold truncate cursor-pointer" :class="[reverse ? 'order-first' : 'order-last']" @click="onReadMore">{{ post.title }}</a>
         <div class="flex justify-end gap-2 text-size-sm">
           <span>{{ dayjs(post.date).format('YYYY-MM-DD') }}</span>
           <span>{{ (post.length / 1000).toFixed(1) }}k字</span>
@@ -31,9 +32,9 @@ const onReadMore = () => {
         </div>
       </div>
       <div class="h-200px flex">
-        <div class="flex-1 post-image-content">
+        <div class="flex-1 post-image-content" :class="[reverse ? 'order-last' : 'order-first']">
           <img
-            class="post-image rounded-1 w-full h-full object-cover cursor-pointer" :src="post.image"
+            class="post-image rounded-1 w-full h-full object-cover cursor-pointer" :src="image"
             @click="onReadMore"
           />
         </div>
@@ -93,7 +94,6 @@ const onReadMore = () => {
 
 .reverse {
   .post-image-content {
-    order: 1;
     margin-right: 0;
     margin-left: 1rem;
     -webkit-clip-path: polygon(0 0,100% 0,100% 100%,8% 100%);
