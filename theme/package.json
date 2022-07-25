@@ -1,5 +1,5 @@
 {
-  "name": "valaxy-theme-starter",
+  "name": "valaxy-theme-hairy",
   "version": "0.2.0",
   "packageManager": "pnpm@7.5.0",
   "author": {
@@ -10,7 +10,7 @@
   "homepage": "https://valaxy.site",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YunYouJun/valaxy-theme-starter"
+    "url": "https://github.com/YunYouJun/valaxy-theme-hairy"
   },
   "keywords": [
     "valaxy",

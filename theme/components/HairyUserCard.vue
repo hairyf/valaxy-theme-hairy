@@ -1,7 +1,7 @@
 <script lang="tsx" setup>
 import { useConfig, useThemeConfig } from 'valaxy'
 import { computed } from 'vue'
-import type { HairyTheme } from 'valaxy-theme-starter'
+import type { HairyTheme } from 'valaxy-theme-hairy'
 
 const config = useConfig()
 const theme = useThemeConfig<HairyTheme>()

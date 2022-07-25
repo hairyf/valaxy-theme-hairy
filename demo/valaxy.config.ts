@@ -1,5 +1,5 @@
 import { defineConfig } from 'valaxy'
-import type { HairyTheme } from 'valaxy-theme-starter'
+import type { HairyTheme } from 'valaxy-theme-hairy'
 import VitePluginVueJsx from '@vitejs/plugin-vue-jsx'
 
 /**
@@ -14,9 +14,9 @@ export default defineConfig<HairyTheme>({
     avatar: 'https://tuimao233.gitee.io/mao-blog/avatar.png',
     name: '毛先生',
   },
-  description: 'Valaxy Theme Starter Preview.',
+  description: 'Valaxy Theme Hairy Preview.',
 
-  theme: 'starter',
+  theme: 'hairy',
 
   social: [
     {

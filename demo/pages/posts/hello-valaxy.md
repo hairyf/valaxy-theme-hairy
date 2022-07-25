@@ -11,7 +11,7 @@ tags:
 ## Hello, Valaxy!
 
 ```ts
-import type { ThemeConfig } from 'valaxy-theme-starter'
+import type { ThemeConfig } from 'valaxy-theme-hairy'
 import { defineConfig } from 'valaxy'
 
 export default defineConfig<ThemeConfig>({

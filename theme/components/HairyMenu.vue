@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { HairyTheme } from 'valaxy-theme-starter'
+import type { HairyTheme } from 'valaxy-theme-hairy'
 import { useThemeConfig } from 'valaxy'
 import { computed } from 'vue'
 const themeConfig = useThemeConfig<HairyTheme>()
