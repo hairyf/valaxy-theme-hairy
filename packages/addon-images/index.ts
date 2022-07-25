@@ -1,26 +1,40 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+import path from 'path'
 import fs from 'fs'
+import YAML from 'yaml'
 import { defineAddon } from 'valaxy'
-import type { ReadTimeResults } from 'reading-time'
-import readingTime from 'reading-time'
 
 declare module 'valaxy' {
   interface Post {
-    durations: Omit<ReadTimeResults, 'text'>
-    length: number
+    image: string
   }
 }
 
-export default defineAddon(({ options }) => {
+export default defineAddon((_, { userRoot }) => {
+  const images = loadImageYaml(userRoot)
+  let count = 0
   return {
     extendMd(ctx) {
-      const file = fs.readFileSync(ctx.path, 'utf-8')
-      const duration = readingTime(file, options.readingTime)
-      // @ts-expect-errors
-      delete duration.text
-      ctx.route.meta.frontmatter.durations = duration
-      ctx.route.meta.frontmatter.length = file.length
-    },
+      if (images.length >= 6) {
+        if (!ctx.route.meta.frontmatter.image)
+          ctx.route.meta.frontmatter.image = images[count]
+        if (count <= images.length)
+          count++
+        if (count >= images.length)
+          count = 0
+      }
+    }
   }
 })
 
+function loadImageYaml(userRoot: string): string[] {
+  const imageYaml = path.join(userRoot, 'images.yml')
+  const defaultYaml = path.join(__dirname, 'images.yml')
+  if (fs.existsSync(imageYaml)) {
+    const images: string[] = YAML.parse(fs.readFileSync(imageYaml, 'utf-8'))
+    if (images.length > 6)
+      return images
+  }
+  const images = YAML.parse(fs.readFileSync(defaultYaml, 'utf-8'))
+  fs.writeFileSync(imageYaml, YAML.stringify(images))
+  return images
+}

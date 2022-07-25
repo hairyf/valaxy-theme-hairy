@@ -1,5 +1,5 @@
 {
-  "name": "valaxy-addon-statistics",
+  "name": "valaxy-addon-images",
   "version": "0.0.1",
   "main": "index.ts",
   "keywords": [
@@ -8,6 +8,7 @@
   ],
   "author": "TuiMao233",
   "dependencies": {
-    "reading-time": "^1.5.0"
+    "yaml": "^2.1.1"
+
   }
 }
