@@ -1,5 +1,7 @@
 ---
-title: 关于
+headline: About
+title: Hairy | TuiMao
+description: "hairy self introduction"
 ---
 
 - 99 后（12月，所以也算 00 后？）

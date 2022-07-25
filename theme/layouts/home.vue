@@ -5,7 +5,16 @@ const config = useConfig()
 
 <template>
   <HairyNav />
-  <HairyHeader :headline="config.title" :title="config.author.name" description="good evening, how are you doing?" />
+  <HairyHeader
+    class="HairyHomeHeader" :headline="config.title" :title="config.author.name"
+    description="good evening, how are you doing?"
+  />
   <HairyBody />
   <HairyBackToTop />
 </template>
+
+<style>
+.HairyHomeHeader .title {
+  @apply tracking-5;
+}
+</style>

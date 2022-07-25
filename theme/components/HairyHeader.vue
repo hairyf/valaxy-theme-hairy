@@ -11,7 +11,11 @@ const { headerRef } = useContext()
 <template>
   <header ref="headerRef" class="HairyHeader">
     <div class="h-50vh flex-center">
-      <HairyPostTitle v-if="title" :title="title" v-bind="$props" />
+      <HairyPostTitle v-if="title" :title="title" v-bind="$props">
+        <template #description>
+          <slot name="description" />
+        </template>
+      </HairyPostTitle>
     </div>
     <HairyWaves />
   </header>

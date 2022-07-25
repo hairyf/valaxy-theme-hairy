@@ -1,9 +1,17 @@
 <script lang="ts" setup>
-defineProps<{
+import { useFrontmatter } from 'valaxy'
+import { computed } from 'vue'
+const props = defineProps<{
   headline?: String
   title: String
   description?: string
 }>()
+
+const post = useFrontmatter()
+
+const headline = computed(() => post.value.headline || props.headline)
+const title = computed(() => post.value.title || props.title)
+const description = computed(() => post.value.description || props.description)
 </script>
 
 <template>
@@ -11,11 +19,11 @@ defineProps<{
     <div v-if="headline" class="font-frederick text-size-3.35em leading-snug">
       {{ headline }}
     </div>
-    <div class="text-size-2.5em font-bold tracking-5">
+    <div class="text-size-2.5em font-bold title tracking-1">
       {{ title }}
     </div>
-    <p v-if="description" class="text-size-sm">
-      <template v-if="!$slots.description">
+    <p v-if="description || $slots.description" class="text-size-sm">
+      <template v-if="description">
         {{ description }}
       </template>
       <slot v-else name="description" />
