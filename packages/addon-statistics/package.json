@@ -1,0 +1,13 @@
+{
+  "name": "valaxy-addon-statistics",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "keywords": [
+    "valaxy",
+    "addon"
+  ],
+  "author": "TuiMao233",
+  "dependencies": {
+    "reading-time": "^1.5.0"
+  }
+}
