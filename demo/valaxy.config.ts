@@ -90,7 +90,7 @@ export default defineConfig<HairyTheme>({
   },
   themeConfig: {
     post: {
-      layout: 'image:slice',
+      layout: 'image:slice:reverse',
     },
     nav: [
       {

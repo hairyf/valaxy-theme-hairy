@@ -6,10 +6,10 @@ import { mergeConfig as mergeViteConfig } from 'vite'
  * (source, default)
  */
 export const mergeValaxyConfig = createDefu((obj: any, key, value) => {
-  if (isFunction(obj[key]) && isFunction(value)) {
+  if (isFunction(obj[key]) || isFunction(value)) {
     obj[key] = function (...args: any[]) {
-      obj[key].call(this, ...args)
-      value.call(this, ...args)
+      obj[key]?.call(this, ...args)
+      value?.call(this, ...args)
     }
   }
   if (key === 'vite') {

@@ -1,15 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import fs from 'fs'
-import type { ReadTimeResults } from 'reading-time'
 import readingTime from 'reading-time'
 import type { ValaxyExtendConfig } from 'valaxy'
-
-declare module 'valaxy' {
-  interface Post {
-    durations: Omit<ReadTimeResults, 'text'>
-    length: number
-  }
-}
 
 function addonStatistics(): ValaxyExtendConfig {
   return {

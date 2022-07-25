@@ -1,15 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import fs from 'fs'
 import { defineAddon } from 'valaxy'
-import type { ReadTimeResults } from 'reading-time'
 import readingTime from 'reading-time'
-
-declare module 'valaxy' {
-  interface Post {
-    durations: Omit<ReadTimeResults, 'text'>
-    length: number
-  }
-}
 
 export default defineAddon(({ options }) => {
   return {

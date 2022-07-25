@@ -3,15 +3,10 @@ import fs from 'fs'
 import type { ResolvedValaxyOptions, ValaxyExtendConfig } from 'valaxy'
 import YAML from 'yaml'
 
-declare module 'valaxy' {
-  interface Post {
-    image: string
-  }
-}
+let count = 0
 
 function addonImages(options: ResolvedValaxyOptions): ValaxyExtendConfig {
-  const images = loadImageYaml(options.userRoot)
-  let count = 0
+  const images = loadImageYaml(options.userRoot, options.themeRoot)
   return {
     extendMd(ctx) {
       if (images.length >= 6) {
@@ -28,9 +23,9 @@ function addonImages(options: ResolvedValaxyOptions): ValaxyExtendConfig {
 
 export default addonImages
 
-function loadImageYaml(userRoot: string): string[] {
+function loadImageYaml(userRoot: string, themeRoot: string): string[] {
   const imageYaml = path.join(userRoot, 'images.yml')
-  const defaultYaml = path.join(__dirname, 'images.yml')
+  const defaultYaml = path.join(themeRoot, 'images.yml')
   if (fs.existsSync(imageYaml)) {
     const images: string[] = YAML.parse(fs.readFileSync(imageYaml, 'utf-8'))
     if (images.length > 6)

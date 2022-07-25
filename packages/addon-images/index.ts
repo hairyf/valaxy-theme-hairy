@@ -3,12 +3,6 @@ import fs from 'fs'
 import YAML from 'yaml'
 import { defineAddon } from 'valaxy'
 
-declare module 'valaxy' {
-  interface Post {
-    image: string
-  }
-}
-
 export default defineAddon((_, { userRoot }) => {
   const images = loadImageYaml(userRoot)
   let count = 0

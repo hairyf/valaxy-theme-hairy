@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { Ref } from 'vue'
 import { computed } from 'vue'
 import type { Post } from 'valaxy'
 import { usePostList } from 'valaxy'
@@ -9,7 +10,7 @@ const props = withDefaults(defineProps<{
 }>(), {
 })
 
-const routes = usePostList()
+const routes = usePostList() as any as Ref<Post[]>
 const posts = computed(() => props.posts || routes.value)
 </script>
 
