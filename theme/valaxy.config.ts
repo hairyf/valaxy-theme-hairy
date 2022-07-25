@@ -1,9 +1,7 @@
 import { defineTheme } from 'valaxy'
 import type { HairyTheme } from 'theme'
 
-
-export default defineTheme<HairyTheme>((options) => {
-
+export default defineTheme<HairyTheme>(() => {
   return {
     // TODO: AUTO GET Title
     extendMd(ctx) {

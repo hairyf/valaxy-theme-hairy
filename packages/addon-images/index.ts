@@ -22,7 +22,7 @@ export default defineAddon((_, { userRoot }) => {
         if (count >= images.length)
           count = 0
       }
-    }
+    },
   }
 })
 
