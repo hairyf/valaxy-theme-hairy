@@ -49,6 +49,7 @@ const timelines = computed(() => {
       <el-timeline-item
         v-if="item.type === 'link'"
         hollow
+        :index="index"
         size="large"
       >
         <HairyLink @click="$router.push(getArchiveLink(year, item.month))">
