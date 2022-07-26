@@ -26,7 +26,7 @@ const State = defineComponent({
 
 <template>
   <div class="flex justify-center mt-2">
-    <State :count="posts.length" @click="$router.push('/posts/')">
+    <State :count="posts.length" @click="$router.push('/archives/')">
       文章
     </State>
     <div class="w-1px bg-gray bg-opacity-50" />

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { ElTimeline, ElTimelineItem } from 'element-plus'
-import dayjs from 'dayjs'
 import 'element-plus/es/components/timeline/style/index'
 import 'element-plus/es/components/timeline-item/style/index'
+import dayjs from 'dayjs'
 import { computed } from 'vue'
 import type { Post } from 'valaxy'
 import { useYearArchives } from '../../../hooks/useYearArchives'
-import { getArchiveLink } from '../../..//utils'
+import { getArchiveLink } from '../../../utils'
 interface TimeLineItem extends Post {
   type: 'link' | 'post'
   month: string
@@ -36,8 +36,13 @@ const timelines = computed(() => {
 </script>
 
 <template>
-  <div class="text-size-2.5em mb-5">
-    title
+  <div class="activity inline-flex items-end text-size-2.5em leading-12 pt-5 mb-10">
+    <HairyLink @click="$router.push(getArchiveLink())">
+      全部
+    </HairyLink>
+    <span class="text-gray-5 text-size-5 mx-2">/</span>
+    <span>{{ year }}年</span>
+    <span class="text-gray-5 text-size-5 ml-1">归档</span>
   </div>
   <el-timeline>
     <template v-for="(item, index) in timelines" :key="index">
@@ -46,7 +51,7 @@ const timelines = computed(() => {
         hollow
         size="large"
       >
-        <HairyLink @click="$router.push(item.link)">
+        <HairyLink @click="$router.push(getArchiveLink(year, item.month))">
           {{ item.month }}月
         </HairyLink>
       </el-timeline-item>

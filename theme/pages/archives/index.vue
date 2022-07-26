@@ -17,11 +17,10 @@ const posts = usePostList()
     <el-timeline-item
       v-for="(activity, index) in activities"
       :key="index"
-      title="awda"
       hollow
       size="large"
     >
-      <div class="inline-flex items-center">
+      <div class="activity inline-flex items-center">
         <HairyLink @click="$router.push(getArchiveLink(activity.year))">
           {{ activity.year }}
         </HairyLink>
@@ -39,3 +38,11 @@ const posts = usePostList()
 meta:
   layout: archives
 </route>
+
+<style lang="scss" scoped>
+.activity:hover {
+  .HairyLink {
+    color: var(--hy-c-primary);
+  }
+}
+</style>

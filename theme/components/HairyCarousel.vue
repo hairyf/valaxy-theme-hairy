@@ -11,19 +11,35 @@ images.sort(() => Math.random() - 0.5)
 
 <template>
   <swiper
-    effect="fade"
-    :speed="2000"
-    :fade-effect="{ crossFade: true }"
-    :modules="[Autoplay, EffectFade]"
-    :slides-per-view="1"
-    :space-between="50"
-    :autoplay="{
+    effect="fade" :speed="2000" :fade-effect="{ crossFade: true }" :modules="[Autoplay, EffectFade]"
+    :slides-per-view="1" :space-between="50" :autoplay="{
       delay: 4000,
-    }"
-    class="swiper-no-swiping"
+    }" class="HairyCarousel swiper-no-swiping"
   >
     <swiper-slide v-for="(item, index) in images" :key="index" class="w-full h-full">
       <img class="w-full h-full object-cover" :src="item" />
     </swiper-slide>
   </swiper>
 </template>
+
+<style lang="scss">
+.HairyCarousel {
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 2;
+    transition: all .2s ease-in-out 0s;
+  }
+}
+.dark {
+  .HairyCarousel::before {
+    background-color: rgba(0,0,0,.4);
+  }
+}
+</style>

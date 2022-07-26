@@ -15,7 +15,7 @@ export const getArchiveLink = (year?: string, month?: string) => {
     return '/archives/'
   if (!month)
     return `/archives/${year}`
-  if (!month)
+  if (month)
     return `/archives/${year}/${month}`
 
   return ''
