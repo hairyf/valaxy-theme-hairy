@@ -13,6 +13,10 @@ export interface HairyTheme {
     layout?: 'text' | 'markdown' | 'image' | 'image:slice' | 'image:slice:reverse'
     images?: string[]
   }
+  /**
+   * 分类对应的文案
+   */
+  categories?: Record<string, string>
 }
 export interface NavItem {
   text: string;
