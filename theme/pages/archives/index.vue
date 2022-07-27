@@ -10,9 +10,14 @@ const posts = usePostList()
 </script>
 
 <template>
-  <div class="text-size-2.5em mb-5">
-    目前共计 {{ posts.length }} 篇文章
-  </div>
+  <HairyBreadcrumb class="mb-5" size="large" after="归档">
+    <HairyBreadcrumbItem to="/">
+      首页
+    </HairyBreadcrumbItem>
+    <HairyBreadcrumbItem>
+      目前共计 {{ posts.length }} 篇文章
+    </HairyBreadcrumbItem>
+  </HairyBreadcrumb>
   <el-timeline>
     <el-timeline-item
       v-for="(activity, index) in activities"

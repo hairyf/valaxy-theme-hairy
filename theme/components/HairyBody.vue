@@ -9,8 +9,8 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
 </script>
 
 <template>
-  <div class="HairyBody min-h-50vh">
-    <div class="mx-auto container flex">
+  <div class="HairyBody min-h-50vh relative">
+    <div class="mx-auto container flex z-1 relative">
       <div class="flex-1 pt-2">
         <router-view />
         <HairyWaline v-if="showWaline" />
@@ -19,11 +19,23 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
         <HairyUserCard class="w-60" />
       </div>
     </div>
+    <div class="HairyBodyBackground" />
   </div>
 </template>
 
-<style>
-  .a {
-    overflow: hidden;
+<style lang="scss">
+.a {
+  overflow: hidden;
+}
+
+.dark {
+  .HairyBodyBackground {
+    @apply absolute inset-0;
+    background-image: linear-gradient(to bottom, var(--hy-c-waves-dimm), transparent), url(http://pic1.win4000.com/wallpaper/2019-10-22/5daecb01d8bb4.jpg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 100%;
   }
+}
 </style>

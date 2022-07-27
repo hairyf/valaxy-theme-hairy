@@ -16,7 +16,6 @@ const post = useFrontmatter()
       </div>
     </template>
   </HairyHeader>
-  <HairyAside />
   <HairyBody />
   <HairyBackToTop />
 </template>

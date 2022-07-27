@@ -23,18 +23,18 @@ const post = computed(() => months.value.flatMap(item => item.posts))
 </script>
 
 <template>
-  <div class="activity inline-flex items-end text-size-2.5em leading-12 pt-5 mb-10">
-    <HairyLink @click="$router.push(getArchiveLink())">
+  <HairyBreadcrumb class="mb-5" size="large" :after="`归档(${count}篇)`">
+    <HairyBreadcrumbItem to="/archives/">
       全部
-    </HairyLink>
-    <span class="text-gray-5 text-size-5 mx-2">/</span>
-    <HairyLink @click="$router.push(getArchiveLink(year))">
+    </HairyBreadcrumbItem>
+    <HairyBreadcrumbItem :to="getArchiveLink(year)">
       {{ year }}年
-    </HairyLink>
-    <span class="text-gray-5 text-size-5 mx-2">/</span>
-    <span>{{ month }}月</span>
-    <span class="text-gray-5 text-size-5 ml-1">归档({{ count }}篇)</span>
-  </div>
+    </HairyBreadcrumbItem>
+    <HairyBreadcrumbItem :to="getArchiveLink(year)">
+      {{ month }}月
+    </HairyBreadcrumbItem>
+  </HairyBreadcrumb>
+
   <el-timeline>
     <el-timeline-item
       v-for="(item, index) in post"

@@ -6,7 +6,7 @@ const post = useFrontmatter()
 <template>
   <HairyNav />
   <HairyHeader :title="post.title" />
-  <HairyAside />
+  <!-- <HairyAside /> -->
   <HairyBody />
   <HairyBackToTop />
 </template>

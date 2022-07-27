@@ -1,10 +1,22 @@
 <script lang="ts" setup>
-import { useData, useFrontmatter } from 'valaxy'
-
-const frontmatter = useFrontmatter()
-const data = useData()
+import { useRoute } from 'vue-router'
 </script>
 
 <template>
-  <div></div>
+  <HairyToc
+    :headers=" [
+      {
+        level: 2,
+        title: 'What is Valaxy?',
+        slug: 'what-is-valaxy',
+        lang: 'en',
+      },
+      {
+        level: 2,
+        title: '什么是 Valaxy?',
+        slug: '什么是-valaxy',
+        lang: 'zh-CN',
+      },
+    ]"
+  />
 </template>

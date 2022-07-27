@@ -88,6 +88,9 @@ export default defineConfig<HairyTheme>({
       VitePluginVueJsx(),
     ],
   },
+  markdown: {
+    theme: 'material-ocean',
+  },
   themeConfig: {
     home: {
       images: [],

@@ -36,14 +36,15 @@ const timelines = computed(() => {
 </script>
 
 <template>
-  <div class="activity inline-flex items-end text-size-2.5em leading-12 pt-5 mb-10">
-    <HairyLink @click="$router.push(getArchiveLink())">
+  <HairyBreadcrumb class="mb-5" size="large" after="归档">
+    <HairyBreadcrumbItem to="/archives/">
       全部
-    </HairyLink>
-    <span class="text-gray-5 text-size-5 mx-2">/</span>
-    <span>{{ year }}年</span>
-    <span class="text-gray-5 text-size-5 ml-1">归档</span>
-  </div>
+    </HairyBreadcrumbItem>
+    <HairyBreadcrumbItem>
+      {{ year }}年
+    </HairyBreadcrumbItem>
+  </HairyBreadcrumb>
+
   <el-timeline>
     <template v-for="(item, index) in timelines" :key="index">
       <el-timeline-item
