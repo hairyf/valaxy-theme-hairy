@@ -28,14 +28,22 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
   overflow: hidden;
 }
 
+.HairyBodyBackground {
+  @apply transition-all duration-200;
+  @apply absolute inset-0 transition-all;
+  opacity: 0;
+}
+
 .dark {
   .HairyBodyBackground {
     @apply absolute inset-0;
+    transition-delay: 200ms;
+    transition-delay: 0;
+    opacity: 1;
     background-image: linear-gradient(to bottom, var(--hy-c-waves-dimm) 0%, transparent 80%), url(http://pic1.win4000.com/wallpaper/2019-10-22/5daecb01d8bb4.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 100%;
   }
 }
 </style>
