@@ -84,6 +84,7 @@ export default defineConfig<HairyTheme>({
     },
   },
   vite: {
+    base: '/valaxy-theme-hairy/',
     plugins: [
       VitePluginVueJsx(),
     ],
