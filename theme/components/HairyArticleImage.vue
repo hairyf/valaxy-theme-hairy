@@ -3,6 +3,7 @@ import type { Post } from 'valaxy'
 import { computed, defineProps } from 'vue'
 import dayjs from 'dayjs'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { usePostLayout } from '../hooks/usePostLayout'
 
 const props = defineProps<{
@@ -14,9 +15,20 @@ const layout = usePostLayout()
 const slice = computed(() => layout.value.includes('slice'))
 const image = computed(() => props.post.image)
 
+const i18n = useI18n()
+
 const onReadMore = () => {
   if (props.post.path)
     router.push(props.post.path)
+}
+
+const toArray = (arr: string | string[]) => {
+  if (Array.isArray(arr))
+    return arr
+  else return [arr].filter(Boolean)
+}
+const displayCategory = (keys: string | string[]) => {
+  router.push({ path: `/categories/${toArray(keys).join('/')}` })
 }
 </script>
 
@@ -45,9 +57,11 @@ const onReadMore = () => {
             </div>
           </div>
           <div class="flex justify-between items-center">
-            <div :class="[reverse && 'order-1']">
-              TODO: 分类
-            </div>
+            <a class="cursor-pointer" :class="[reverse && 'order-1']">
+              <span v-if="post.categories?.length" @click="displayCategory(post.categories)">
+                {{ i18n.t(toArray(post.categories).at(-1) || '') }}
+              </span>
+            </a>
             <div class="text-base leading-6 font-medium">
               <a class="link cursor-pointer" aria-label="read more" @click="onReadMore">
                 <span v-if="reverse">←</span>

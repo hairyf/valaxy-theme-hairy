@@ -16,8 +16,6 @@ const router = useRouter()
 const paths = computed(() => props.categories.split('/').filter(Boolean))
 const current = useCurrentCategory(paths)
 
-console.log(current.value)
-
 const posts = useCategoryPost(paths)
 
 const i18n = useI18n()
@@ -37,7 +35,7 @@ const displayCategory = (key: string) => {
     <HairyBreadcrumbItem to="/">
       首页
     </HairyBreadcrumbItem>
-    <HairyBreadcrumbItem to="/categories/">
+    <HairyBreadcrumbItem :to="paths.length && '/categories/' || ''">
       全部
     </HairyBreadcrumbItem>
     <HairyBreadcrumbItem v-for="(key, index) in paths" :key="key" :to="getBreadcrumbPath(index)">
