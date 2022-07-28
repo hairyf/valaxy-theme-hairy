@@ -21,7 +21,7 @@ const posts = useCategoryPost(paths)
 const i18n = useI18n()
 
 const getBreadcrumbPath = (index: number) => {
-  if (paths.value[index] === paths.value.at(-1))
+  if (paths.value[index] === paths.value[paths.value.length - 1])
     return ''
   return `/categories/${paths.value.slice(0, index)}`
 }

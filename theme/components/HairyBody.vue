@@ -40,7 +40,7 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
     transition-delay: 200ms;
     transition-delay: 0;
     opacity: 1;
-    background-image: linear-gradient(to bottom, var(--hy-c-waves-dimm) 0%, transparent 80%), url(http://pic1.win4000.com/wallpaper/2019-10-22/5daecb01d8bb4.jpg);
+    background-image: linear-gradient(to bottom, var(--hy-c-waves-dimm) 0%, transparent 80%), url(https://tva4.sinaimg.cn/large/008ugSUaly8h4mq1j62huj31hc0u0mz9.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
