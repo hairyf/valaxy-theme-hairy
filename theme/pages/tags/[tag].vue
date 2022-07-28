@@ -1,9 +1,16 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
-
-defineProps<{
+import { computed, defineProps } from 'vue'
+import { usePostList } from 'valaxy'
+import { ElTimeline, ElTimelineItem } from 'element-plus'
+import 'element-plus/es/components/timeline/style/index'
+import 'element-plus/es/components/timeline-item/style/index'
+const props = defineProps<{
   tag: string
 }>()
+
+const posts = usePostList()
+
+const tagPosts = computed<any[]>(() => posts.value.filter(post => post.tags?.includes(props.tag)))
 </script>
 
 <template>
@@ -11,7 +18,20 @@ defineProps<{
     <HairyBreadcrumbItem to="/">
       首页
     </HairyBreadcrumbItem>
+    <HairyBreadcrumbItem>
+      {{ tag }}
+    </HairyBreadcrumbItem>
   </HairyBreadcrumb>
+  <el-timeline>
+    <el-timeline-item
+      v-for="(item, index) in tagPosts"
+      :key="index"
+      hollow
+      size="large"
+    >
+      <HairyTimelinePostItem :post="item" />
+    </el-timeline-item>
+  </el-timeline>
 </template>
 
 <route lang="yaml">

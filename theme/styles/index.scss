@@ -12,7 +12,13 @@ body {
 }
 
 a {
-  color: var(--hy-c-primary)
+  @apply transition-colors;
+  color: var(--hy-c-primary-light);
+
+  &:hover {
+    --un-text-opacity: 1;
+    color: var(--hy-c-primary-dark);
+  }
 }
 
 html,

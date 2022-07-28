@@ -4,7 +4,9 @@ import { computed, defineProps } from 'vue'
 import dayjs from 'dayjs'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import last from 'lodash/last'
 import { usePostLayout } from '../hooks/usePostLayout'
+import { toArr } from '../utils'
 
 const props = defineProps<{
   post: Post
@@ -21,16 +23,9 @@ const onReadMore = () => {
   if (props.post.path)
     router.push(props.post.path)
 }
-const last = (arr: string[] = []) => {
-  return arr[arr.length - 1]
-}
-const toArray = (arr: string | string[]) => {
-  if (Array.isArray(arr))
-    return arr
-  else return [arr].filter(Boolean)
-}
+
 const displayCategory = (keys: string | string[] = []) => {
-  router.push({ path: `/categories/${toArray(keys).join('/')}` })
+  router.push({ path: `/categories/${toArr(keys).join('/')}` })
 }
 </script>
 
@@ -61,7 +56,7 @@ const displayCategory = (keys: string | string[] = []) => {
           <div class="flex justify-between items-center">
             <a class="cursor-pointer" :class="[reverse && 'order-1']">
               <span v-if="post.categories?.length" @click="displayCategory(post.categories)">
-                {{ i18n.t(last(toArray(post.categories)) || '') }}
+                {{ i18n.t(last(toArr(post.categories)) || '') }}
               </span>
             </a>
             <div class="text-base leading-6 font-medium">

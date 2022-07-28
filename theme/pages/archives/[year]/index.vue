@@ -2,7 +2,6 @@
 import { ElTimeline, ElTimelineItem } from 'element-plus'
 import 'element-plus/es/components/timeline/style/index'
 import 'element-plus/es/components/timeline-item/style/index'
-import dayjs from 'dayjs'
 import { computed } from 'vue'
 import type { Post } from 'valaxy'
 import { useYearArchives } from '../../../hooks/useYearArchives'
@@ -62,10 +61,7 @@ const timelines = computed(() => {
         hollow
         size="normal"
       >
-        <div class="mb-1 text-size-3.5 mt-1.5">
-          {{ dayjs(item.date).format('MM-DD') }}
-        </div>
-        <a class="cursor-pointer text-size-4" @click="$router.push(item.path || '')">{{ item.title }}</a>
+        <HairyTimelinePostItem :post="item" />
       </el-timeline-item>
     </template>
   </el-timeline>

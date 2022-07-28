@@ -20,3 +20,9 @@ export const getArchiveLink = (year?: string, month?: string) => {
 
   return ''
 }
+
+export const toArr = <T>(arr: T[] | T): T[] => {
+  if (Array.isArray(arr))
+    return arr as any
+  else return [arr].filter(Boolean) as any
+}

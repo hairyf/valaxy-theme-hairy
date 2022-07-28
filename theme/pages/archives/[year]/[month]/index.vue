@@ -3,7 +3,6 @@ import { ElTimeline, ElTimelineItem } from 'element-plus'
 import 'element-plus/es/components/timeline/style/index'
 import 'element-plus/es/components/timeline-item/style/index'
 import { computed, defineProps } from 'vue'
-import dayjs from 'dayjs'
 import { useYearArchives } from '../../../../hooks/useYearArchives'
 import { getArchiveLink } from '../../../../utils'
 
@@ -42,10 +41,7 @@ const post = computed(() => months.value.flatMap(item => item.posts))
       hollow
       size="large"
     >
-      <div class="mb-1 text-size-3.5 mt-1.5">
-        {{ dayjs(item.date).format('MM-DD') }}
-      </div>
-      <a class="cursor-pointer text-size-4" @click="$router.push(item.path || '')">{{ item.title }}</a>
+      <HairyTimelinePostItem :post="item" />
     </el-timeline-item>
   </el-timeline>
 </template>
