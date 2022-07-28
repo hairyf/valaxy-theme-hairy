@@ -76,3 +76,8 @@ const displayCategory = (key: string) => {
     color: #fff;
   }
 </style>
+
+<route lang="yaml">
+meta:
+  layout: categories
+</route>

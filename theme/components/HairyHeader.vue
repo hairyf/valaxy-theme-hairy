@@ -12,7 +12,7 @@ const { headerRef } = useContext()
 
 <template>
   <header ref="headerRef" class="HairyHeader relative">
-    <div class="h-45vh flex-center">
+    <div class="h-30vh flex-center">
       <HairyPostTitle v-if="title" class="relative z-2" :title="title" v-bind="$props">
         <template #description>
           <slot name="description" />

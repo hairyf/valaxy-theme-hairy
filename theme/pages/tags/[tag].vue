@@ -11,3 +11,8 @@ defineProps<{
     施工中
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  layout: tags
+</route>
