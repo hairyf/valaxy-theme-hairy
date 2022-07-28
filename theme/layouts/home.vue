@@ -4,13 +4,16 @@ const config = useConfig()
 </script>
 
 <template>
-  <HairyNav />
-  <HairyHeader
-    class="HairyHomeHeader" :headline="config.title" :title="config.author.name"
-    description="good evening, how are you doing?"
-  />
-  <HairyBody />
-  <HairyBackToTop />
+  <HairyLayout
+    class="HairyHomeLayout"
+    :header="{
+      headline: config.title,
+      title: config.author.name,
+      description: 'good evening, how are you doing?',
+    }"
+  >
+    <router-view />
+  </HairyLayout>
 </template>
 
 <style>

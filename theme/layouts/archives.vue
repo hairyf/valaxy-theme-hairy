@@ -4,9 +4,8 @@ const post = useFrontmatter()
 </script>
 
 <template>
-  <HairyNav />
-  <HairyHeader :title="post.title" />
-  <HairyBody />
-  <HairyBackToTop />
+  <HairyLayout :header="{ title: post.title }">
+    <router-view />
+  </HairyLayout>
 </template>
 
