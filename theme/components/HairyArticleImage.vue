@@ -8,8 +8,8 @@ defineProps<{
 </script>
 
 <template>
-  <HairyArticleImageDefault :post="post" :reverse="reverse" class="hidden md:block" />
-  <HairyArticleImageSmall :post="post" :reverse="reverse" class="hidden lt-md:block" />
+  <HairyArticleImageDefault :post="post" :reverse="reverse" class="hidden sm:block" />
+  <HairyArticleImageSmall :post="post" :reverse="reverse" class="hidden lt-sm:block" />
 </template>
 
 <style lang="scss">
