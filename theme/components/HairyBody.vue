@@ -43,7 +43,7 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
       linear-gradient(to bottom, var(--hy-c-waves-dimm) 0%, transparent 60%, var(--hy-c-waves-dimm) 100%),
       url(https://tva2.sinaimg.cn/large/008ugSUaly8h4mt4lbuc0j31hc0u040c.jpg);
     background-position: center;
-    opacity: 0.8;
+    opacity: 0.4;
     background-repeat: no-repeat;
     filter: blur(0px);
     background-size: cover;

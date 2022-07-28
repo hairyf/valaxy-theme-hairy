@@ -7,12 +7,14 @@ defineProps<{
 </script>
 
 <template>
-  <div class="text-center pt-20 text-20">
-    施工中
-  </div>
+  <HairyBreadcrumb class="mb-5" size="large" after="标签">
+    <HairyBreadcrumbItem to="/">
+      首页
+    </HairyBreadcrumbItem>
+  </HairyBreadcrumb>
 </template>
 
 <route lang="yaml">
 meta:
-  layout: tags
+  layout: tag
 </route>

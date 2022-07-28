@@ -1,5 +1,5 @@
 <template>
-  <HairyLayout :header="{ title: '所有标签' }">
+  <HairyLayout>
     <router-view />
   </HairyLayout>
 </template>

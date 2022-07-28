@@ -26,7 +26,6 @@ const { headerRef } = useContext()
 
 <style>
 .HairyHeader {
-  background: url(https://tuimao233.gitee.io/mao-blog/background.jpg) center/cover no-repeat;
   position: relative;
 }
 </style>
