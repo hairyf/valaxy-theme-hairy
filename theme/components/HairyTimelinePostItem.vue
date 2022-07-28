@@ -27,7 +27,7 @@ const displayCategory = (keys: string | string[] = []) => {
 
 <template>
   <div class="mb-1 text-size-3.5 mt-1.5 flex items-center">
-    <div class="mr-2.2">
+    <div class="mr-2.2 dark:text-gray-500 text-gray-400">
       {{ dayjs(post.date).format(format) }}
     </div>
     <HairyLink v-if="post.categories?.length" @click="displayCategory(post.categories)">
