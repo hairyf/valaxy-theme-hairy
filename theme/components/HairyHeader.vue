@@ -11,7 +11,7 @@ const { headerRef } = useContext()
 </script>
 
 <template>
-  <header ref="headerRef" class="HairyHeader">
+  <header ref="headerRef" class="HairyHeader relative">
     <div class="h-45vh flex-center">
       <HairyPostTitle v-if="title" class="relative z-2" :title="title" v-bind="$props">
         <template #description>
@@ -19,7 +19,7 @@ const { headerRef } = useContext()
         </template>
       </HairyPostTitle>
     </div>
-    <HairyCarousel class="absolute inset-0" />
+    <HairyCarousel class="inset-0" style="position: absolute" />
     <HairyWaves class="relative z-10" />
   </header>
 </template>
