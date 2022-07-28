@@ -4,6 +4,10 @@
     color: initial;
     line-height: 1;
     font-size: 1.5rem;
+
+    @media (max-width: 1200px) {
+      font-size: 1.3rem;
+    }
   }
 
   .el-timeline-item__wrapper {}

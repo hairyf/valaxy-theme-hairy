@@ -9,7 +9,7 @@ export default defineConfig({
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
-      '2xl': '75vw',
+      '2xl': '1600px',
     },
   },
 

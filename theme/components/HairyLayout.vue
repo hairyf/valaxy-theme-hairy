@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useConfig } from 'valaxy'
 defineProps<{
   header?: {
     title?: string

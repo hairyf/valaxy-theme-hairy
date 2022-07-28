@@ -42,3 +42,23 @@ body {
     border-radius: 5px;
   }
 }
+
+
+@media (min-width: 1200px) {
+  .breakpoint {
+    width: 72.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .breakpoint {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .breakpoint {
+    width: 75vw;
+  }
+}

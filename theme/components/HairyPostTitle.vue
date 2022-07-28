@@ -15,15 +15,12 @@ const title = computed(() => post.value.title || props.title)
 
 <template>
   <div class="flex-center flex-col text-shadow-lg text-white">
-    <div v-if="headline" class="font-frederick text-size-3.35em leading-snug">
+    <div v-if="headline" class="font-frederick text-size-3.35em lt-sm:text-size-3rem leading-snug">
       {{ headline }}
     </div>
-    <div class="text-size-2.5em font-bold title tracking-1">
+    <div class="text-size-2.5em lt-sm:text-size-2rem font-bold title tracking-1">
       {{ title }}
     </div>
-    <p v-if="post.description">
-      {{ post.description }}
-    </p>
     <p v-if="description || $slots.description" class="text-size-sm">
       <template v-if="description">
         {{ description }}

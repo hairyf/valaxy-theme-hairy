@@ -21,12 +21,12 @@ const isShow = computed(() => {
 
 <template>
   <div class="HairyNav fixed w-full h-3.125rem top-0 z-10 opacity-0 transition-opacity duration-200" :class="[isShow && 'opacity-100']">
-    <div class="mx-auto container flex relative z-1">
+    <div class="mx-auto breakpoint flex relative z-1">
       <div class="flex-1 flex items-center">
-        <HairyNavTitle />
+        <HairyNavTitle class="lt-sm:hidden" />
         <HairyMenu />
       </div>
-      <div class="flex-center">
+      <div class="flex-center lt-sm:hidden">
         <HairyNavToggleDark />
         <HairyNavSearch />
       </div>

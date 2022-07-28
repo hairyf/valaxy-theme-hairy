@@ -10,7 +10,7 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
 
 <template>
   <div class="HairyBody min-h-50vh relative">
-    <div class="mx-auto container flex z-1 relative">
+    <div class="mx-auto breakpoint flex z-1 relative">
       <div class="relative flex-1 pt-2">
         <slot />
         <HairyWaline v-if="showWaline" />

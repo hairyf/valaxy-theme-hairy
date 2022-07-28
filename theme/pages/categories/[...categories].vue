@@ -2,14 +2,21 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
+import { useThemeConfig } from 'valaxy'
+import { ElTimeline, ElTimelineItem } from 'element-plus'
 import { useCurrentCategory } from '../../hooks/useCategory'
 import { useCategoryPost } from '../../hooks/useCategoryPost'
 
 import { usePostLayout } from '../../hooks/usePostLayout'
+import type { HairyTheme } from '../..'
+import 'element-plus/es/components/timeline/style/index'
+import 'element-plus/es/components/timeline-item/style/index'
 const props = defineProps<{
   categories: string
 }>()
 const layout = usePostLayout()
+const themeConfig = useThemeConfig<HairyTheme>()
+const categoriesLayout = computed(() => themeConfig.value.categories?.layout || 'post')
 
 const router = useRouter()
 
@@ -42,10 +49,13 @@ const displayCategory = (key: string) => {
       {{ i18n.t(key) }}
     </HairyBreadcrumbItem>
   </HairyBreadcrumb>
-  <div class="grid grid-flow-col auto-cols-30 gap-12 dark:text-gray-3">
+  <div class="grid__view dark:text-gray-3 flex-wrap">
     <template v-for="([key, item]) in current.children" :key="key">
-      <div class="relative flex items-center flex-col cursor-pointer hover:text-primary transition-color" @click="displayCategory(key)">
-        <div class="i-ri-folder-open-line text-22" />
+      <div
+        class="relative flex items-center flex-col cursor-pointer hover:text-primary transition-color"
+        @click="displayCategory(key)"
+      >
+        <div class="i-ri-folder-open-line text-22 lt-sm:text-15" />
         <div class="text-center leading-normal">
           {{ i18n.t(key) }}
         </div>
@@ -56,25 +66,47 @@ const displayCategory = (key: string) => {
     </template>
   </div>
   <div class="border-t border-gray-200 dark:border-gray-500 mt-5" />
-  <HairyPostImageList v-if="layout.includes('image')" :posts="posts" />
-  <HairyPostList v-else :posts="posts" />
+
+  <el-timeline v-if="categoriesLayout === 'timeline'" class="pt-5 pl-10">
+    <el-timeline-item v-for="(item, index) in posts" :key="index" hollow size="large">
+      <HairyTimelinePostItem :post="item" />
+    </el-timeline-item>
+  </el-timeline>
+  <template v-else>
+    <HairyPostImageList v-if="layout.includes('image')" :posts="posts" />
+    <HairyPostList v-else :posts="posts" />
+  </template>
 </template>
 
 <style lang="scss" scoped>
-  .badge {
-    position: absolute;
-    right: 0.8rem;
-    top: 0.5rem;
-    padding-left: 6px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 6px;
+.badge {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.5rem;
+  padding-left: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 6px;
 
-    line-height: normal;
-    border-radius: 50%;
-    background-color: #f56c6c;
-    color: #fff;
+  line-height: normal;
+  border-radius: 50%;
+  background-color: #f56c6c;
+  color: #fff;
+}
+
+.grid__view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 7.5rem);
+  gap: 3rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(auto-fill, 6.5rem);
   }
+
+  &>* {
+    height: var(--height);
+  }
+}
 </style>
 
 <route lang="yaml">

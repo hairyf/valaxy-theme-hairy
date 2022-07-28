@@ -42,6 +42,7 @@ const text = computed(() => `"${props.after || ''}"`)
   .el-breadcrumb.large {
     margin-top: 3rem;
     font-size: 2.5em;
+    @apply lt-md:text-3xl lt-sm:text-xl;
     .el-breadcrumb__separator {
       @apply text-size-5 text-gray-5;
       font-weight: normal;
