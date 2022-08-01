@@ -22,7 +22,7 @@ defineProps<{
       <template v-if="$slots['body-slide']" #slide>
         <slot name="body-slide" />
       </template>
-    </HairyBody>
+    </HairyBody>1
     <HairyBackToTop />
     <HairyMeting />
   </div>
