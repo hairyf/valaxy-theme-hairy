@@ -8,7 +8,6 @@
   --hy-c-primary-dimm-2: rgba(27, 201, 166, 0.25);
   --hy-c-primary-dimm-3: rgba(27, 201, 166, 0.05);
 
-
   --hy-c-black: #1a1a1a;
   --hy-c-black-pure: #000000;
   --hy-c-black-soft: #242424;
@@ -150,4 +149,13 @@
   --hy-c-text-inverse-4: var(--hy-c-text-light-4);
 
   --hy-c-text-code: var(--hy-c-indigo-lighter);
+}
+
+/**
+ * element-plus Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --el-color-primary: var(--hy-c-primary) !important;
+  --el-text-color-primary: var(--hy-c-text-2) !important;
 }

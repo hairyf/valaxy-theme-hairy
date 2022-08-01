@@ -11,7 +11,7 @@ const description = computed(() => theme.value.user?.description || config.value
 </script>
 
 <template>
-  <div class="sticky top-3.125rem pt-5">
+  <div class="pt-5">
     <div class="flex flex-col items-center">
       <img class="mx-auto w-40 rounded-full -mx-1px" :src="config.author.avatar" />
       <div class="leading-loose mt-2">

@@ -1,0 +1,26 @@
+.el-tabs__nav-wrap::after {
+  @apply bg-gray-200;
+}
+
+.dark .el-tabs__nav-wrap::after {
+  @apply bg-gray-500;
+}
+
+.el-tabs {
+
+  .el-tabs__active-bar,
+  .el-tabs__nav-wrap::after {
+    height: 1px;
+  }
+
+  .el-tabs__item {
+    @apply transition-colors;
+    padding: 0 10px;
+  }
+
+  .el-tabs__nav-scroll {
+    display: flex;
+    justify-content: center;
+  }
+
+}

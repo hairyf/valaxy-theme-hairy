@@ -16,7 +16,10 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
         <HairyWaline v-if="showWaline" />
       </div>
       <div class="ml-4 w-60 lg:block hidden">
-        <HairyUserCard class="w-60" />
+        <div class="sticky top-3.125rem z-1">
+          <slot v-if="$slots.slide" name="slide" />
+          <HairyUserCard v-else />
+        </div>
       </div>
     </div>
     <div class="HairyBodyBackground" />

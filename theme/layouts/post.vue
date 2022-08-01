@@ -15,6 +15,9 @@ const post = useFrontmatter()
       </div>
     </template>
     <router-view />
+    <template #body-slide>
+      <HairyUserTab />
+    </template>
   </HairyLayout>
 </template>
 

@@ -18,6 +18,10 @@ defineProps<{
     </HairyHeader>
     <HairyBody>
       <slot />
+
+      <template v-if="$slots['body-slide']" #slide>
+        <slot name="body-slide" />
+      </template>
     </HairyBody>
     <HairyBackToTop />
   </div>
