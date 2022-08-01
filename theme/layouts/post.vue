@@ -8,6 +8,9 @@ const post = useFrontmatter()
 <template>
   <HairyLayout :header="{ title: post.title }">
     <template #header-description>
+      <div class="text-center">
+        {{ post.description }}
+      </div>
       <div class="flex gap-2">
         <span>发表于 {{ dayjs(post.date).format('YYYY-MM-DD') }}</span>
         <span>本文字数 {{ (post.length / 1000).toFixed(1) }}k 字</span>
