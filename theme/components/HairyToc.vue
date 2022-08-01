@@ -9,7 +9,7 @@ import {
   useThemeConfig,
 } from 'valaxy'
 
-const props = defineProps<{ headers: Header[] }>()
+const props = defineProps<{ headers?: Header[] }>()
 
 const frontmatter = useFrontmatter()
 const themeConfig = useThemeConfig()
@@ -21,7 +21,7 @@ const marker = ref()
 useActiveAnchor(container, marker)
 
 const resolvedHeaders = computed(() => {
-  return resolveHeaders(props.headers || [])
+  return resolveHeaders(props.headers || frontmatter.value['it-toc'])
 })
 
 function handleClick({ target: el }: Event) {
@@ -32,7 +32,7 @@ function handleClick({ target: el }: Event) {
 </script>
 
 <template>
-  <div v-show="headers.length" ref="container">
+  <div v-show="resolvedHeaders.length" ref="container">
     <div class="content">
       <div class="outline-title">
         {{ themeConfig.outlineTitle || 'On this page' }}

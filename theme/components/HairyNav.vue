@@ -14,13 +14,13 @@ whenever(() => scroll.directions.bottom, () => {
   cache.value = 'bottom'
 })
 
-const isShow = computed(() => {
+const show = computed(() => {
   return scroll.y.value < (headerHeight.value / 2) || cache.value === 'top'
 })
 </script>
 
 <template>
-  <div class="HairyNav fixed w-full h-3.125rem top-0 z-10 opacity-0 transition-opacity duration-200" :class="[isShow && 'opacity-100']">
+  <div class="HairyNav fixed w-full h-3.125rem top-0 z-20 opacity-0 transition-opacity duration-200" :class="[show && 'opacity-100']">
     <div class="mx-auto breakpoint flex relative z-1">
       <div class="flex-1 flex items-center">
         <HairyNavTitle class="lt-sm:hidden" />

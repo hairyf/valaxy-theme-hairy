@@ -44,6 +44,11 @@ html.dark {
   border-radius: 3px;
 }
 
+.markdown-body div[class*=language-] pre {
+  max-width: calc(100vw - 56px);
+}
+
+
 .prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::before,
 .prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::after {
   content: none !important;

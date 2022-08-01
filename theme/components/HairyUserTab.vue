@@ -16,7 +16,7 @@ const active = ref('aside')
           <span class="ml-1">Aside</span>
         </div>
       </template>
-      <HairyArticleAside />
+      <HairyToc />
     </el-tab-pane>
     <el-tab-pane label="Series" name="series">
       <template #label>
