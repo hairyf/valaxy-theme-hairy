@@ -15,12 +15,12 @@ function isCurrent(title = '') {
 </script>
 
 <template>
-  <div class="pl-16px text-14px relative">
+  <div class="pl-16px text-14px relative overflow-hidden">
     <div class="outline-title">
       On this Series
     </div>
     <ul class="va-toc relative z-1">
-      <a v-for="(item, index) of posts" :key="index" class="va-toc-item">
+      <a v-for="(item, index) of posts" :key="index" class="va-toc-item" @click="$router.push(item.path || '')">
         <a class="outline-link" :class="[isCurrent(item.title) && 'active']">{{ index + 1 }}.{{ item.title }}</a>
       </a>
     </ul>
@@ -37,10 +37,10 @@ function isCurrent(title = '') {
 
 .outline-link {
   display: block;
+  position: relative;
   line-height: 28px;
   color: var(--va-c-text-light);
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   transition: color 0.5s;
   cursor: pointer;
@@ -53,6 +53,21 @@ function isCurrent(title = '') {
   &.active {
     color: var(--va-c-brand);
     transition: color .25s;
+
+    &::after {
+      position: absolute;
+      content: '';
+      left: -1.12rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 4px;
+      height: 18px;
+      background-color: var(--va-c-brand);
+      transition: top 0.25s cubic-bezier(0, 1, 0.5, 1), background-color 0.5s, opacity 0.25s;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
   }
 }
 </style>
