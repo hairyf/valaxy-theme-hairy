@@ -24,5 +24,6 @@ defineProps<{
       </template>
     </HairyBody>
     <HairyBackToTop />
+    <HairyMeting />
   </div>
 </template>
