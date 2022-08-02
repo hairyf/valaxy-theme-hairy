@@ -9,6 +9,8 @@ valaxy-theme-hairy<sup><em>(vue)</em></sup>
 
 ![image](https://user-images.githubusercontent.com/49724027/182444624-6228d153-94cb-461d-a5d8-be8535441fb6.png)
 
+> Want to see more browsing? You can view [preview.md](/preview)
+
 ## Usage
 
 ```bash
