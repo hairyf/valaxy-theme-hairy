@@ -5,80 +5,29 @@ valaxy-theme-hairy<sup><em>(vue)</em></sup>
 [![npm](https://img.shields.io/npm/v/valaxy-theme-hairy)](https://www.npmjs.com/package/valaxy-theme-hairy)
 [![npm dev dependency version](https://img.shields.io/npm/dependency-version/valaxy-theme-hairy/dev/valaxy)](https://github.com/YunYouJun/valaxy)
 
-> This is a template for creating a [valaxy](https://github.com/YunYouJun/valaxy) theme.
+> Hairy theme based on valley.
 
 ## Usage
 
-### Clone to local
+### create valaxy
 
 > Use [pnpm](https://pnpm.io/), because we need its workspace.
 
 ```bash
-npx degit YunYouJun/valaxy-theme-hairy valaxy-theme-name
-cd valaxy-theme-name
-# If you don't have pnpm installed, run: npm install -g pnpm
-pnpm i
+pnpm create valaxy
 ```
 
-### Development
+### install theme
 
 ```bash
-# dev node
-pnpm dev
-# dev client
-pnpm demo
+cd project
+pnpm add valaxy-theme-hairy
 ```
 
-### Build
+edit valaxy.config
 
-```bash
-pnpm build
+```json
+{
+  "theme": "hairy"
+}
 ```
-
-### Release
-
-> Publish to [npm](https://www.npmjs.com/).
-
-#### Manual
-
-```bash
-pnpm ci:publish
-```
-
-#### Auto by GitHub Actions
-
-> You can release it by github actions.
-
-Click `Settings` -> `Secrets` -> `Actions` in your GitHub repo.
-
-Add `New repository secret`:
-
-- `NPM_TOKEN`: `your npm token` (Generate from your npm `Access Tokens` - `Automation`)
-
-```bash
-npm run release
-# choose your version to automatic release
-```
-
-## Checklist
-
-- [ ] Change the author name in `LICENSE` & `package.json` & `.github`
-- [ ] Write `ThemeConfig` & Other init content
-- [ ] Rename `valaxy-theme-hairy` to `valaxy-theme-<name>` (custom it)
-- [ ] Change `theme: 'starter'` to `theme: <name>` in `valaxy.config.ts`
-- [ ] Each of your Vue components should have a namespace
-  - For example: `YunTest.vue` for `valaxy-theme-yun`
-
-Let's write the theme & docs!
-
-## Thanks
-
-Starter theme ref [vuejs/blog](https://github.com/vuejs/blog).
-
-### [Sponsors](https://sponsors.yunyoujun.cn)
-
-<p align="center">
-  <a href="https://sponsors.yunyoujun.cn">
-    <img src='https://fastly.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg'/>
-  </a>
-</p>

@@ -1,16 +1,16 @@
 {
   "name": "valaxy-theme-hairy",
-  "version": "0.2.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@7.5.0",
   "author": {
-    "email": "me@yunyoujun.cn",
-    "name": "YunYouJun",
-    "url": "https://www.yunyoujun.cn"
+    "email": "wwu710632@gmail.com",
+    "name": "TuiMao233",
+    "url": "https://github.com/TuiMao233"
   },
-  "homepage": "https://valaxy.site",
+  "homepage": "https://github.com/TuiMao233/valaxy-theme-hairy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YunYouJun/valaxy-theme-hairy"
+    "url": "https://github.com/TuiMao233/valaxy-theme-hairy"
   },
   "keywords": [
     "valaxy",

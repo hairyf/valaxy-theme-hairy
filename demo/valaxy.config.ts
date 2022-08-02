@@ -9,7 +9,7 @@ import VitePluginVueJsx from '@vitejs/plugin-vue-jsx'
 export default defineConfig<HairyTheme>({
   lang: 'zh-CN',
   title: 'Hairy\'s Blog',
-  url: 'https://starter.valaxy.site/',
+  url: 'https://tuimao233.gitee.io/valaxy-theme-hairy',
   author: {
     avatar: 'https://tuimao233.gitee.io/mao-blog/avatar.png',
     name: '毛先生',
@@ -118,7 +118,7 @@ export default defineConfig<HairyTheme>({
       },
       {
         text: 'Github',
-        link: 'https://github.com/YunYouJun/valaxy',
+        link: 'https://github.com/TuiMao233/valaxy-theme-hairy',
       },
     ],
     user: {
