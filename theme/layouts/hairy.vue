@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const meta = computed(() => route.meta)
 const type = computed(() => meta.value.type || '')
+console.log(type.value)
 </script>
 
 <template>

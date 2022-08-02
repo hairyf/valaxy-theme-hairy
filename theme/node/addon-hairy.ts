@@ -9,7 +9,7 @@ function addonHairy(): ValaxyExtendConfig {
     pages: {
       extendRoute(route) {
         // 改用 type, 由 theme 决定使用布局
-        if (route.meta.layout)
+        if (!route.meta.type && route.meta.layout)
           route.meta.type = route.meta.layout
 
         if (!route.meta.type)
