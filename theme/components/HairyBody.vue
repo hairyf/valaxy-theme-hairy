@@ -9,7 +9,7 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
 </script>
 
 <template>
-  <div class="HairyBody min-h-50vh relative">
+  <div class="HairyBody min-h-49vh relative">
     <div class="mx-auto breakpoint flex z-1 relative">
       <div class="relative flex-1 pt-2">
         <slot />
@@ -22,7 +22,6 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
         </div>
       </div>
     </div>
-    <HairyFooter class="z-1 relative" />
     <div class="HairyBodyBackground" />
   </div>
 </template>

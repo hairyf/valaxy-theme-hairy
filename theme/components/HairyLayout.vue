@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="HairyLayout">
+  <div class="HairyLayout min-h-100vh">
     <HairyNav />
     <HairyHeader v-bind="header">
       <template #description>
@@ -23,5 +23,6 @@ defineProps<{
         <slot name="body-slide" />
       </template>
     </HairyBody>
+    <HairyFooter class="z-1 relative" />
   </div>
 </template>

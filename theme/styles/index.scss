@@ -11,6 +11,7 @@ body {
 
 #app {
   @apply transition-none;
+  min-height: 100vh;
 }
 
 a {
