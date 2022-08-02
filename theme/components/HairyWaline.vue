@@ -22,4 +22,8 @@ useWaline({
   --waline-theme-color: var(--hy-c-primary);
   --waline-active-color: var(--hy-c-primary-dark)
 }
+.wl-editor {
+  padding: 4px;
+  width: calc(100% - 1rem - 8px);
+}
 </style>

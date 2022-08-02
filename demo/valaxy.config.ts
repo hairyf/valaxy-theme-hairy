@@ -136,6 +136,7 @@ export default defineConfig<HairyTheme>({
     meting: {
       auto: 'https://music.163.com/#/playlist?id=2043085869',
       autoplay: true,
+      theme: 'var(--hy-c-primary)',
     },
   },
 })
