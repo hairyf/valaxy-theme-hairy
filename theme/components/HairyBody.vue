@@ -22,6 +22,7 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
         </div>
       </div>
     </div>
+    <HairyFooter class="z-1 relative" />
     <div class="HairyBodyBackground" />
   </div>
 </template>

@@ -15,7 +15,6 @@ export default defineConfig<HairyTheme>({
     name: '毛先生',
   },
   description: 'Valaxy Theme Hairy Preview.',
-
   theme: 'hairy',
 
   social: [
@@ -121,6 +120,14 @@ export default defineConfig<HairyTheme>({
         link: 'https://github.com/TuiMao233/valaxy-theme-hairy',
       },
     ],
+    footer: {
+      since: 2016,
+      beian: {
+        enable: false,
+        icp: '苏ICP备17038157号',
+      },
+      powered: true,
+    },
     user: {
       name: 'TuiMao',
       description: 'Mao\'s Notes',
