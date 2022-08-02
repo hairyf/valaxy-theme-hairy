@@ -94,6 +94,7 @@ export default defineConfig<HairyTheme>({
   themeConfig: {
     home: {
       images: [],
+      description: 'good evening, how are you doing?',
     },
     post: {
       layout: 'image:slice:reverse',

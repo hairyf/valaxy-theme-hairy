@@ -7,11 +7,13 @@ import addonStatistics from './node/addon-statistics'
 import addonToc from './node/addon-toc'
 export default defineTheme<HairyTheme>((options) => {
   const images = addonImages(options)
+  const hairy = addonHairy()
 
   return {
     vite: images.vite,
+    pages: hairy.pages,
     extendMd(ctx) {
-      addonHairy().extendMd?.(ctx)
+      hairy.extendMd?.(ctx)
       images.extendMd?.(ctx)
       addonStatistics().extendMd?.(ctx)
       addonToc().extendMd?.(ctx)

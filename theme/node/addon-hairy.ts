@@ -6,6 +6,19 @@ function addonHairy(): ValaxyExtendConfig {
       if (ctx.route.meta.excerpt)
         ctx.route.meta.frontmatter.text = removeTags(ctx.route.meta.excerpt)
     },
+    pages: {
+      extendRoute(route) {
+        // 改用 type, 由 theme 决定使用布局
+        if (route.meta.layout)
+          route.meta.type = route.meta.layout
+
+        if (!route.meta.type)
+          route.meta.type = 'default'
+
+        // 清除所有 layout, 使用统一入口 hairy.vue
+        route.meta.layout = 'hairy'
+      },
+    },
   }
 }
 

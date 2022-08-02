@@ -3,6 +3,9 @@ import type { ViteSSGContext } from 'vite-ssg'
 export interface HairyTheme {
   nav?: NavItem[];
   home?: {
+    headline?: string
+    title?: string
+    description?: string
     images?: string[]
   }
   user?: {

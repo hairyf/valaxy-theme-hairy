@@ -11,7 +11,7 @@ const { headerRef } = useContext()
 </script>
 
 <template>
-  <header ref="headerRef" class="HairyHeader relative">
+  <header ref="headerRef" class="HairyHeader relative animate__animated animate__fadeIn">
     <div class="h-30vh lt-md:h-60vh min-h-80 flex-center">
       <HairyPostTitle v-if="title" class="relative z-2" :title="title" v-bind="$props">
         <template #description>
