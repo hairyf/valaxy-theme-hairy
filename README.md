@@ -7,6 +7,8 @@ valaxy-theme-hairy<sup><em>(vue)</em></sup>
 
 > Hairy theme based on [valley](https://github.com/YunYouJun/valaxy).
 
+![image](https://user-images.githubusercontent.com/49724027/182444624-6228d153-94cb-461d-a5d8-be8535441fb6.png)
+
 ## Usage
 
 ```bash
