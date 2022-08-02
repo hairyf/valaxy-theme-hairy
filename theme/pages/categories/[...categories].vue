@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { useThemeConfig } from 'valaxy'
-import { ElTimeline, ElTimelineItem } from 'element-plus'
+import { ElTimeline, ElTimelineItem } from 'element-plus/es/components/timeline/index'
 import { useCurrentCategory } from '../../hooks/useCategory'
 import { useCategoryPost } from '../../hooks/useCategoryPost'
 

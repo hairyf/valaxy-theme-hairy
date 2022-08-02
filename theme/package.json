@@ -27,6 +27,7 @@
     "@iconify-json/simple-icons": "^1.1.19",
     "@vueuse/core": "^8.9.4",
     "@waline/client": "^2.6.1",
+    "dayjs": "^1.11.4",
     "defu": "^6.0.0",
     "element-plus": "^2.2.10",
     "furigana-markdown-it": "^1.0.3",

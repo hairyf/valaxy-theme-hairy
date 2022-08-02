@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, defineProps } from 'vue'
 import { usePostList } from 'valaxy'
-import { ElTimeline, ElTimelineItem } from 'element-plus'
+import { ElTimeline, ElTimelineItem } from 'element-plus/es/components/timeline/index'
 import 'element-plus/es/components/timeline/style/index'
 import 'element-plus/es/components/timeline-item/style/index'
 const props = defineProps<{
