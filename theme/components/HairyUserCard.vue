@@ -1,4 +1,4 @@
-<script lang="tsx" setup>
+<script lang="ts" setup>
 import { useConfig, useThemeConfig } from 'valaxy'
 import { computed } from 'vue'
 import type { HairyTheme } from 'valaxy-theme-hairy'

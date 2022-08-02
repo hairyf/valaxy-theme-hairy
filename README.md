@@ -33,4 +33,4 @@ change valaxy.config
 - Mobile adaptation
 - Footer info
 - Check and fix
-- pull away addons
+- Pull away addons
