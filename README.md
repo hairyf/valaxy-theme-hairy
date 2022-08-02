@@ -35,6 +35,5 @@ change valaxy.config
 
 - Friend links
 - Mobile adaptation
-- Footer info
 - Check and fix
 - Pull away addons
