@@ -1,6 +1,6 @@
 import type { MaybeRef } from '@vueuse/shared'
 import { usePostList } from 'valaxy'
-import isEqual from 'lodash/isEqual'
+import { isEqual } from 'lodash-es'
 import { computed, unref } from 'vue'
 
 export function useCategoryPost(categories: MaybeRef<string[]>) {

@@ -4,7 +4,7 @@ import { computed, defineProps } from 'vue'
 import dayjs from 'dayjs'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import last from 'lodash/last'
+import { last } from 'lodash-es'
 import { usePostLayout } from '../hooks/usePostLayout'
 import { toArr } from '../utils'
 

@@ -1,5 +1,5 @@
 import { createDefu } from 'defu'
-import isFunction from 'lodash/isFunction'
+import { isFunction } from 'lodash-es'
 import { mergeConfig as mergeViteConfig } from 'vite'
 /**
  * merge valaxy.config

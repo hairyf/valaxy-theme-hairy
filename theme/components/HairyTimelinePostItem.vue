@@ -2,7 +2,7 @@
 import type { Post } from 'valaxy'
 import dayjs from 'dayjs'
 import { withDefaults } from 'vue'
-import last from 'lodash/last'
+import { last } from 'lodash-es'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { toArr } from '../utils'
