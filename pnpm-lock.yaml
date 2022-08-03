@@ -70,7 +70,7 @@ importers:
       markdown-toc: ^1.2.0
       reading-time: ^1.5.0
       swiper: ^8.3.1
-      unoverlay-vue: 0.2.1
+      unoverlay-vue: 0.2.2
     dependencies:
       '@docsearch/css': 3.1.1
       '@docsearch/js': 3.1.1
@@ -88,7 +88,7 @@ importers:
       markdown-toc: 1.2.0
       reading-time: 1.5.0
       swiper: 8.3.1
-      unoverlay-vue: 0.2.1
+      unoverlay-vue: 0.2.2
     devDependencies:
       '@types/lodash': 4.14.182
       '@types/node': 18.6.0
@@ -5629,8 +5629,8 @@ packages:
       - vite
     dev: true
 
-  /unoverlay-vue/0.2.1:
-    resolution: {integrity: sha512-A0B2OtCESGCsX+K0RSwjEw1vlnGF8uT8XbXo3UL17n/+8INZfv2GBb2Cfxl4mk2kB6WhdsAcCEfJr8eegWEbtg==}
+  /unoverlay-vue/0.2.2:
+    resolution: {integrity: sha512-kZmVlim1/NfYQHzu4NKcmkWgofEWqpeqOdDFYN5y++oZaUORvsBXlvW6zz0lxYeGd7XIUPjqUEgasGZktY2jzg==}
     peerDependencies:
       '@vue/composition-api': ^1.0.0-rc.1
       vue: ^2.0.0 || >=3.0.0
@@ -5641,7 +5641,6 @@ packages:
         optional: true
     dependencies:
       '@vueuse/core': 8.9.4
-      delay: 5.0.0
       lodash: 4.17.21
       vue-demi: 0.13.6
     dev: false

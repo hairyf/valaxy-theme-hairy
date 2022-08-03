@@ -1,6 +1,8 @@
-import type { ValaxyExtendConfig } from 'valaxy'
+import type { ResolvedValaxyOptions, ValaxyExtendConfig } from 'valaxy'
+import type { HairyTheme } from 'valaxy-theme-hairy'
 
-function addonHairy(): ValaxyExtendConfig {
+function addonHairy(options: ResolvedValaxyOptions<HairyTheme>): ValaxyExtendConfig {
+  const safelist = options.config.themeConfig?.nav?.filter(v => v.icon)?.map(v => v.icon || '') || []
   return {
     extendMd(ctx) {
       if (ctx.route.meta.excerpt)
@@ -18,6 +20,9 @@ function addonHairy(): ValaxyExtendConfig {
         // 清除所有 layout, 使用统一入口 hairy.vue
         route.meta.layout = 'hairy'
       },
+    },
+    unocss: {
+      safelist,
     },
   }
 }
