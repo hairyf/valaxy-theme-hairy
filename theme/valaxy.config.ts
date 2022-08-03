@@ -7,7 +7,7 @@ import addonStatistics from './node/addon-statistics'
 import addonToc from './node/addon-toc'
 export default defineTheme<HairyTheme>((options) => {
   const images = addonImages(options)
-  const hairy = addonHairy()
+  const hairy = addonHairy(options)
 
   return {
     vite: images.vite,
