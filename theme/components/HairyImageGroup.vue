@@ -2,8 +2,8 @@
 import { computed, provide, useCssVars, useSlots } from 'vue'
 import { executeOverlay } from 'unoverlay-vue'
 import type { ImageViewerProps } from 'element-plus/es/components/image-viewer/index'
-import type { AtWillNumber } from '@hairy/libcore'
-import { atWillToUnit } from '@hairy/libcore'
+import type { AtWillNumber } from '../utils'
+import { atWillToUnit } from '../utils'
 import HairyImageViewer from './HairyImageViewer.vue'
 
 const props = withDefaults(defineProps<{
