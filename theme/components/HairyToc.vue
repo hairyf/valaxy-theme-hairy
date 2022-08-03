@@ -32,7 +32,7 @@ function handleClick({ target: el }: Event) {
 </script>
 
 <template>
-  <div v-show="resolvedHeaders.length" ref="container">
+  <div v-show="resolvedHeaders.length" ref="container" class="animate__animated animate__fadeIn">
     <div class="content">
       <div class="outline-title">
         {{ themeConfig.outlineTitle || 'On this page' }}

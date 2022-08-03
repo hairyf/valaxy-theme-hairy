@@ -15,7 +15,7 @@ function isCurrent(title = '') {
 </script>
 
 <template>
-  <div class="pl-16px text-14px relative overflow-hidden">
+  <div class="pl-16px text-14px relative overflow-hidden animate__animated animate__fadeIn">
     <div class="outline-title">
       On this Series
     </div>
