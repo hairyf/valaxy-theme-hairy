@@ -1,16 +1,29 @@
 <script lang="ts" setup>
 import { useFrontmatter } from 'valaxy'
-import { computed } from 'vue'
+import { computed, inject, nextTick, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { toArr } from '../utils'
 import { useCurrentCategory } from '../hooks/useCategory'
 
 const frontmatter = useFrontmatter()
 const paths = computed(() => toArr(frontmatter.value.categories).filter(Boolean) as string[])
 const category = useCurrentCategory(paths)
-const posts = computed(() => category.value.posts || [])
+const posts = computed(() => {
+  const result = category.value.posts || []
+  return result.sort((a, b) => (a.date || 1) > (b.date || 1) ? 1 : -1)
+})
+const router = useRouter()
+
+const active = inject('HairyUserTab:active', ref(''))
 
 function isCurrent(title = '') {
   return frontmatter.value.title === title
+}
+
+async function changePost(path = '') {
+  router.push(path)
+  await nextTick()
+  active.value = 'aside'
 }
 </script>
 
@@ -20,7 +33,7 @@ function isCurrent(title = '') {
       On this Series
     </div>
     <ul class="va-toc relative z-1">
-      <a v-for="(item, index) of posts" :key="index" class="va-toc-item" @click="$router.push(item.path || '')">
+      <a v-for="(item, index) of posts" :key="index" class="va-toc-item" @click="changePost(item.path)">
         <a class="outline-link" :class="[isCurrent(item.title) && 'active']">{{ index + 1 }}.{{ item.title }}</a>
       </a>
     </ul>

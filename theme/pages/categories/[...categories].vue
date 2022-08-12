@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { useThemeConfig } from 'valaxy'
@@ -22,18 +22,20 @@ const router = useRouter()
 
 const paths = computed(() => props.categories.split('/').filter(Boolean))
 const current = useCurrentCategory(paths)
-
 const posts = useCategoryPost(paths)
 
 const i18n = useI18n()
 
+const s = '/'
+
 const getBreadcrumbPath = (index: number) => {
-  if (paths.value[index] === paths.value[paths.value.length - 1])
+  const paths = props.categories.split('/').filter(Boolean)
+  if (paths[index] === paths[paths.length - 1])
     return ''
-  return `/categories/${paths.value.slice(0, index)}`
+  return `/categories/${paths.slice(0, index + 1).join('/')}`
 }
 const displayCategory = (key: string) => {
-  router.push({ path: `/categories/${[...paths.value, key].join('/')}` })
+  router.push({ path: `/categories/${[key, ...paths.value].reverse().join('/')}` })
 }
 </script>
 
@@ -45,10 +47,11 @@ const displayCategory = (key: string) => {
     <HairyBreadcrumbItem :to="paths.length && '/categories/' || ''">
       全部
     </HairyBreadcrumbItem>
-    <HairyBreadcrumbItem v-for="(key, index) in paths" :key="key" :to="getBreadcrumbPath(index)">
+    <HairyBreadcrumbItem v-for="(key, index) in categories.split(s)" :key="key" :to="getBreadcrumbPath(index)">
       {{ i18n.t(key) }}
     </HairyBreadcrumbItem>
   </HairyBreadcrumb>
+
   <div class="grid__view dark:text-gray-3 flex-wrap">
     <template v-for="([key, item]) in current.children" :key="key">
       <div

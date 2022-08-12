@@ -1,8 +1,23 @@
 <script lang="ts" setup>
-import { useCategory, usePostList, useTag } from 'valaxy'
-const category = useCategory()
+import { usePostList, useTag } from 'valaxy'
+import { computed } from 'vue'
+import { toArr } from '../utils'
 const posts = usePostList()
 const tags = useTag()
+
+const total = computed(() => {
+  const categories = posts.value.map(v => toArr(v.categories || [])).filter(v => v.length)
+  const maps: string[] = []
+  for (const category of categories) {
+    let caches: string[] = []
+    for (const iterator of category) {
+      caches.push(iterator)
+      maps.push(caches.join('-'))
+    }
+    caches = []
+  }
+  return new Set(maps).size
+})
 </script>
 
 <template>
@@ -11,7 +26,7 @@ const tags = useTag()
       文章
     </HairyUserStats>
     <div class="w-1px bg-gray bg-opacity-50" />
-    <HairyUserStats :count="category.total" @click="$router.push('/categories/')">
+    <HairyUserStats :count="total" @click="$router.push('/categories/')">
       分类
     </HairyUserStats>
     <div class="w-1px bg-gray bg-opacity-50" />

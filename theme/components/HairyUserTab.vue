@@ -2,9 +2,9 @@
 import { ElTabPane, ElTabs } from 'element-plus/es/components/tabs/index'
 import 'element-plus/es/components/tabs/style/index'
 import 'element-plus/es/components/tab-pane/style/index'
-import { ref } from 'vue'
-
+import { provide, ref } from 'vue'
 const active = ref('aside')
+provide('HairyUserTab:active', active)
 </script>
 
 <template>

@@ -17,7 +17,7 @@ const displayTag = (tag: string) => {
     <div text="center" class="text-size-2.5em pt-10 mb-5">
       目前共计 {{ Array.from(tags).length }} 个标签
     </div>
-    <div text="center">
+    <div text="center" class="max-w-7xl flex flex-wrap justify-center items-center gap-2">
       <a v-for="[key, tag] in Array.from(tags).sort()" :key="key" class="post-tag cursor-pointer" :style="getTagStyle(tag.count)" p="1" @click="displayTag(key.toString())">
         {{ key }}
       </a>
