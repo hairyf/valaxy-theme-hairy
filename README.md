@@ -37,3 +37,5 @@ change valaxy.config
 - Mobile adaptation
 - Check and fix
 - Pull away addons
+- Top Post
+- Posts pagination
