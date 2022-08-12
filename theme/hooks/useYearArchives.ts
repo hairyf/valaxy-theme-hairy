@@ -27,17 +27,21 @@ export function useYearArchives() {
       const [year, month] = [days.format('YYYY'), days.format('MM')]
       if (!maps[year])
         maps[year] = {}
-      if (!maps[year][month]) { maps[year][month] = { count: 1, posts: [post] } }
+      if (!maps[year][month]) { maps[year][month] = { count: 1, posts: [post as any] } }
       else {
         maps[year][month].count++
-        maps[year][month].posts.push(post)
+        maps[year][month].posts.unshift(post as any)
       }
     }
     for (const [year, months] of Object.entries(maps)) {
       for (const [month, { count, posts }] of Object.entries(months))
-        items.push({ year, month, count, posts })
+        items.unshift({ year, month, count, posts })
     }
-    return items
+    return items.sort((a, b) => {
+      const aTime = `${a.year}-${a.month}`
+      const bTime = `${b.year}-${b.month}`
+      return bTime > aTime ? 1 : -1
+    })
   })
   return archives
 }

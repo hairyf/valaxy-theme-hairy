@@ -26,14 +26,20 @@ const posts = usePostList()
       size="large"
     >
       <div class="activity inline-flex items-center">
-        <HairyLink @click="$router.push(getArchiveLink(activity.year))">
+        <HairyLink class="text-size-8" @click="$router.push(getArchiveLink(activity.year))">
           {{ activity.year }}
         </HairyLink>
-        <span class="text-gray-5 text-size-5 mx-2">/</span>
-        <HairyLink @click="$router.push(getArchiveLink(activity.year, activity.month))">
+        <span class="text-gray-5 mx-2">/</span>
+        <HairyLink class="text-size-8" @click="$router.push(getArchiveLink(activity.year, activity.month))">
           {{ activity.month }}
         </HairyLink>
         <span class="text-gray-5 text-size-5 ml-1">({{ activity.count }}篇)</span>
+      </div>
+      <HairyTimelinePostItem v-for="(item, index) in activity.posts.slice(0, 2)" :key="index" :post="item" />
+      <div v-if="activity.posts.length > 2">
+        <HairyLink @click="$router.push(getArchiveLink(activity.year))">
+          ....
+        </HairyLink>
       </div>
     </el-timeline-item>
   </el-timeline>
