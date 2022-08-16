@@ -1,0 +1,1 @@
+import{_ as t,b as n,w as r,a6 as _,o as a,l as c,r as s}from"./app.7959e630.js";const i={};function p(u,f){const e=s("router-view"),o=_;return a(),n(o,{header:{title:"\u6240\u6709\u6807\u7B7E"}},{default:r(()=>[c(e)]),_:1})}var m=t(i,[["render",p]]);export{m as default};

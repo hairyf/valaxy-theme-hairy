@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <script>
+    (function () {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+    
+    <script>
+    (function () {
+      const locale = localStorage.getItem('valaxy-locale') || 'zh-CN'
+      document.documentElement.setAttribute('lang', locale)
+    })()
+    </script>
+    
+  <script type="module" crossorigin src="/valaxy-theme-hairy/assets/app.7959e630.js"></script>
+  <link rel="stylesheet" href="/valaxy-theme-hairy/assets/app.d8c7848f.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  
+  
+</body>
+
+</html>

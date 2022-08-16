@@ -1,0 +1,1 @@
+import{_ as a,b as t,w as n,a6 as _,o as s,l as c,r as i}from"./app.7959e630.js";const p={};function u(e,m){const o=i("router-view"),r=_;return s(),t(r,{header:{title:`\u53D1\u8868\u4E8E'${e.$route.params.year}\u5E74'\u7684\u6587\u7AE0`}},{default:n(()=>[c(o)]),_:1},8,["header"])}var l=a(p,[["render",u]]);export{l as default};

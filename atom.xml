@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://tuimao233.gitee.io/valaxy-theme-hairy/</id>
+    <title>Hairy's Blog</title>
+    <updated>2022-08-16T07:35:43.243Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>毛先生</name>
+        <email>i@valaxy.site</email>
+        <uri>https://valaxy.site</uri>
+    </author>
+    <link rel="alternate" href="https://tuimao233.gitee.io/valaxy-theme-hairy/"/>
+    <link rel="self" href="https://tuimao233.gitee.io/valaxy-theme-hairy/feed.atom"/>
+    <subtitle>Valaxy Theme Hairy Preview.</subtitle>
+    <logo>https://tuimao233.gitee.io/mao-blog/avatar.png</logo>
+    <icon>https://tuimao233.gitee.io/valaxy-theme-hairy/favicon.svg</icon>
+    <rights>CC BY-NC-SA 4.0 2022 © 毛先生</rights>
+    <entry>
+        <title type="html"><![CDATA[i18n]]></title>
+        <id>https://tuimao233.gitee.io/valaxy-theme-hairy/posts/i18n</id>
+        <link href="https://tuimao233.gitee.io/valaxy-theme-hairy/posts/i18n"/>
+        <updated>2022-04-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[关于 I18N 的使用]]></summary>
+        <content type="html"><![CDATA[<p>::: tip</p>
+<p>You can click this button to toggle locales.</p>
+<p>:::</p>
+<div class="text-center">
+  <!-- <YunToggleLocale class="shadow" /> -->
+</div>
+<p>::: zh-CN</p>
+<blockquote>
+<p>在一个页面中实现 i18n</p>
+</blockquote>
+<p>为了使 <a href="https://github.com/YunYouJun/valaxy">Valaxy</a> 成为一个国际化的项目，i18n 是必不可少的。</p>
+<p>常见的 i18n 方案为采用不同的路径（如 <code>/zh-CN/</code>）或解析不同的域名（<code>cn.xxx.xxx</code>）来分别维护。</p>
+<blockquote>
+<p>此外还可使用 <a href="https://crowdin.com/">crowdin</a> 平台辅助用户进行多语言翻译。</p>
+</blockquote>
+<p>但对于博客来说，这显然都很麻烦。<br>
+当你需要 i18n 时，你不得不同时维护多个目录下的文章。<br>
+当文章间存在相同的示例时，你还需要维护相同的内容。非常不优雅。</p>
+<p>Valaxy 中，<br>
+站点的独立字段部分（如文章目录：Table of Contents）基于 <a href="https://vue-i18n.intlify.dev/">vue-i18n</a> 实现，<br>
+而文章内容部分的大段文本则采用另一种 CSS i18n 的方案。</p>
+<p><a href="#result">我想先看看效果</a></p>
+<p>:::</p>
+<p>::: en</p>
+]]></content>
+        <author>
+            <name>毛先生</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2022-08-16T07:34:55.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Valaxy Test 文章内容测试]]></title>
+        <id>https://tuimao233.gitee.io/valaxy-theme-hairy/posts/test</id>
+        <link href="https://tuimao233.gitee.io/valaxy-theme-hairy/posts/test"/>
+        <updated>2022-03-23T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>::: zh-CN<br>
+[[toc]]</p>
+<p>标题是一级标题</p>
+<h2>二级标题 {lang=&quot;zh-CN&quot;}</h2>
+<h3>三级标题 {lang=&quot;zh-CN&quot;}</h3>
+<h4>四级标题 {lang=&quot;zh-CN&quot;}</h4>
+<h5>五级标题 {lang=&quot;zh-CN&quot;}</h5>
+<h6>六级标题 {lang=&quot;zh-CN&quot;}</h6>
+<h2>标题 {lang=&quot;zh-CN&quot;}</h2>
+<h2>列表测试 {lang=&quot;zh-CN&quot;}</h2>
+<ul>
+<li>AAA</li>
+<li>BBB</li>
+<li>CCC
+<ul>
+<li>DDD
+<ul>
+<li>EEE</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Checkbox</h3>
+<ul>
+<li>[ ] FLAG</li>
+<li>[x] FLAG<br>
+:::</li>
+</ul>
+<p>::: en<br>
+[[toc]]</p>
+<p>The title is a primary title</p>
+<h2>Secondary title {lang=&quot;en&quot;}</h2>
+<h3>Tertiary title {lang=&quot;en&quot;}</h3>
+<h4>Level four title {lang=&quot;en&quot;}</h4>
+<h5>Level five title {lang=&quot;en&quot;}</h5>
+<h6>Level six title {lang=&quot;en&quot;}</h6>
+<h2>Title {lang=&quot;en&quot;}</h2>
+<h2>List title {lang=&quot;en&quot;}</h2>
+<ul>
+<li>AAA</li>
+<li>BBB</li>
+<li>CCC
+<ul>
+<li>DDD
+<ul>
+<li>EEE</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Checkbox {lang=&quot;en&quot;}</h3>
+<ul>
+<li>[ ] FLAG</li>
+<li>[x] FLAG<br>
+:::</li>
+</ul>
+<p><img src="" alt=""><br>
+<em>a</em></p>
+]]></content>
+        <author>
+            <name>毛先生</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2022-08-16T07:34:55.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Valaxy Theme Hairy]]></title>
+        <id>https://tuimao233.gitee.io/valaxy-theme-hairy/posts/valaxy-theme-hairy</id>
+        <link href="https://tuimao233.gitee.io/valaxy-theme-hairy/posts/valaxy-theme-hairy"/>
+        <updated>2022-08-16T07:34:55.000Z</updated>
+        <content type="html"><![CDATA[<h2>快速开始</h2>
+]]></content>
+        <author>
+            <name>毛先生</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2022-08-16T07:34:55.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello, Valaxy!]]></title>
+        <id>https://tuimao233.gitee.io/valaxy-theme-hairy/posts/hello-valaxy</id>
+        <link href="https://tuimao233.gitee.io/valaxy-theme-hairy/posts/hello-valaxy"/>
+        <updated>2022-03-22T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h2>Hello, Valaxy!</h2>
+<pre><code class="language-ts">import type { ThemeConfig } from 'valaxy-theme-hairy'
+import { defineConfig } from 'valaxy'
+
+export default defineConfig&lt;ThemeConfig&gt;({
+  // your theme name
+  // valaxy-theme-yun name is 'yun'
+  theme: 'starter',
+
+  themeConfig: {
+    banner: {
+      enable: true,
+      title: '云游君的小站',
+    },
+  },
+})
+</code></pre>
+]]></content>
+        <author>
+            <name>毛先生</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2022-03-23T00:00:00.000Z</published>
+    </entry>
+</feed>

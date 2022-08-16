@@ -1,0 +1,1 @@
+import{d as o,a5 as r,b as s,w as n,a as c,a6 as _,o as i,l as p,r as m}from"./app.7959e630.js";const h=o({__name:"archives",setup(u){const e=r();return(l,d)=>{const t=m("router-view"),a=_;return i(),s(a,{header:{title:c(e).title}},{default:n(()=>[p(t)]),_:1},8,["header"])}}});export{h as default};

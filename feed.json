@@ -1,0 +1,63 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Hairy's Blog",
+    "home_page_url": "https://tuimao233.gitee.io/valaxy-theme-hairy/",
+    "feed_url": "https://tuimao233.gitee.io/valaxy-theme-hairy/feed.json",
+    "description": "Valaxy Theme Hairy Preview.",
+    "icon": "https://tuimao233.gitee.io/mao-blog/avatar.png",
+    "author": {
+        "name": "毛先生",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "",
+            "content_html": "<p>::: tip</p>\n<p>You can click this button to toggle locales.</p>\n<p>:::</p>\n<div class=\"text-center\">\n  <!-- <YunToggleLocale class=\"shadow\" /> -->\n</div>\n<p>::: zh-CN</p>\n<blockquote>\n<p>在一个页面中实现 i18n</p>\n</blockquote>\n<p>为了使 <a href=\"https://github.com/YunYouJun/valaxy\">Valaxy</a> 成为一个国际化的项目，i18n 是必不可少的。</p>\n<p>常见的 i18n 方案为采用不同的路径（如 <code>/zh-CN/</code>）或解析不同的域名（<code>cn.xxx.xxx</code>）来分别维护。</p>\n<blockquote>\n<p>此外还可使用 <a href=\"https://crowdin.com/\">crowdin</a> 平台辅助用户进行多语言翻译。</p>\n</blockquote>\n<p>但对于博客来说，这显然都很麻烦。<br>\n当你需要 i18n 时，你不得不同时维护多个目录下的文章。<br>\n当文章间存在相同的示例时，你还需要维护相同的内容。非常不优雅。</p>\n<p>Valaxy 中，<br>\n站点的独立字段部分（如文章目录：Table of Contents）基于 <a href=\"https://vue-i18n.intlify.dev/\">vue-i18n</a> 实现，<br>\n而文章内容部分的大段文本则采用另一种 CSS i18n 的方案。</p>\n<p><a href=\"#result\">我想先看看效果</a></p>\n<p>:::</p>\n<p>::: en</p>\n",
+            "url": "https://tuimao233.gitee.io/valaxy-theme-hairy/posts/i18n",
+            "title": "i18n",
+            "summary": "关于 I18N 的使用",
+            "date_modified": "2022-04-09T00:00:00.000Z",
+            "date_published": "2022-08-16T07:34:55.000Z",
+            "author": {
+                "name": "毛先生",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<p>::: zh-CN<br>\n[[toc]]</p>\n<p>标题是一级标题</p>\n<h2>二级标题 {lang=&quot;zh-CN&quot;}</h2>\n<h3>三级标题 {lang=&quot;zh-CN&quot;}</h3>\n<h4>四级标题 {lang=&quot;zh-CN&quot;}</h4>\n<h5>五级标题 {lang=&quot;zh-CN&quot;}</h5>\n<h6>六级标题 {lang=&quot;zh-CN&quot;}</h6>\n<h2>标题 {lang=&quot;zh-CN&quot;}</h2>\n<h2>列表测试 {lang=&quot;zh-CN&quot;}</h2>\n<ul>\n<li>AAA</li>\n<li>BBB</li>\n<li>CCC\n<ul>\n<li>DDD\n<ul>\n<li>EEE</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h3>Checkbox</h3>\n<ul>\n<li>[ ] FLAG</li>\n<li>[x] FLAG<br>\n:::</li>\n</ul>\n<p>::: en<br>\n[[toc]]</p>\n<p>The title is a primary title</p>\n<h2>Secondary title {lang=&quot;en&quot;}</h2>\n<h3>Tertiary title {lang=&quot;en&quot;}</h3>\n<h4>Level four title {lang=&quot;en&quot;}</h4>\n<h5>Level five title {lang=&quot;en&quot;}</h5>\n<h6>Level six title {lang=&quot;en&quot;}</h6>\n<h2>Title {lang=&quot;en&quot;}</h2>\n<h2>List title {lang=&quot;en&quot;}</h2>\n<ul>\n<li>AAA</li>\n<li>BBB</li>\n<li>CCC\n<ul>\n<li>DDD\n<ul>\n<li>EEE</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h3>Checkbox {lang=&quot;en&quot;}</h3>\n<ul>\n<li>[ ] FLAG</li>\n<li>[x] FLAG<br>\n:::</li>\n</ul>\n<p><img src=\"\" alt=\"\"><br>\n<em>a</em></p>\n",
+            "url": "https://tuimao233.gitee.io/valaxy-theme-hairy/posts/test",
+            "title": "Valaxy Test 文章内容测试",
+            "date_modified": "2022-03-23T00:00:00.000Z",
+            "date_published": "2022-08-16T07:34:55.000Z",
+            "author": {
+                "name": "毛先生",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>快速开始</h2>\n",
+            "url": "https://tuimao233.gitee.io/valaxy-theme-hairy/posts/valaxy-theme-hairy",
+            "title": "Valaxy Theme Hairy",
+            "date_modified": "2022-08-16T07:34:55.000Z",
+            "date_published": "2022-08-16T07:34:55.000Z",
+            "author": {
+                "name": "毛先生",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>Hello, Valaxy!</h2>\n<pre><code class=\"language-ts\">import type { ThemeConfig } from 'valaxy-theme-hairy'\nimport { defineConfig } from 'valaxy'\n\nexport default defineConfig&lt;ThemeConfig&gt;({\n  // your theme name\n  // valaxy-theme-yun name is 'yun'\n  theme: 'starter',\n\n  themeConfig: {\n    banner: {\n      enable: true,\n      title: '云游君的小站',\n    },\n  },\n})\n</code></pre>\n",
+            "url": "https://tuimao233.gitee.io/valaxy-theme-hairy/posts/hello-valaxy",
+            "title": "Hello, Valaxy!",
+            "date_modified": "2022-03-22T00:00:00.000Z",
+            "date_published": "2022-03-23T00:00:00.000Z",
+            "author": {
+                "name": "毛先生",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}
