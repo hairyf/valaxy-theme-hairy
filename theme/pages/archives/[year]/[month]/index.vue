@@ -33,7 +33,6 @@ const post = computed(() => months.value.flatMap(item => item.posts))
       {{ month }}月
     </HairyBreadcrumbItem>
   </HairyBreadcrumb>
-
   <el-timeline>
     <el-timeline-item
       v-for="(item, index) in post"

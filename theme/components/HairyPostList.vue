@@ -1,24 +1,51 @@
 <script lang="ts" setup>
-import type { Ref } from 'vue'
-import { computed } from 'vue'
+import { computed, defineProps, ref, withDefaults } from 'vue'
 import type { Post } from 'valaxy'
 import { usePostList } from 'valaxy'
+import { usePostLayout } from '../hooks/usePostLayout'
 
 const props = withDefaults(defineProps<{
   type?: string
   posts?: Post[]
+  curPage?: number
+  pagination?: boolean
 }>(), {
+  curPage: 1,
+  pagination: false,
 })
+const layout = usePostLayout()
 
-const routes = usePostList() as any as Ref<Post[]>
-const posts = computed(() => props.posts || routes.value)
+const pageSize = ref(7)
+const routes = usePostList({ type: props.type || '' })
+const posts = computed<any[]>(() => props.posts || routes.value)
+const pagePosts = computed(() => posts.value.slice((props.curPage - 1) * pageSize.value, props.curPage * pageSize.value))
+const displayedPosts = computed(() => props.pagination ? pagePosts.value : posts.value)
 </script>
 
 <template>
-  <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-    <Transition v-for="post, i in posts" :key="i" name="fade">
-      <HairyArticleText :post="post" />
-    </Transition>
-  </ul>
+  <HairyPostImageList v-if="layout.includes('image')" :posts="displayedPosts" />
+  <HairyPostTextsList v-else :posts="displayedPosts" />
+  <ValaxyPagination v-if="pagination" :cur-page="curPage" :page-size="pageSize" :total="posts.length" />
 </template>
 
+<style lang="scss">
+.pagination {
+  font-size: 16px;
+}
+
+.pagination .prev.active,
+.pagination .next.active,
+.pagination .page-number.active {
+  font-weight: normal;
+  background: transparent;
+  color: var(--hy-c-primary);
+  cursor: default;
+}
+
+.pagination .prev:hover,
+.pagination .next:hover,
+.pagination .page-number:hover {
+  color: var(--va-c-bg);
+  background: rgba(143, 230, 213, 0.8);
+}
+</style>

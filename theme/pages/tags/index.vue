@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const { tags, getTagStyle } = useTags({
-  primary: 'red',
+  primary: '#1bc9a6',
 })
 
 const displayTag = (tag: string) => {
@@ -29,3 +29,13 @@ const displayTag = (tag: string) => {
 meta:
   layout: tags
 </route>
+
+<style lang="scss" scoped>
+  a {
+    color: var(--yun-tag-color);
+    &:hover {
+      --un-text-opacity: 1;
+      color: var(--hy-c-primary-dark);
+    }
+  }
+</style>
