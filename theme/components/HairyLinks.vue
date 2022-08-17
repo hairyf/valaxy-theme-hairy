@@ -19,9 +19,9 @@ defineProps<{
           <HairyImage class="w-full h-full rounded-xl" :src="item.image" />
         </a>
         <div class="pl-1rem flex-1">
-          <div class="font-bold text-lg title">
+          <a :href="item.url" class="font-bold text-lg title">
             {{ item.name }}
-          </div>
+          </a>
           <div class="max-w-180px text-sm my-0.5rem truncate">
             {{ item.desc }}
           </div>
