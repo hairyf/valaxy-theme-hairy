@@ -12,6 +12,7 @@ export default defineTheme<HairyTheme>((options) => {
   return {
     vite: images.vite,
     pages: hairy.pages,
+    unocss: hairy.unocss,
     extendMd(ctx) {
       hairy.extendMd?.(ctx)
       images.extendMd?.(ctx)

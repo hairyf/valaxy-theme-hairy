@@ -36,3 +36,20 @@ export const atWillToUnit = (value: AtWillNumber, unit = 'px') => {
     return ''
   return isString(value) && /\D/g.test(value) ? value : value + unit
 }
+
+export interface PromiseResolver<T = void> extends Promise<T> {
+  resolve: (value: T) => void
+  reject: Function
+}
+export function createPromise<T>(): PromiseResolver<T> {
+  let resolve
+  let reject
+  // eslint-disable-next-line promise/param-names
+  const promise: any = new Promise((_r, _j) => {
+    resolve = _r
+    reject = _j
+  })
+  promise.resolve = resolve
+  promise.reject = reject
+  return promise as PromiseResolver<T>
+}

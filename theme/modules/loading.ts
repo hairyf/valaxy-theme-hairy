@@ -1,10 +1,13 @@
 import './loading.scss'
 import { ref } from 'vue'
+import { fontFacePromise } from '../utils/fonts'
 import type { UserModule } from '..'
 
 export const install: UserModule = ({ router }) => {
   showFullLoading()
-  router.afterEach(hideFullLoading)
+  router.afterEach(() => {
+    fontFacePromise.then(hideFullLoading)
+  })
 }
 
 export const isLoading = ref(false)

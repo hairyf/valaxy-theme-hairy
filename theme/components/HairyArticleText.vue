@@ -13,6 +13,13 @@ const text = computed(() => {
     return props.post.text
   return props.post.excerpt
 })
+
+const Blogs = {
+  name: 'Mao’s blog',
+  desc: '记录生活、持续学习。',
+  link: 'https://hairy.blog/',
+  thumbnail: 'https://user-images.githubusercontent.com/49724027/182444624-6228d153-94cb-461d-a5d8-be8535441fb6.png',
+}
 </script>
 
 <template>
