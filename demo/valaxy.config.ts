@@ -16,7 +16,6 @@ export default defineConfig<HairyTheme>({
   },
   description: 'Valaxy Theme Hairy Preview.',
   theme: 'hairy',
-
   social: [
     {
       name: 'RSS',
@@ -70,7 +69,7 @@ export default defineConfig<HairyTheme>({
   comment: {
     waline: {
       enable: true,
-      serverURL: 'https://te58kr68.api.lncldglobal.com',
+      serverURL: 'https://valaxy-blog-waline.vercel.app/',
     },
   },
   search: {

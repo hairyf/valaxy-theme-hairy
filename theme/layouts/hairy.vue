@@ -1,11 +1,20 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { pageviewCount } from '@waline/client'
+import { useConfig } from 'valaxy'
 
 const route = useRoute()
 const meta = computed(() => route.meta)
 const type = computed(() => meta.value.type || '')
-console.log(type.value)
+const config = useConfig()
+
+onMounted(() => {
+  pageviewCount({
+    serverURL: config.value.comment.waline.serverURL,
+    path: window.location.pathname,
+  })
+})
 </script>
 
 <template>

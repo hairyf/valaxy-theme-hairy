@@ -21,7 +21,7 @@ const footerIcon = computed(() => themeConfig.value.footer.icon)
 </script>
 
 <template>
-  <footer v-if="themeConfig.footer" class="va-footer p-4 pb-10" text="center sm" style="color:var(--va-c-text-light)">
+  <footer v-if="themeConfig.footer" class="va-footer p-4 pt-5 pb-14" text="center sm" style="color:var(--va-c-text-light)">
     <div v-if="themeConfig.footer.beian?.enable && themeConfig.footer.beian.icp" class="beian" m="y-2">
       <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">
         {{ themeConfig.footer.beian.icp }}
@@ -41,7 +41,12 @@ const footerIcon = computed(() => themeConfig.value.footer.icon)
         <div :class="footerIcon.name" />
       </a>
 
-      <span class="ml-2">{{ config.author.name }}</span>
+      <span>{{ config.author.name }}</span>
+      <span class="mx-2">|</span>
+      <span v-if="config.comment.waline" class="flex items-center">
+        <div class="i-ri-eye-fill mr-1" />
+        <span class="waline-pageview-count" data-path="/" />
+      </span>
     </div>
 
     <div v-if="themeConfig.footer.powered" class="powered" m="2">

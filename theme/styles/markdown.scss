@@ -58,3 +58,18 @@ html.dark {
   background-color: rgba(200, 200, 200, 0.1);
   border-color: var(--hy-c-primary);
 }
+
+.markdown-body {
+  --un-prose-borders: var(--hy-c-primary);
+}
+
+.prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
+  background: rgba(200, 200, 200, 0.1);
+  @apply py-1px;
+
+  font-size: 15px;
+
+  >p {
+    margin: 0.5rem 0;
+  }
+}

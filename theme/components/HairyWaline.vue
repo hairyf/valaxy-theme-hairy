@@ -6,6 +6,10 @@ const config = useConfig()
 // 挂载 Waline
 useWaline({
   el: '#waline',
+  emoji: [
+    '//unpkg.com/@waline/emojis@1.0.1/weibo',
+    '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+  ],
   ...config.value.comment.waline,
 })
 </script>
@@ -25,5 +29,16 @@ useWaline({
 .wl-editor {
   padding: 4px;
   width: calc(100% - 1rem - 8px);
+}
+.wl-emoji-popup {
+  border-bottom: none !important;
+  z-index: 1000;
+}
+.wl-emoji-popup .wl-tabs {
+  height: auto !important;
+  overflow-x: auto !important;
+  padding: 0 !important;
+  margin-left: -1px;
+  margin-right: -1px;
 }
 </style>
