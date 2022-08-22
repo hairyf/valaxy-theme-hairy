@@ -48,6 +48,16 @@ html.dark {
   max-width: calc(100vw - 56px);
 }
 
+.markdown-body div[class*=language-] {
+  width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .markdown-body div[class*=language-] {
+    margin: auto;
+  }
+}
+
 
 .prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::before,
 .prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::after {
@@ -61,6 +71,10 @@ html.dark {
 
 .markdown-body {
   --un-prose-borders: var(--hy-c-primary);
+}
+
+.markdown-body div[class*=language-] pre {
+  max-width: none;
 }
 
 .prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {

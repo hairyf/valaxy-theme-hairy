@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="HairyLayout min-h-100vh">
+  <div class="HairyLayout min-h-80vh">
     <HairyNav />
     <HairyHeader v-bind="header">
       <template #description>

@@ -30,6 +30,8 @@ function showFullLoading() {
     el = createElement()
   el.style.opacity = '0'
   document.body.appendChild(el)
+  document.body.style.overflow = 'hidden'
+
   setTimeout(() => el.style.opacity = '1')
   isLoading.value = true
 }
@@ -38,6 +40,7 @@ function hideFullLoading() {
   if (!el)
     return
   el.style.opacity = '0'
+  document.body.style.overflow = ''
   setTimeout(() => {
     isLoading.value = true
     el.remove()

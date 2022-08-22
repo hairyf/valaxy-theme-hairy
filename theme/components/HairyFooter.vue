@@ -45,7 +45,7 @@ const footerIcon = computed(() => themeConfig.value.footer.icon)
       <span class="mx-2">|</span>
       <span v-if="config.comment.waline" class="flex items-center">
         <div class="i-ri-eye-fill mr-1" />
-        <span class="waline-pageview-count" data-path="/" />
+        <span class="waline-pageview-count" data-path="/">1</span>
       </span>
     </div>
 
