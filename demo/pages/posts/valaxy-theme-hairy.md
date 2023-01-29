@@ -5,8 +5,10 @@ categories:
 tags:
   - valaxy
   - theme
+quiz: true
 ---
 
 ## 快速开始
 
 <hairy-codepen slug-hash="wvwEOZL" user="GreenSock" />
+

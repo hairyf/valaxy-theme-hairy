@@ -66,6 +66,8 @@ importers:
       defu: ^6.0.0
       element-plus: ^2.2.10
       furigana-markdown-it: ^1.0.3
+      markdown-it-attrs: ^4.1.4
+      markdown-it-bracketed-spans: ^1.0.1
       markdown-toc: ^1.2.0
       reading-time: ^1.5.0
       swiper: ^8.3.1
@@ -83,6 +85,8 @@ importers:
       defu: 6.0.0
       element-plus: 2.2.10
       furigana-markdown-it: 1.0.3
+      markdown-it-attrs: registry.npmjs.org/markdown-it-attrs/4.1.4
+      markdown-it-bracketed-spans: registry.npmjs.org/markdown-it-bracketed-spans/1.0.1
       markdown-toc: 1.2.0
       reading-time: 1.5.0
       swiper: 8.3.1
@@ -5387,7 +5391,7 @@ packages:
     dependencies:
       '@vueuse/core': 8.9.4
       lodash: 4.17.21
-      vue-demi: registry.npmjs.org/vue-demi/0.13.7
+      vue-demi: registry.npmjs.org/vue-demi/0.13.11
     dev: false
 
   /unplugin-vue-components/0.21.1_vite@2.9.14+vue@3.2.37:
@@ -6334,6 +6338,21 @@ packages:
     version: 4.17.21
     dev: true
 
+  registry.npmjs.org/markdown-it-attrs/4.1.4:
+    resolution: {integrity: sha512-53Zfv8PTb6rlVFDlD106xcZHKBSsRZKJ2IW/rTxEJBEVbVaoxaNsmRkG0HXfbHl2SK8kaxZ2QKqdthWy/QBwmA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/markdown-it-attrs/-/markdown-it-attrs-4.1.4.tgz}
+    name: markdown-it-attrs
+    version: 4.1.4
+    engines: {node: '>=6'}
+    peerDependencies:
+      markdown-it: '>= 9.0.0'
+    dev: false
+
+  registry.npmjs.org/markdown-it-bracketed-spans/1.0.1:
+    resolution: {integrity: sha512-ffDHx7bdOEecvo/EPpsatFLNnLZBRdj+ZF/v6gGJh0ixU0oVWxUUeJn5daVnT0sn0MU73G9oPDTqBX82z99fnw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/markdown-it-bracketed-spans/-/markdown-it-bracketed-spans-1.0.1.tgz}
+    name: markdown-it-bracketed-spans
+    version: 1.0.1
+    dev: false
+
   registry.npmjs.org/semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/semver/-/semver-6.3.0.tgz}
     name: semver
@@ -6348,10 +6367,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  registry.npmjs.org/vue-demi/0.13.7:
-    resolution: {integrity: sha512-hbhlvpx1gFW3TB5HxJ0mNxyA9Jh5iQt409taOs6zkhpvfJ7YzLs1rsLufJmDsjH5PI1cOyfikY1fE/meyHfU5A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vue-demi/-/vue-demi-0.13.7.tgz}
+  registry.npmjs.org/vue-demi/0.13.11:
+    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vue-demi/-/vue-demi-0.13.11.tgz}
     name: vue-demi
-    version: 0.13.7
+    version: 0.13.11
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true

@@ -3,6 +3,7 @@ import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { pageviewCount } from '@waline/client'
 import { useConfig } from 'valaxy'
+import { setupDefaultDark } from '../hooks/setupDefaultDark'
 
 const route = useRoute()
 const meta = computed(() => route.meta)
@@ -15,6 +16,7 @@ onMounted(() => {
     path: window.location.pathname,
   })
 })
+setupDefaultDark()
 </script>
 
 <template>

@@ -91,6 +91,7 @@ export default defineConfig<HairyTheme>({
     theme: 'material-ocean',
   },
   themeConfig: {
+    mode: 'dark',
     home: {
       images: [],
       description: 'good evening, how are you doing?',
