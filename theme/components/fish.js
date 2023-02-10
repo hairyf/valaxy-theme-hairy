@@ -3,19 +3,25 @@
 /* eslint-disable vars-on-top */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-undef */
-const RENDERER = {
-  POINT_INTERVAL: 5,
-  FISH_COUNT: 3,
-  MAX_INTERVAL_COUNT: 50,
-  INIT_HEIGHT_RATE: 0.5,
-  THRESHOLD: 50,
+
+class RENDERER {
+  ENABLE = false
+  POINT_INTERVAL = 5
+  FISH_COUNT = 3
+  MAX_INTERVAL_COUNT = 50
+  INIT_HEIGHT_RATE = 0.5
+  THRESHOLD = 50
   init() {
+    if (this.ENABLE)
+      return
     this.setParameters()
     this.reconstructMethods()
     this.setup()
     this.bindEvent()
     this.render()
-  },
+    this.ENABLE = true
+  }
+
   setParameters() {
     this.$window = $(window)
     this.$container = $('#jsi-flying-fish-container')
@@ -24,7 +30,8 @@ const RENDERER = {
     this.points = []
     this.fishes = []
     this.watchIds = []
-  },
+  }
+
   createSurfacePoints() {
     const count = Math.round(this.width / this.POINT_INTERVAL)
     this.pointInterval = this.width / (count - 1)
@@ -36,7 +43,8 @@ const RENDERER = {
       previous.setNextPoint(point)
       this.points.push(point)
     }
-  },
+  }
+
   reconstructMethods() {
     this.watchWindowSize = this.watchWindowSize.bind(this)
     this.jdugeToStopResize = this.jdugeToStopResize.bind(this)
@@ -44,7 +52,8 @@ const RENDERER = {
     this.moveEpicenter = this.moveEpicenter.bind(this)
     this.reverseVertical = this.reverseVertical.bind(this)
     this.render = this.render.bind(this)
-  },
+  }
+
   setup() {
     this.points.length = 0
     this.fishes.length = 0
@@ -57,17 +66,20 @@ const RENDERER = {
     this.reverse = false
     this.fishes.push(new FISH(this))
     this.createSurfacePoints()
-  },
+  }
+
   watchWindowSize() {
     this.clearTimer()
     this.tmpWidth = this.$window.width()
     this.tmpHeight = this.$window.height()
     this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
-  },
+  }
+
   clearTimer() {
     while (this.watchIds.length > 0)
       clearTimeout(this.watchIds.pop())
-  },
+  }
+
   jdugeToStopResize() {
     const width = this.$window.width()
     const height = this.$window.height()
@@ -76,19 +88,23 @@ const RENDERER = {
     this.tmpHeight = height
     if (stopped)
       this.setup()
-  },
+  }
+
   bindEvent() {
     this.$window.on('resize', this.watchWindowSize)
     this.$container.on('mouseenter', this.startEpicenter)
     this.$container.on('mousemove', this.moveEpicenter)
-  },
+  }
+
   getAxis(event) {
     const offset = this.$container.offset()
     return { x: event.clientX - offset.left + this.$window.scrollLeft(), y: event.clientY - offset.top + this.$window.scrollTop() }
-  },
+  }
+
   startEpicenter(event) {
     this.axis = this.getAxis(event)
-  },
+  }
+
   moveEpicenter(event) {
     const axis = this.getAxis(event)
     if (!this.axis)
@@ -96,7 +112,8 @@ const RENDERER = {
 
     this.generateEpicenter(axis.x, axis.y, axis.y - this.axis.y)
     this.axis = axis
-  },
+  }
+
   generateEpicenter(x, y, velocity) {
     if (y < this.height / 2 - this.THRESHOLD || y > this.height / 2 + this.THRESHOLD)
       return
@@ -106,12 +123,14 @@ const RENDERER = {
       return
 
     this.points[index].interfere(y, velocity)
-  },
+  }
+
   reverseVertical() {
     this.reverse = !this.reverse
     for (let i = 0, count = this.fishes.length; i < count; i++)
       this.fishes[i].reverseVertical()
-  },
+  }
+
   controlStatus() {
     for (let i = 0, count = this.points.length; i < count; i++)
       this.points[i].updateSelf()
@@ -123,7 +142,8 @@ const RENDERER = {
       this.intervalCount = this.MAX_INTERVAL_COUNT
       this.fishes.push(new FISH(this))
     }
-  },
+  }
+
   render() {
     requestAnimationFrame(this.render)
     this.controlStatus()
@@ -143,7 +163,7 @@ const RENDERER = {
     this.context.closePath()
     this.context.fill()
     this.context.restore()
-  },
+  }
 }
 
 var SURFACE_POINT = function (renderer, x) {
