@@ -11,9 +11,14 @@ class RENDERER {
   MAX_INTERVAL_COUNT = 50
   INIT_HEIGHT_RATE = 0.5
   THRESHOLD = 50
-  init() {
+
+  COLOR = 'hsl(0, 0%, 95%)'
+
+  constructor(color) {
     if (this.ENABLE)
       return
+    if (color)
+      this.COLOR = color
     this.setParameters()
     this.reconstructMethods()
     this.setup()

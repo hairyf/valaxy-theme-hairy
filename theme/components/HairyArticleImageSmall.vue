@@ -30,7 +30,7 @@ const displayCategory = (keys: string | string[] = []) => {
 </script>
 
 <template>
-  <li class="HairyArticleImage my-10 py-2" :class="[slice && 'slice', reverse && 'reverse']">
+  <li class="HairyArticleImage my-10 py-2 dark:bg-gray" :class="[slice && 'slice', reverse && 'reverse']">
     <article>
       <div class="flex justify-between items-center">
         <a class="text-size-2xl font-bold truncate cursor-pointer" :class="[reverse ? 'order-first' : 'order-last']" @click="onReadMore">{{ post.title }}</a>

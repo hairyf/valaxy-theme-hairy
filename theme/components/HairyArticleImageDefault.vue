@@ -40,14 +40,14 @@ const displayCategory = (keys: string | string[] = []) => {
           <span>{{ post.durations.minutes.toFixed(2) }}分钟</span>
         </div>
       </div>
-      <div class="h-200px flex">
+      <div class="h-200px flex bg-light-2 dark:bg-transparent rounded-5 duration-200" :class="[reverse ? 'pl-4' : 'pr-4']">
         <div class="flex-1 post-image-content" :class="[reverse ? 'order-last' : 'order-first']">
           <img
             class="post-image rounded-1 w-full h-full object-cover cursor-pointer" :src="image"
             @click="onReadMore"
           />
         </div>
-        <div class="flex flex-col justify-between flex-1">
+        <div class="flex-1 flex flex-col justify-between py-2 dark:py-0">
           <div class="flex-1 text-size-sm">
             <div class="line-clamp-text">
               {{ post.text }}

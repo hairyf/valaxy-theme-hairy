@@ -1,7 +1,8 @@
+<!-- eslint-disable no-new -->
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import { useScriptTag } from '@vueuse/core'
-import { RENDERER } from './fish'
+import { RENDERER } from './lib/fish'
 
 const fishContainer = ref()
 
@@ -9,7 +10,7 @@ const tag = useScriptTag('https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.mi
 onMounted(() => {
   tag.load()
     .then(() => {
-      new RENDERER().init()
+      new RENDERER()
     })
 })
 </script>
