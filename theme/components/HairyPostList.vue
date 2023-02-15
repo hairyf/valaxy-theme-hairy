@@ -23,9 +23,12 @@ const displayedPosts = computed(() => props.pagination ? pagePosts.value : posts
 </script>
 
 <template>
-  <HairyPostImageList v-if="layout.includes('image')" :posts="displayedPosts" />
-  <HairyPostTextsList v-else :posts="displayedPosts" />
-  <ValaxyPagination v-if="pagination" :cur-page="curPage" :page-size="pageSize" :total="posts.length" />
+  <div class="mt-8">
+    <HairyPostToggleLayout />
+    <HairyPostImageList v-if="layout.includes('image')" :posts="displayedPosts" />
+    <HairyPostTextsList v-else :posts="displayedPosts" />
+    <ValaxyPagination v-if="pagination" :cur-page="curPage" :page-size="pageSize" :total="posts.length" />
+  </div>
 </template>
 
 <style lang="scss">

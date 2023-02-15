@@ -4,7 +4,7 @@ import { computed } from 'vue'
 import type { Post } from 'valaxy'
 import { usePostList } from 'valaxy'
 
-import { usePostLayout } from '../hooks/usePostLayout'
+import { usePostLayout } from '../../hooks/usePostLayout'
 
 const props = withDefaults(defineProps<{
   type?: string
@@ -21,7 +21,7 @@ const reverse = computed(() => layout.value.includes('reverse'))
 <template>
   <ul class="divide-y divide-gray-200 dark:divide-gray-700">
     <Transition v-for="post, i in posts" :key="i" name="fade">
-      <HairyArticleImage :post="post" :reverse="reverse && (i % 2) === 0" />
+      <HairyArticleImage :post="post" :reverse="reverse && !((i % 2) === 0)" />
     </Transition>
   </ul>
 </template>

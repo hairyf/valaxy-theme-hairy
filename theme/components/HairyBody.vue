@@ -15,6 +15,7 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
         <slot />
         <HairyWaline v-if="showWaline" />
       </div>
+
       <div class="ml-4 w-60 lg:block hidden">
         <div class="sticky top-3.125rem z-1">
           <slot v-if="$slots.slide" name="slide" />
@@ -27,10 +28,6 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
 </template>
 
 <style lang="scss">
-.a {
-  overflow: hidden;
-}
-
 .HairyBodyBackground {
   @apply transition-all duration-200;
   @apply absolute top-0 max-h-150vh top-5 bottom-0 w-full transition-opacity;
@@ -43,8 +40,7 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
     transition-delay: 0;
     opacity: 1;
     background-image:
-      linear-gradient(to bottom, var(--hy-c-waves-dimm) 0%, transparent 60%, var(--hy-c-waves-dimm) 100%),
-      url(./images/bg.jpg);
+      linear-gradient(to bottom, var(--hy-c-waves-dimm) 0%, transparent 60%, var(--hy-c-waves-dimm) 100%), url(./images/bg.jpg);
     background-position: center;
     opacity: 0.4;
     background-repeat: no-repeat;

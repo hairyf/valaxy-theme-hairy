@@ -10,7 +10,7 @@ const themeTitle = computed(() => {
 </script>
 
 <template>
-  <button class="yun-icon-btn" :title="themeTitle" :style="{ color: isDark ? '' : '#f1cb64' }" @click="toggleDark()">
+  <button class="yun-icon-btn bg-light-1 p-1 dark:bg-transparent rounded-5" :title="themeTitle" :style="{ color: isDark ? '' : '#f1cb64' }" @click="toggleDark()">
     <div i="ri-sun-line dark:ri-moon-line" />
   </button>
 </template>

@@ -5,8 +5,8 @@ import dayjs from 'dayjs'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { last } from 'lodash-es'
-import { usePostLayout } from '../hooks/usePostLayout'
-import { toArr } from '../utils'
+import { usePostLayout } from '../../hooks/usePostLayout'
+import { toArr } from '../../utils'
 
 const props = defineProps<{
   post: Post
@@ -30,17 +30,17 @@ const displayCategory = (keys: string | string[] = []) => {
 </script>
 
 <template>
-  <li class="HairyArticleImage my-10 py-2" :class="[slice && 'slice', reverse && 'reverse']">
+  <li class="HairyArticleImage mb-10 py-2" :class="[slice && 'slice', reverse && 'reverse']">
     <article>
       <div class="flex justify-between items-center">
-        <a class="text-size-2xl font-bold truncate cursor-pointer" :class="[reverse ? 'order-first' : 'order-last']" @click="onReadMore">{{ post.title }}</a>
-        <div class="flex justify-end gap-2 text-size-sm">
+        <a class="text-size-2xl font-bold truncate cursor-pointer lt-sm:text-size-lg" :class="[reverse ? 'order-last' : 'order-first']" @click="onReadMore">{{ post.title }}</a>
+        <div class="flex justify-end gap-2 text-size-sm lt-sm:text-size-xs">
           <span>{{ dayjs(post.date).format('YYYY-MM-DD') }}</span>
           <span>{{ (post.length / 1000).toFixed(1) }}k字</span>
-          <span>{{ post.durations.minutes.toFixed(2) }}分钟</span>
+          <span class="lt-sm:hidden">{{ post.durations.minutes.toFixed(2) }}分钟</span>
         </div>
       </div>
-      <div class="h-200px flex bg-light-2 dark:bg-transparent rounded-5 duration-200" :class="[reverse ? 'pl-4' : 'pr-4']">
+      <div class="h-200px lt-sm:h-150px flex bg-light-2 dark:bg-transparent rounded-5 duration-200" :class="[reverse ? 'pl-4' : 'pr-4']">
         <div class="flex-1 post-image-content" :class="[reverse ? 'order-last' : 'order-first']">
           <img
             class="post-image rounded-1 w-full h-full object-cover cursor-pointer" :src="image"

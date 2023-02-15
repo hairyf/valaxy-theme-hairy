@@ -2,8 +2,8 @@
 import { useFrontmatter } from 'valaxy'
 import { computed, inject, nextTick, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { toArr } from '../utils'
-import { useCurrentCategory } from '../hooks/useCategory'
+import { toArr } from '../../utils'
+import { useCurrentCategory } from '../../hooks/useCategory'
 
 const frontmatter = useFrontmatter()
 const paths = computed(() => toArr(frontmatter.value.categories).filter(Boolean) as string[])

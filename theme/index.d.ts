@@ -1,5 +1,7 @@
 import type { ViteSSGContext } from 'vite-ssg'
 
+export type HairyPostLayout = 'text' | 'markdown' | 'image' | 'image:slice' | 'image:slice:reverse'
+
 export interface HairyTheme {
   nav?: NavItem[];
   mode?: 'dark'
@@ -14,7 +16,7 @@ export interface HairyTheme {
     description?: string;
   };
   post?: {
-    layout?: 'text' | 'markdown' | 'image' | 'image:slice' | 'image:slice:reverse'
+    layout?: HairyPostLayout
     images?: string[]
   }
   categories?: {

@@ -7,14 +7,12 @@ import { ElTimeline, ElTimelineItem } from 'element-plus/es/components/timeline/
 import { useCurrentCategory } from '../../hooks/useCategory'
 import { useCategoryPost } from '../../hooks/useCategoryPost'
 
-import { usePostLayout } from '../../hooks/usePostLayout'
 import type { HairyTheme } from '../..'
 import 'element-plus/es/components/timeline/style/index'
 import 'element-plus/es/components/timeline-item/style/index'
 const props = defineProps<{
   categories: string
 }>()
-const layout = usePostLayout()
 const themeConfig = useThemeConfig<HairyTheme>()
 const categoriesLayout = computed(() => themeConfig.value.categories?.layout || 'post')
 
@@ -76,8 +74,7 @@ const displayCategory = (key: string) => {
     </el-timeline-item>
   </el-timeline>
   <template v-else>
-    <HairyPostImageList v-if="layout.includes('image')" :posts="posts" />
-    <HairyPostList v-else :posts="posts" />
+    <HairyPostList :posts="posts" />
   </template>
 </template>
 

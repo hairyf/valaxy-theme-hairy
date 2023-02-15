@@ -17,14 +17,27 @@ class RENDERER {
   constructor(color) {
     if (this.ENABLE)
       return
-    if (color)
-      this.COLOR = color
+
+    this.setColor(color)
+    this.removeCanvas()
     this.setParameters()
     this.reconstructMethods()
     this.setup()
     this.bindEvent()
     this.render()
     this.ENABLE = true
+  }
+
+  removeCanvas() {
+    const container = document.querySelector('#jsi-flying-fish-container')
+    const canvas = container.querySelector('canvas')
+    if (canvas)
+      canvas.remove()
+  }
+
+  setColor(color) {
+    if (color)
+      this.COLOR = color
   }
 
   setParameters() {
@@ -153,7 +166,7 @@ class RENDERER {
     requestAnimationFrame(this.render)
     this.controlStatus()
     this.context.clearRect(0, 0, this.width, this.height)
-    this.context.fillStyle = 'hsl(0, 0%, 95%)'
+    this.context.fillStyle = this.COLOR
     for (let i = 0, count = this.fishes.length; i < count; i++)
       this.fishes[i].render(this.context)
 

@@ -7,11 +7,20 @@ import { RENDERER } from './lib/fish'
 const fishContainer = ref()
 
 const tag = useScriptTag('https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js')
+
+let renderer: RENDERER
+
+function reset() {
+  const color = 'hsl(0, 0%, 95%)'
+  if (!renderer)
+    renderer = new RENDERER(color)
+  else
+    renderer.setColor(color)
+}
+
 onMounted(() => {
   tag.load()
-    .then(() => {
-      new RENDERER()
-    })
+    .then(reset)
 })
 </script>
 
