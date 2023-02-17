@@ -22,6 +22,7 @@ setupDefaultDark()
 <template>
   <HairyBackToTop />
   <HairyMeting />
+  <HairyUserPopup />
   <home v-if="type === 'home'" />
   <post v-if="type === 'post'" />
   <archives v-if="type === 'archives'" />

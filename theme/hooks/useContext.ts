@@ -1,16 +1,13 @@
 import { ref } from 'vue'
-import { createContext } from '../utils/createContext'
+import { createSharedComposable } from '@vueuse/core'
 
-const HairyContext = createContext('Hairy', () => {
+const _useContext = () => {
   const headerRef = ref<HTMLDivElement>()
-
+  const drawerShow = ref(true)
   return {
     headerRef,
+    drawerShow,
   }
-})
-
-export const useContext = () => {
-  return HairyContext.inject()
 }
 
-export default HairyContext
+export const useContext = createSharedComposable(_useContext)
