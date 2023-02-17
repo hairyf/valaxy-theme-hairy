@@ -3,7 +3,7 @@ import { createSharedComposable } from '@vueuse/core'
 
 const _useContext = () => {
   const headerRef = ref<HTMLDivElement>()
-  const drawerShow = ref(true)
+  const drawerShow = ref(false)
   return {
     headerRef,
     drawerShow,

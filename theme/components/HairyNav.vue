@@ -26,7 +26,7 @@ const show = computed(() => {
         <HairyNavTitle />
       </div>
       <div class="flex items-center sm:flex-1">
-        <HairyNavMenu class="sm:hidden pr-15" />
+        <HairyNavMenu class="sm:hidden pl-3 pr-12" />
         <HairyMenu class="lt-sm:hidden" />
       </div>
       <div class="flex-center order-1">

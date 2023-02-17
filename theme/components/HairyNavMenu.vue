@@ -5,7 +5,7 @@ const { drawerShow } = useContext()
 </script>
 
 <template>
-  <button class="yun-icon-btn bg-light-1 p-1 dark:bg-transparent rounded-5" @click="drawerShow = true">
+  <button class="yun-icon-btn" @click="drawerShow = true">
     <div i="ri-menu-fill" />
   </button>
 </template>

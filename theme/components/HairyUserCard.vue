@@ -11,7 +11,7 @@ const description = computed(() => theme.value.user?.description || config.value
 </script>
 
 <template>
-  <div class="pt-5 animate__animated animate__fadeIn">
+  <div class="pt-5 animate__animated animate__fadeIn relative z-1">
     <div class="flex flex-col items-center">
       <img class="mx-auto w-40 rounded-full -mx-1px" :src="config.author.avatar" />
       <div class="leading-loose mt-2">
