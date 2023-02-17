@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ElDrawer } from 'element-plus'
+import { ElDrawer } from 'element-plus/es/components/drawer/index'
 import 'element-plus/es/components/drawer/style/index'
 import { useContext } from '../hooks/useContext'
 const { drawerShow } = useContext()
