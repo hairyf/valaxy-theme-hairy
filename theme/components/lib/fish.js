@@ -140,7 +140,8 @@ class RENDERER {
     if (index < 0 || index >= this.points.length)
       return
 
-    this.points[index].interfere(y, velocity)
+    if (this.points[index])
+      this.points[index].interfere(y, velocity)
   }
 
   reverseVertical() {

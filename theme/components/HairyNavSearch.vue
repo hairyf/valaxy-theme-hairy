@@ -56,7 +56,7 @@ function load() {
         class="DocSearch DocSearch-Button"
         aria-label="Search"
       >
-        <span class="DocSearch-Button-Container">
+        <span class="DocSearch-Button-Container lt-sm:text-size-xl">
           <svg
             class="DocSearch-Search-Icon"
             width="20"
@@ -173,8 +173,8 @@ function load() {
 
 .DocSearch-Button .DocSearch-Search-Icon {
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 1em;
+  height: 1em;
   color: var(--hy-c-text-1);
   fill: currentColor;
   transition: color 0.5s;
