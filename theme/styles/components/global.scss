@@ -1,0 +1,51 @@
+body {
+  font-family: var(--hy-font-family-seto);
+  @apply transition-colors duration-200;
+  color: var(--va-c-text);
+}
+
+#app {
+  @apply transition-none;
+  min-height: 100vh;
+}
+
+a {
+  @apply transition-colors;
+  color: var(--hy-c-primary-light);
+
+  &:hover {
+    --un-text-opacity: 1;
+    color: var(--hy-c-primary-dark);
+  }
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+
+
+
+@media (min-width: 1200px) {
+  .breakpoint {
+    width: 72.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .breakpoint {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .breakpoint {
+    width: 75vw;
+  }
+}
+
+body {
+  // background-image: linear-gradient(to top, #f7f7f7 0, #fdfdfd 20%) no-repeat bottom;
+}

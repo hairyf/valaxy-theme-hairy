@@ -1,11 +1,5 @@
 {
   "extends": "@antfu",
-  "rules": {
-    "vue/html-self-closing": "off",
-    "react/display-name": "off",
-    "react/no-unknown-property": "off",
-    "react/prop-types": "off"
-  },
   "globals": {
     "__DEV__": true
   }

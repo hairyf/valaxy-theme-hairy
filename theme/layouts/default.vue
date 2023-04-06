@@ -1,9 +1,5 @@
-<script lang="ts" setup>
-</script>
-
 <template>
-  <HairyLayout :header="$route.meta.frontmatter">
+  <Layout>
     <router-view />
-  </HairyLayout>
+  </Layout>
 </template>
-

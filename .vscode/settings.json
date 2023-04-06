@@ -10,7 +10,18 @@
   "i18n-ally.keystyle": "nested",
   "i18n-ally.localesPaths": ["./locales"],
   "i18n-ally.sortKeys": true,
-  "prettier.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "html",
+    "json",
+    "jsonc",
+    "json5",
+    "markdown"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -21,6 +32,5 @@
   "[scss]": {
     "editor.formatOnSave": true
   },
-  "svg.preview.background": "editor",
-  "unocss.root": "theme"
+  "svg.preview.background": "editor"
 }

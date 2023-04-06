@@ -3,7 +3,6 @@ import { capitalize, computed } from 'vue'
 import { useConfig, useThemeConfig } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 import pkg from 'valaxy/package.json'
-import HairyFooterFish from './HairyFooterFish.vue'
 
 const { t } = useI18n()
 
@@ -41,12 +40,9 @@ const footerIcon = computed(() => themeConfig.value.footer.icon)
           <div :class="footerIcon.name" />
         </a>
 
-        <span>{{ config.author.name }}</span>
+        <span>{{ config.siteConfig.author.name }}</span>
         <span class="mx-2">|</span>
-        <span v-if="config.comment.waline" class="flex items-center">
-          <div class="i-ri-eye-fill mr-1" />
-          <span class="waline-pageview-count" data-path="/">1</span>
-        </span>
+        <HairyWalineMeta />
       </div>
       <div v-if="themeConfig.footer.powered" class="powered" m="2">
         <span v-html="poweredHtml" /> | <span>{{ t('footer.theme') }} - <a :href="themeConfig.pkg.homepage" :title="`valaxy-theme-${config.theme}`" target="_blank">{{ capitalize(config.theme) }}</a> v{{ themeConfig.pkg.version }}</span>

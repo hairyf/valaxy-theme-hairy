@@ -1,5 +1,5 @@
 <template>
-  <HairyPostList :pagination="true" />
+  <StarterPostList />
 </template>
 
 <route lang="yaml">

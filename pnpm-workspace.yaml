@@ -1,4 +1,3 @@
 packages:
   - theme
-  - packages/*
   - demo

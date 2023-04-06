@@ -2,7 +2,7 @@
 title: Hello, Valaxy!
 date: 2022-03-22
 updated: 2022-03-23
-categories: Valaxy 开发笔记
+categories: Valaxy Notes
 tags:
   - valaxy
   - 笔记
@@ -11,7 +11,7 @@ tags:
 ## Hello, Valaxy!
 
 ```ts
-import type { ThemeConfig } from 'valaxy-theme-hairy'
+import type { ThemeConfig } from 'valaxy-theme-starter'
 import { defineConfig } from 'valaxy'
 
 export default defineConfig<ThemeConfig>({

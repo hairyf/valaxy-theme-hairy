@@ -1,3 +1,5 @@
 valaxy_theme_starter: Valaxy 主题 Starter
-Uncategorized: '未分类'
-Valaxy Notes: 'Valaxy 笔记'
+
+post:
+  pageview_count: 阅读次数
+  comment_count: 评论数
