@@ -24,6 +24,7 @@
     "@iconify-json/ant-design": "^1.1.5",
     "@iconify-json/simple-icons": "^1.1.48",
     "@unoverlays/vue": "^0.6.0",
+    "animate.css": "^4.1.1",
     "element-plus": "^2.3.2",
     "swiper": "^9.2.0",
     "valaxy-addon-waline": "^0.1.0"

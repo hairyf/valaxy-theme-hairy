@@ -3,7 +3,7 @@ import type { HairyTheme } from 'valaxy-theme-hairy'
 import { useThemeConfig } from 'valaxy'
 import { computed } from 'vue'
 
-const themeConfig = useThemeConfig<HairyTheme>()
+const themeConfig = useThemeConfig<HairyTheme.Config>()
 const nav = computed(() => themeConfig.value.nav || [])
 </script>
 

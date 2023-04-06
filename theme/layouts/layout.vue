@@ -1,17 +1,28 @@
-<template>
-  <div class="antialiased">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-      <StarterNav />
-    </div>
+<script lang="ts" setup>
+defineProps<{
+  header?: {
+    title?: string
+    headline?: string
+    description?: string
+  }
+}>()
+</script>
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+<template>
+  <div class="HairyLayout min-h-80vh">
+    <HairyNav />
+    <HairyHeader v-bind="header">
+      <template #description>
+        <slot name="header-description" />
+      </template>
+    </HairyHeader>
+    <HairyMain>
       <slot>
         <router-view v-slot="{ Component }">
           <component :is="Component">
             <template #main-header>
               <slot name="main-header" />
             </template>
-
             <template #main-header-after>
               <slot name="main-header-after" />
             </template>
@@ -39,12 +50,10 @@
           </component>
         </router-view>
       </slot>
-    </main>
+    </HairyMain>
 
-    <StarterHelper />
-
-    <StarterFooter>
+    <HairyFooter>
       <slot name="footer" />
-    </StarterFooter>
+    </HairyFooter>
   </div>
 </template>

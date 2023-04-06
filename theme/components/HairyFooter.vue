@@ -42,7 +42,7 @@ const footerIcon = computed(() => themeConfig.value.footer.icon)
 
         <span>{{ config.siteConfig.author.name }}</span>
         <span class="mx-2">|</span>
-        <HairyWalineMeta />
+        <!-- <HairyWalineMeta /> -->
       </div>
       <div v-if="themeConfig.footer.powered" class="powered" m="2">
         <span v-html="poweredHtml" /> | <span>{{ t('footer.theme') }} - <a :href="themeConfig.pkg.homepage" :title="`valaxy-theme-${config.theme}`" target="_blank">{{ capitalize(config.theme) }}</a> v{{ themeConfig.pkg.version }}</span>

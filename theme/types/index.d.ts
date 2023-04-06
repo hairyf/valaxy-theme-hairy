@@ -3,10 +3,10 @@ export namespace HairyTheme {
 }
 
 export type HairyPostLayout = 'text'
- | 'markdown' 
- | 'image' 
- | 'image:slice' 
- | 'image:slice:reverse'
+  | 'markdown'
+  | 'image'
+  | 'image:slice'
+  | 'image:slice:reverse'
 
 /**
  * Theme Config
@@ -24,9 +24,14 @@ export interface ThemeConfig {
     layout?: HairyPostLayout
     images?: string[]
   }
+  user?: {
+    name?: string;
+    description?: string;
+  };
   categories?: {
     layout?: 'timeline' | 'post'
   }
+  
   colors: {
     /**
      * primary color
@@ -82,6 +87,33 @@ export interface ThemeConfig {
    * navbar
    */
   nav: NavItem[]
+
+  /**
+ * meting options
+ * @see https://github.com/metowolf/MetingJS#option
+ */
+  meting?: {
+    id?: string
+    server?: string
+    type?: string
+    auto?: string
+    fixed?: boolean
+    mini?: boolean
+    autoplay?: boolean
+    theme?: string
+    loop?: string
+    order?: string
+    preload?: string
+    volume?: number
+    work?: string
+    mutex?: boolean
+    start?: string
+    'lrc-type'?: number
+    'list-folded'?: boolean
+    'list-max-height'?: string
+    'storage-name'?: string
+    [key: string]: any
+  }
 }
 
 export interface NavItem {

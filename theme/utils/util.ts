@@ -5,3 +5,9 @@ export function ejectWindow(url: string) {
   link.click()
   link.remove()
 }
+
+export function toArr<T>(arr: T[] | T): T[] {
+  if (Array.isArray(arr))
+    return arr as any
+  else return [arr].filter(Boolean) as any
+}

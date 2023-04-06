@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useAddonWaline } from 'valaxy-addon-waline'
+import { useAddonWaline } from 'valaxy-addon-waline/client'
 
 const addon = useAddonWaline()
 </script>
