@@ -7,10 +7,28 @@
 
 > Hairy theme based on [valaxy](https://github.com/YunYouJun/valaxy).
 
-<img src="./public/light.png" />
-
 <br />
 
 <img src="./public/dark.png" />
 
 > Want to see more browsing? You can view [docs](https://www.hairy.blog/posts/theme)
+
+## Usage
+
+```bash
+pnpm create valaxy
+```
+
+## install theme
+
+```bash
+pnpm add valaxy-theme-hairy
+```
+
+change valaxy.config
+
+```json
+{
+  "theme": "hairy"
+}
+```
