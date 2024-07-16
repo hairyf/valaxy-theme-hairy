@@ -4,7 +4,7 @@ date: 2020-05-04 14:00:00
 categories:
   - Server
   - NodeJS
-tags: 
+tags:
   - NodeJS
 ---
 
@@ -16,15 +16,42 @@ tags:
 
 ~~~js
 [
-  'RSA-MD4', 'RSA-MD5', 'RSA-MDC2', 'RSA-RIPEMD160',
-  'RSA-SHA1', 'RSA-SHA1-2', 'RSA-SHA224', 'RSA-SHA256',
-  'RSA-SHA384', 'RSA-SHA512', 'blake2b512', 'blake2s256',
-  'md4', 'md4WithRSAEncryption', 'md5', 'md5-sha1',
-  'md5WithRSAEncryption', 'mdc2', 'mdc2WithRSA', 'ripemd',
-  'ripemd160', 'ripemd160WithRSA', 'rmd160', 'sha1',
-  'sha1WithRSAEncryption', 'sha224', 'sha224WithRSAEncryption',
-  'sha256', 'sha256WithRSAEncryption', 'sha384', 'sha384WithRSAEncryption',
-  'sha512', 'sha512WithRSAEncryption', 'ssl3-md5', 'ssl3-sha1', 'whirlpool'
+  'RSA-MD4',
+  'RSA-MD5',
+  'RSA-MDC2',
+  'RSA-RIPEMD160',
+  'RSA-SHA1',
+  'RSA-SHA1-2',
+  'RSA-SHA224',
+  'RSA-SHA256',
+  'RSA-SHA384',
+  'RSA-SHA512',
+  'blake2b512',
+  'blake2s256',
+  'md4',
+  'md4WithRSAEncryption',
+  'md5',
+  'md5-sha1',
+  'md5WithRSAEncryption',
+  'mdc2',
+  'mdc2WithRSA',
+  'ripemd',
+  'ripemd160',
+  'ripemd160WithRSA',
+  'rmd160',
+  'sha1',
+  'sha1WithRSAEncryption',
+  'sha224',
+  'sha224WithRSAEncryption',
+  'sha256',
+  'sha256WithRSAEncryption',
+  'sha384',
+  'sha384WithRSAEncryption',
+  'sha512',
+  'sha512WithRSAEncryption',
+  'ssl3-md5',
+  'ssl3-sha1',
+  'whirlpool'
 ]
 ~~~
 
@@ -33,7 +60,7 @@ tags:
 hash 算法加密使用 `hash.update()` 方法将要计算的数据以流（stream）的方式写入，流输入结束后，使用 `hash.digest()` 方法计算数据的 hash 值解析为字符串。
 
 ~~~js
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 // 创建哈希函数 sha256
 const hash = crypto.createHash('sha256')
 
@@ -55,7 +82,7 @@ PBKDF2 是 Node.js 的 crypto 模块原生支持的标准方法。
 同步函数示例：
 
 ~~~js
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 // crypto.randomBytes() 方法生成 32 字节的随机数 - 这里作为盐值
 const salt = crypto.randomBytes(32)
 // 参数列表：(未加密字符串, 盐值, 迭代次数, 密钥长度, 摘要函数-hash加密)
@@ -69,7 +96,7 @@ const result = crypto.pbkdf2Sync(password, salt, 4096, 512, 'sha256')
 常见的 Hash 算法使用示例：
 
 ~~~js
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 const md5 = crypto.createHash('md5')
 const str = '123456'
 // 直接对密码原文进行 Hash
@@ -83,7 +110,7 @@ console.log(md5.digest('hex'))
 加“盐”的 Hash 算法：
 
 ~~~js
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 const md5 = crypto.createHash('md5')
 
 // 生成强加密的伪随机数
@@ -103,7 +130,7 @@ console.log(md5.digest('hex'))
 HMAC 算法加密是将散列算法与一个密钥结合在一起，以阻止对签名完整性破坏，其实就是类似于上面的提到的md5密码中加盐道理是类似的。
 
 ~~~js
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 // 创建hmac_hash函数(算法, 密匙)
 const hmac = crypto.createHmac('sha1', 'BDvDYUmfdykkBLgX')
 // 对字符串进行 hash 加密
@@ -114,14 +141,67 @@ console.log(hmac.digest('hex'))
 // a43bfb9f12b6f69ad9fcd4338a981efbed2569ae
 ~~~
 
-
 ## Cipher（加密）和 Decipher（解密）
 
 Cipher类用于加密数据，属于对称密钥加密，假设通信双方 A、B，通讯方 A 使用 key 对明文进行加密传输，通讯方 B 接收到密文后，使用同样的 key 进行解密得到明文。Cipher 加密算法字符串格式是 `算法-秘钥长度-模式` node.js 支持的有以下
 
 ~~~js
 [
-  'aes-128-cbc', 'aes-128-cbc-hmac-sha1', 'aes-128-cbc-hmac-sha256', 'aes-128-ccm', 'aes-128-cfb', 'aes-128-cfb1', 'aes-128-cfb8', 'aes-128-ctr', 'aes-128-ecb', 'aes-128-gcm', 'aes-128-ocb', 'aes-128-ofb', 'aes-128-xts', 'aes-192-cbc', 'aes-192-ccm', 'aes-192-cfb', 'aes-192-cfb1', 'aes-192-cfb8', 'aes-192-ctr', 'aes-192-ecb', 'aes-192-gcm', 'aes-192-ocb', 'aes-192-ofb', 'aes-256-cbc', 'aes-256-cbc-hmac-sha1', 'aes-256-cbc-hmac-sha256', 'aes-256-ccm', 'aes-256-cfb', 'aes-256-cfb1', 'aes-256-cfb8', 'aes-256-ctr', 'aes-256-ecb', 'aes-256-gcm', 'aes-256-ocb', 'aes-256-ofb', 'aes-256-xts', 'aes128', 'aes128-wrap', 'aes192', 'aes192-wrap', 'aes256', 'aes256-wrap', 'bf', 'bf-cbc', 'bf-cfb', 'bf-ecb', 'bf-ofb', 'blowfish', 'des', 'des-cbc', 'des-cfb', 'des-cfb1', 'des-cfb8', 'des-ecb', 'des3',
+  'aes-128-cbc',
+  'aes-128-cbc-hmac-sha1',
+  'aes-128-cbc-hmac-sha256',
+  'aes-128-ccm',
+  'aes-128-cfb',
+  'aes-128-cfb1',
+  'aes-128-cfb8',
+  'aes-128-ctr',
+  'aes-128-ecb',
+  'aes-128-gcm',
+  'aes-128-ocb',
+  'aes-128-ofb',
+  'aes-128-xts',
+  'aes-192-cbc',
+  'aes-192-ccm',
+  'aes-192-cfb',
+  'aes-192-cfb1',
+  'aes-192-cfb8',
+  'aes-192-ctr',
+  'aes-192-ecb',
+  'aes-192-gcm',
+  'aes-192-ocb',
+  'aes-192-ofb',
+  'aes-256-cbc',
+  'aes-256-cbc-hmac-sha1',
+  'aes-256-cbc-hmac-sha256',
+  'aes-256-ccm',
+  'aes-256-cfb',
+  'aes-256-cfb1',
+  'aes-256-cfb8',
+  'aes-256-ctr',
+  'aes-256-ecb',
+  'aes-256-gcm',
+  'aes-256-ocb',
+  'aes-256-ofb',
+  'aes-256-xts',
+  'aes128',
+  'aes128-wrap',
+  'aes192',
+  'aes192-wrap',
+  'aes256',
+  'aes256-wrap',
+  'bf',
+  'bf-cbc',
+  'bf-cfb',
+  'bf-ecb',
+  'bf-ofb',
+  'blowfish',
+  'des',
+  'des-cbc',
+  'des-cfb',
+  'des-cfb1',
+  'des-cfb8',
+  'des-ecb',
+  'des3',
   // 后面还有 39 个...
 ]
 ~~~
@@ -144,7 +224,7 @@ DES 使用一个 56 位的密钥以及附加的8位奇偶校验位，产生最�
 ### AES-256-GCM 示例
 
 ~~~js
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 
 // 初始化参数
 const text = 'Encryption Testing AES GCM mode' // 要加密和解密的数据
@@ -174,7 +254,7 @@ console.log(decrypted) // Encryption Testing AES GCM mode
 ### 生成密匙对
 
 ~~~js
-const { generateKeyPair, generateKeyPairSync } = require('crypto')
+const { generateKeyPair, generateKeyPairSync } = require('node:crypto')
 generateKeyPair('rsa', { // 算法名称 必须是 rsa / dsa / ec 之一
   modulusLength: 4096, // 密匙长度
   publicKeyEncoding: { // 公钥编码格式
@@ -197,8 +277,8 @@ const { privateKey, publicKey } = crypto.generateKeyPairSync('ec', {/* ... */})
 ### 公私加解密
 
 ~~~js
-const crypto = require('crypto')
-const fs = require('fs')
+const crypto = require('node:crypto')
+const fs = require('node:fs')
 // 读取密匙对
 const publicKey = fs.readFileSync('/mypubkey.pem')
 const privateKey = fs.readFileSync('/ mykey.pem')
@@ -218,7 +298,7 @@ Sign签名存在目的是为了防止不法分子修改参数数据，进而攻�
 
 ~~~js
 // 引入REA密匙生成器, 创建签名函数, 验证签名函数
-const { generateKeyPairSync, createSign, createVerify } = require('crypto')
+const { generateKeyPairSync, createSign, createVerify } = require('node:crypto')
 // 生成REA密匙
 const { publicKey, privateKey } = generateKeyPairSync('rsa', { modulusLength: 4096 })// 密匙长度4096
 // 私钥生成签名
@@ -236,7 +316,7 @@ console.log(verify.verify(publicKey, sign_buf))
 DH 密钥交换是1976年由 Diffie 和 Hellman 共同发明的一种算法。使用这种算法，通信双方仅通过交换一些可以公开的信息就能够生成出共享的密码数字，而这一密码数字就可以被用作对称密码的密钥。IPsec 中就使用了经过改良的 DH 密钥交换。
 
 ~~~js
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 // Generate(生成) Alice's keys...
 // 创建客户端的DH实例, 素数长度为1024
 const alice = crypto.createDiffieHellman(1024)
@@ -265,7 +345,7 @@ console.log(aliceSecret === bobSecret)
 ECDH 类是创建椭圆曲线 Diffie-Hellman（Elliptic Curve Diffie-Hellman (ECDH)）键交换的实用工具。ECDH 类的实例可以使用 `crypto.createECDH()` 方法。
 
 ~~~js
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 
 // Generate(生成) Alice's keys...
 const alice = crypto.createECDH('secp521r1')

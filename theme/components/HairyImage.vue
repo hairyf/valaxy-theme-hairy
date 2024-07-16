@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import { ElImage, imageProps } from 'element-plus/es/components/image/index'
-import 'element-plus/es/components/image/style/index'
+import { ElImage, imageProps } from 'element-plus'
+import 'element-plus/theme-chalk/el-image.css'
 import { inject } from 'vue'
+
 const props = defineProps(imageProps)
 
-const preview = inject<(url: string) => void>('HairyImageGroup:preview')
+const preview = inject<any>('HairyImageGroup:preview', undefined)
 </script>
 
 <template>

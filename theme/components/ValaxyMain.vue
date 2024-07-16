@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import type { PageData, Post } from 'valaxy'
-import { useConfig } from 'valaxy'
+import { useSiteConfig } from 'valaxy'
 
 defineProps<{
   frontmatter: Post
   data?: PageData
 }>()
-const config = useConfig()
+const siteConfig = useSiteConfig()
 </script>
 
 <template>
@@ -34,7 +34,7 @@ const config = useConfig()
 
         <slot name="main-nav-after" />
 
-        <slot v-if="config.comment.enable && frontmatter.comment !== false" name="comment" />
+        <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment" />
 
         <slot name="footer" />
       </slot>

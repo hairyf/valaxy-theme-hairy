@@ -1,0 +1,89 @@
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+
+@use 'valaxy/client/styles/components/code.scss' as *;
+@use 'valaxy/client/styles/components/code-group.scss' as *;
+@use 'valaxy/client/styles/components/custom-block.scss' as *;
+
+.markdown-body {
+  --c-toc-link: var(--hy-c-text-light);
+}
+
+html.dark {
+  .markdown-body {
+    --c-toc-link: var(--hy-c-text-dark);
+  }
+}
+
+.markdown-body {
+  --un-prose-borders: var(--hy-c-primary);
+  word-wrap: break-word;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--va-font-family-base);
+    font-weight: 900;
+  }
+
+  ul {
+    li>p {
+      margin-bottom: 0;
+    }
+  }
+
+  blockquote {
+    margin: 16px 0;
+    border-left: 4px solid var(--va-c-divider);
+    padding-left: 12px;
+
+    transition: border-color 0.5s p {
+      margin: 0;
+      font-size: 16px;
+      color: var(--vp-c-text-2);
+      transition: color 0.5s;
+    }
+  }
+
+  code:not(pre > code) {
+    color: var(--va-c-text-code);
+    background-color: var(--va-c-bg-mute);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+
+    &::before {
+      content: none;
+    }
+
+    &::after {
+      content: none;
+    }
+  }
+
+  div[class*=language-] pre {
+    max-width: none;
+  }
+}
+
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::before,
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::after {
+  content: none !important;
+}
+
+.prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
+  background: rgba(200, 200, 200, 0.1);
+  @apply py-1px;
+
+  font-size: 15px;
+
+  >p {
+    margin: 0.5rem 0;
+  }
+}
+
+.markdown-body blockquote {
+  border-color: var(--hy-c-primary);
+}

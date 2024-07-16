@@ -1,6 +1,7 @@
 import { defineConfig } from 'unocss'
+
 const safelist = [
-  'i-ri:home-2-fill',
+  'i-ri-home-2-fill',
   'i-ri-list-check-2',
   'i-ri-flow-chart',
   'i-ri-user-line',
@@ -11,6 +12,7 @@ const safelist = [
   'i-fluent-markdown-20-filled',
   'i-fluent-code-text-16-filled',
 ]
+
 export default defineConfig({
   theme: {
     breakpoints: {
@@ -28,6 +30,8 @@ export default defineConfig({
     ['font-christmas', { 'font-family': 'var(--hy-font-family-christmas)' }],
     ['font-frederick', { 'font-family': 'var(--hy-font-family-frederick)' }],
     ['text-primary', { color: 'var(--hy-c-primary)' }],
+    ['text-primary-dark', { color: 'var(--hy-c-primary-dark)' }],
+    ['text-primary-light', { color: 'var(--hy-c-primary-light)' }],
     ['border-primary', { 'border-color': 'var(--hy-c-primary)' }],
     ['bg-primary', { background: 'var(--hy-c-primary)' }],
   ],

@@ -1,21 +1,18 @@
 <script lang="ts" setup>
-import { ElTimeline, ElTimelineItem } from 'element-plus/es/components/timeline/index'
-import 'element-plus/es/components/timeline/style/index'
-import 'element-plus/es/components/timeline-item/style/index'
-import { computed, defineProps } from 'vue'
-import { useYearArchives } from '../../../../hooks/useYearArchives'
+import { ElTimeline, ElTimelineItem } from 'element-plus'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useYearArchives } from '../../../../composables'
 import { getArchiveLink } from '../../../../utils'
 
-const props = defineProps<{
-  year: string
-  month: string
-}>()
+const year = computed(() => useRoute().params.year as string)
+const month = computed(() => useRoute().params.month as string)
 
 const activities = useYearArchives()
 const months = computed(() =>
   activities.value
-    .filter(item => item.year === props.year)
-    .filter(item => item.month === props.month),
+    .filter(item => item.year === year.value)
+    .filter(item => item.month === month.value),
 )
 const count = computed(() => months.value.reduce((total, value) => total + value.count, 0))
 const post = computed(() => months.value.flatMap(item => item.posts))
@@ -33,19 +30,19 @@ const post = computed(() => months.value.flatMap(item => item.posts))
       {{ month }}月
     </HairyBreadcrumbItem>
   </HairyBreadcrumb>
-  <el-timeline>
-    <el-timeline-item
+  <ElTimeline>
+    <ElTimelineItem
       v-for="(item, index) in post"
       :key="index"
       hollow
       size="large"
     >
-      <HairyTimelinePostItem :post="item" />
-    </el-timeline-item>
-  </el-timeline>
+      <HairyTimelineContent :post="item" />
+    </ElTimelineItem>
+  </ElTimeline>
 </template>
 
 <route lang="yaml">
-meta:
-  layout: month
-</route>
+  meta:
+    layout: archive-month
+  </route>

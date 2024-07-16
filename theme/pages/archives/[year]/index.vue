@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-import { ElTimeline, ElTimelineItem } from 'element-plus/es/components/timeline/index'
-import 'element-plus/es/components/timeline/style/index'
-import 'element-plus/es/components/timeline-item/style/index'
+import { ElTimeline, ElTimelineItem } from 'element-plus'
 import { computed } from 'vue'
 import type { Post } from 'valaxy'
-import { useYearArchives } from '../../../hooks/useYearArchives'
+import { useRoute } from 'vue-router'
 import { getArchiveLink } from '../../../utils'
-interface TimeLineItem extends Post {
+import { useYearArchives } from '../../../composables'
+
+interface TimeLineByPost extends Post {
   type: 'link' | 'post'
   month: string
   link: string
   count: number
 }
-const props = defineProps<{
-  year: string
-}>()
 
 const activities = useYearArchives()
-const filterYear = computed(() => activities.value.filter(item => item.year === props.year))
+
+const year = computed(() => useRoute().params.year as string)
+
+const filterYear = computed(() => activities.value.filter(item => item.year === year.value))
 const timelines = computed(() => {
-  const timeLines: Partial<TimeLineItem>[] = []
+  const timeLines: Partial<TimeLineByPost>[] = []
   for (const { year, count, month, posts } of filterYear.value) {
     timeLines.push({
       type: 'link',
@@ -30,7 +30,7 @@ const timelines = computed(() => {
     for (const post of posts)
       timeLines.push({ ...post, type: 'post' })
   }
-  return timeLines as TimeLineItem[]
+  return timeLines as TimeLineByPost[]
 })
 </script>
 
@@ -44,9 +44,9 @@ const timelines = computed(() => {
     </HairyBreadcrumbItem>
   </HairyBreadcrumb>
 
-  <el-timeline>
+  <ElTimeline>
     <template v-for="(item, index) in timelines" :key="index">
-      <el-timeline-item
+      <ElTimelineItem
         v-if="item.type === 'link'"
         hollow
         :index="index"
@@ -55,19 +55,19 @@ const timelines = computed(() => {
         <HairyLink @click="$router.push(getArchiveLink(year, item.month))">
           {{ item.month }}月
         </HairyLink>
-      </el-timeline-item>
-      <el-timeline-item
+      </ElTimelineItem>
+      <ElTimelineItem
         v-else
         hollow
         size="normal"
       >
-        <HairyTimelinePostItem :post="item" />
-      </el-timeline-item>
+        <HairyTimelineContent :post="item" />
+      </ElTimelineItem>
     </template>
-  </el-timeline>
+  </ElTimeline>
 </template>
 
 <route lang="yaml">
-meta:
-  layout: year
-</route>
+  meta:
+    layout: archive-year
+  </route>

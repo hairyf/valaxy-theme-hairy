@@ -6,7 +6,7 @@ categories:
   - Guitar
 tags:
   - guitar
---- 
+---
 
 可以从 Kemper 官方网站下载音色管理器软件，确保根据您的计算机操作系统，选择正确的版本。
 
@@ -51,7 +51,6 @@ tags:
 - `Local Library` 包含计算机上的所有音色。
 - `Rig Exchange` 展示了用户音色交换平台上的所有音色。
 - `MyProfiler` 列出了现在 LPA 中所有的音色。
-
 
 左侧菜单 All Performances 列出了计算机以及连接的 kPA 上所有可用音色。
 

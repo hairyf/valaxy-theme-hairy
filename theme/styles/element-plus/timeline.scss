@@ -1,7 +1,7 @@
 .el-timeline {
   .el-timeline-item__content {
     display: inline-block;
-    color: initial;
+    color: var(--va-c-text) !important;
     line-height: 1;
     font-size: 1.5rem;
 

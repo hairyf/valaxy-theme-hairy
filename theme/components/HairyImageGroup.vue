@@ -1,19 +1,17 @@
 <script lang="ts" setup>
 import { computed, provide, useCssVars, useSlots } from 'vue'
-import { executeOverlay } from 'unoverlay-vue'
-import type { ImageViewerProps } from 'element-plus/es/components/image-viewer/index'
-import type { AtWillNumber } from '../utils'
+import { renderOverlay } from '@overlastic/vue'
+import type { ImageViewerProps } from 'element-plus'
 import { atWillToUnit } from '../utils'
-import HairyImageViewer from './HairyImageViewer.vue'
+import HairyImageViewer from './parts/HairyImageViewer.vue'
 
 const props = withDefaults(defineProps<{
-  row?: AtWillNumber
-  col?: AtWillNumber
-  gap?: AtWillNumber
+  row?: string | number
+  col?: string | number
+  gap?: string | number
   justify?: string
   align?: string
-}>(),
-{
+}>(), {
   row: 'auto',
   col: 'auto',
   gap: 10,
@@ -36,13 +34,11 @@ const paths = computed(() => slots
   .filter(Boolean) as string[],
 )
 
-const preview = (url: string) => {
+function preview(url: string) {
   const initialIndex = paths.value.findIndex(v => v === url) || 0
-  executeOverlay<Partial<ImageViewerProps>>(HairyImageViewer, {
-    props: {
-      urlList: paths.value,
-      initialIndex,
-    },
+  renderOverlay<Partial<ImageViewerProps>>(HairyImageViewer, {
+    urlList: paths.value,
+    initialIndex,
   })
 }
 
@@ -51,7 +47,7 @@ provide('HairyImageGroup:preview', preview)
 
 <template>
   <div class="HairyImageGroup">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

@@ -2,8 +2,12 @@
 </script>
 
 <template>
-  <HairyLayout :header="$route.meta.frontmatter">
-    <router-view />
-  </HairyLayout>
+  <HairyContainer>
+    <HairyNavbar />
+    <HairyHeader />
+    <HairyBody>
+      <router-view />
+    </HairyBody>
+    <HairyFooter />
+  </HairyContainer>
 </template>
-

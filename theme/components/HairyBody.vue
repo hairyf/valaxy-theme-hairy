@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-import { useFrontmatter } from 'valaxy'
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-const fr = useFrontmatter()
-const route = useRoute()
-
-const showWaline = computed(() => route.path.includes('/posts/') || fr.value.waline)
+withDefaults(
+  defineProps<{
+    comment?: boolean
+  }>(),
+  {
+    comment: true,
+  },
+)
 </script>
 
 <template>
-  <div class="HairyBody min-h-49vh relative">
-    <div class="mx-auto breakpoint flex z-1 relative">
-      <div class="relative flex-1 pt-2 w-0">
-        <slot />
-        <HairyWaline v-if="showWaline" />
+  <div class="min-h-49vh relative z-5">
+    <div class="mx-auto container flex z-1 relative">
+      <div class="relative flex-1 pt-2 main">
+        <slot v-if="$slots.default" />
+        <HairyComment v-if="comment" />
       </div>
-
       <div class="ml-4 w-60 lg:block hidden">
         <div class="sticky top-3.125rem z-1">
           <slot v-if="$slots.slide" name="slide" />
-          <HairyUserCard v-else />
+          <HairySidebar v-else />
         </div>
       </div>
     </div>
@@ -29,15 +29,17 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
 
 <style lang="scss">
 .HairyBodyBackground {
-  @apply transition-all duration-200;
-  @apply absolute top-0 max-h-150vh top-5 bottom-0 w-full transition-opacity;
+  @apply absolute top-0 max-h-150vh top-5 bottom-0 w-full;
   opacity: 0;
+}
+.main {
+  background: linear-gradient(to bottom,#fafafa 0,#fff 20%) no-repeat top;
+  padding: 1.25rem;
+  border-radius: 10px
 }
 
 .dark {
   .HairyBodyBackground {
-    transition-delay: 200ms;
-    transition-delay: 0;
     opacity: 1;
     background-image:
       linear-gradient(to bottom, var(--hy-c-waves-dimm) 0%, transparent 60%, var(--hy-c-waves-dimm) 100%), url(./images/bg.jpg);
@@ -46,6 +48,9 @@ const showWaline = computed(() => route.path.includes('/posts/') || fr.value.wal
     background-repeat: no-repeat;
     filter: blur(0px);
     background-size: cover;
+  }
+  .main {
+    background: transparent;
   }
 }
 </style>

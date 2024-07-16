@@ -7,7 +7,7 @@ categories:
 tags:
   - guitar
 ---
- 
+
 将循环录音机放置在信号流不同的位置，需要按“SYSTEM系统”按钮，然后使用“PAGE页面”按钮翻到 Remote 设置页面：
 
 <hairy-image style="max-width: 1200px" src="https://pic.imgdb.cn/item/63e5bb3d4757feff339ab780.jpg" />

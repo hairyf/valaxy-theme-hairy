@@ -24,7 +24,7 @@ tags:
 
 <hairy-image src="https://pic.imgdb.cn/item/63e463b54757feff33997826.jpg" />
 
-> 记住，不能使用前置的 INPUT 和后置的 ALTERNATIVE INPUT 进行重新放大。 
+> 记住，不能使用前置的 INPUT 和后置的 ALTERNATIVE INPUT 进行重新放大。
 
 在确保将放大的音频信号接入到声卡的输出，并连接 KPA 的输入。
 

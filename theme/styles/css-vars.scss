@@ -50,6 +50,10 @@
   --hy-c-indigo-lighter: #c9def1;
   --hy-c-indigo-dark: #1d2f3f;
   --hy-c-indigo-darker: #14212e;
+
+  --va-c-bg: #fafafa;
+
+  --un-prose-links: var(--hy-c-primary)
 }
 
 .dark {
@@ -61,7 +65,9 @@
   --hy-c-primary-dimm-1: rgba(143, 230, 213, 0.5);
   --hy-c-primary-dimm-2: rgba(143, 230, 213, 0.25);
   --hy-c-primary-dimm-3: rgba(143, 230, 213, 0.05);
+  --va-c-bg: #1b1b1f;
 }
+
 
 :root {
   --hy-c-waves-dimm: var(--va-c-bg);
@@ -149,6 +155,13 @@
   --hy-c-text-inverse-4: var(--hy-c-text-light-4);
 
   --hy-c-text-code: var(--hy-c-indigo-lighter);
+}
+
+:root {
+  --va-c-primary-light: var(--hy-c-primary-light);
+  --va-c-primary-lighter: var(--hy-c-primary-lighter);
+  --va-c-primary-dark: var(--hy-c-primary-dark);
+  --va-c-primary: var(--hy-c-primary);
 }
 
 /**

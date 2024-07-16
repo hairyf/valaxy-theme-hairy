@@ -1,0 +1,62 @@
+.markdown-body {
+  --c-toc-link: var(--hy-c-text-light);
+}
+
+html.dark {
+  .markdown-body {
+    --c-toc-link: var(--hy-c-text-dark);
+  }
+}
+
+.markdown-body {
+  word-wrap: break-word;
+
+  h2,
+  a {
+    color: var(--hy-c-primary);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--hy-font-serif);
+    font-weight: 900;
+  }
+
+  ul {
+    li>p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.markdown-body :not(pre)>code {
+  padding: 3px 6px;
+  font-size: 0.85rem;
+  color: var(--hy-c-text-code);
+  background: var(--hy-c-bg-mute);
+  border-radius: 3px;
+}
+
+.markdown-body div[class*=language-] pre {
+  max-width: calc(100vw - 56px);
+}
+
+.markdown-body div[class*=language-] {
+  width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .markdown-body div[class*=language-] {
+    margin: auto;
+  }
+}
+
+
+.markdown-body {
+  --un-prose-borders: var(--hy-c-primary);
+}

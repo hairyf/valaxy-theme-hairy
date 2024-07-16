@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
+
 defineProps<{
   links?: {
     name: string
@@ -39,7 +40,7 @@ defineProps<{
   border: 0.0625rem solid #f7f7f7;
   box-shadow: 0 0.625rem 1.875rem -0.9375rem rgba(0, 0, 0, 0.1);
   --bg-color: var(--block-color, #666);
-  @apply transition-all;
+  @apply transition-all duration-200;
 
   .title {
     color: var(--block-color);

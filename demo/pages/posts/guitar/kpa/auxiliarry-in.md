@@ -66,10 +66,8 @@ Aux In>Headph: 在耳机中辅助输入信号的音量
 
 如果要使用单声道将乐队其他乐器通过调音台的监听混音发送到 KPA，调音台的信号应该连接到 KPA 的 Return，依旧可以使用 XLR 来连接。
 
-<hairy-image src="https://pic.imgdb.cn/item/63eb3130f144a010072881ac.jpg" / >
+<hairy-image src="https://pic.imgdb.cn/item/63eb3130f144a010072881ac.jpg" />
 
 然后使用 PAGE 按钮翻页至 Aux In 页面，按软按钮1“Aux>Mono"，随后调整 Aux In>Headph 参数。
 
 <hairy-image src="https://pic.imgdb.cn/item/63eb3167f144a01007290aa7.jpg" />
-
-

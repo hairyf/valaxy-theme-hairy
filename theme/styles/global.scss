@@ -1,0 +1,40 @@
+html {
+  color: var(--va-c-text);
+}
+
+body {
+  font-family: var(--hy-font-family-seto);
+  color: var(--va-c-text);
+  background-color: var(--va-c-bg);
+  @apply transition-colors duration-200;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--hy-c-primary);
+  font-weight: 500;
+}
+
+
+@media (min-width: 1200px) {
+  .breakpoint {
+    width: 72.5rem
+  }
+}
+
+@media (max-width: 1200px) {
+  .breakpoint {
+    padding-left: .5rem;
+    padding-right: .5rem
+  }
+}
+
+@media (min-width: 1600px) {
+  .breakpoint {
+    width: 75vw
+  }
+}

@@ -1,6 +1,4 @@
-<template>
-  <HairyPostList :pagination="true" />
-</template>
+<template></template>
 
 <route lang="yaml">
 meta:

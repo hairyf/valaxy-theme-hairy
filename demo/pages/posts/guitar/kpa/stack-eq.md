@@ -8,13 +8,11 @@ tags:
   - guitar
 ---
 
-
 要显示 EQ 菜单，按住 EQ 键约一秒钟以显示。
 
 <hairy-image style="max-width: 1200px" src="https://pic.imgdb.cn/item/63e393d14757feff3382255c.jpg" />
 
 每一个克隆文件都提供四段均衡：低音、中音、高音、极高频。
-
 
 ## EQ Post（EQ 后）
 

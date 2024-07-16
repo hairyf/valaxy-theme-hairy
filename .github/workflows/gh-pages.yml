@@ -12,6 +12,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -22,6 +24,9 @@ jobs:
 
       - name: Install
         run: pnpm install
+
+      - name: Build Theme
+        run: pnpm run build
 
       - name: Build Demo
         run: pnpm run build:demo

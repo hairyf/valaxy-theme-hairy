@@ -8,7 +8,6 @@ tags:
   - guitar
 ---
 
-
 在“Stack 音箱”菜单中，可以找到几个选项来微调所使用的音箱克隆。
 
 <hairy-image style="max-width: 1200px" src="https://pic.imgdb.cn/item/63e38c914757feff3375c743.jpg" />
