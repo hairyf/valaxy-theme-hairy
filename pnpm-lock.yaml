@@ -101,8 +101,8 @@ importers:
         specifier: ^0.1.3
         version: 0.1.3
       valaxy-addon-waline:
-        specifier: ^0.1.5
-        version: 0.1.5(typescript@5.5.3)(valaxy@0.19.2)
+        specifier: ^0.2.0
+        version: 0.2.0(typescript@5.5.3)(valaxy@0.19.2)
 
 packages:
 
@@ -7227,6 +7227,19 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - typescript
+    dev: false
+
+  /valaxy-addon-waline@0.2.0(typescript@5.5.3)(valaxy@0.19.2):
+    resolution: {integrity: sha512-/aJ4XkMaKPVcZYdvzlJQVgbZ0KYZ24/BncJRmSdt33+rkRm8OeSvyQkwfXDnTJSyrbM3jL5qtLL9Bvl9JTHzTg==}
+    peerDependencies:
+      valaxy: latest
+    dependencies:
+      '@waline/client': 3.3.0(typescript@5.5.3)
+      valaxy: 0.19.2(@types/markdown-it@14.1.1)(postcss@8.4.39)(typescript@5.5.3)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+    dev: true
 
   /valaxy@0.19.2(@types/markdown-it@14.1.1)(postcss@8.4.39)(typescript@5.5.3):
     resolution: {integrity: sha512-Osm/Ss3ReFhXppgg11sohsbp+TW3+8KSdPnI0poYPv/oNb4PsU/AY2cXIAn2L8N5DDfsHlXqqCCUozbug3lrwA==}
