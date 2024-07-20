@@ -6,7 +6,6 @@ import { createDeferred } from '../utils'
 
 let el: HTMLElement
 
-
 export const deferred = createDeferred<void>()
 
 export function install({ router }: ViteSSGContext) {
