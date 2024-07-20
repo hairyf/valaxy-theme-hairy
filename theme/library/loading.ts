@@ -6,11 +6,11 @@ import { createDeferred } from '../utils'
 
 let el: HTMLElement
 
-showFullLoading()
 
 export const deferred = createDeferred<void>()
 
 export function install({ router }: ViteSSGContext) {
+  showFullLoading()
   loadFonts('Seto', Seto)
   router.afterEach(() => deferred.then(hideFullLoading))
 }
