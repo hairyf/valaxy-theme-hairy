@@ -2,10 +2,10 @@
 title: Kemper（KPA）并行路径
 date: 2023-02-09 10:18:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 在 KPA 中，可以选择对音频使用并行路径，次功能会将信号流分为了个独立的路径

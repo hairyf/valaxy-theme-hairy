@@ -2,10 +2,10 @@
 title: Kemper（KPA）重新放大
 date: 2023-02-09 11:18:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 如果我们有类似 KPA “Direct 直接输出” 录制的吉他声音，可以使用音箱克隆对齐进行“重新放大”，转换为适合的吉他音色，而 KPA 支持实现重新放大，无需任何其他设备，简单的将其连接到声卡即可。
@@ -24,7 +24,7 @@ tags:
 
 <hairy-image src="https://pic.imgdb.cn/item/63e463b54757feff33997826.jpg" />
 
-> 记住，不能使用前置的 INPUT 和后置的 ALTERNATIVE INPUT 进行重新放大。
+> 记住，不能使用前置的 INPUT 和后置的 ALTERNATIVE INPUT 进行重新放大。 
 
 在确保将放大的音频信号接入到声卡的输出，并连接 KPA 的输入。
 

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { useThemeConfig } from 'valaxy'
 import { ElTimeline, ElTimelineItem } from 'element-plus'
@@ -18,8 +17,6 @@ const categories = computed(() => route.params.its as string)
 const paths = computed(() => categories.value.split('/').filter(Boolean))
 const current = useCategory(paths)
 const posts = useCategoryPost(paths)
-
-const i18n = useI18n()
 
 function getBreadcrumbPath(index: number) {
   const paths = categories.value.split('/').filter(Boolean)
@@ -42,12 +39,12 @@ function displayCategory(key: string) {
       全部
     </HairyBreadcrumbItem>
     <HairyBreadcrumbItem v-for="(key, index) in categories.split('/')" :key="key" :to="getBreadcrumbPath(index)">
-      {{ i18n.t(key) }}
+      {{ $t(key, {}, { missingWarn: false }) }}
     </HairyBreadcrumbItem>
   </HairyBreadcrumb>
 
   <div class="grid__view dark:text-gray-3 flex-wrap">
-    <template v-for="([key, item]) in current.children" :key="key">
+    <template v-for="([key]) in current.children" :key="key">
       <div
         v-if="!key.startsWith('/post')"
         class="relative flex items-center flex-col cursor-pointer hover:text-primary transition-colors"
@@ -55,11 +52,11 @@ function displayCategory(key: string) {
       >
         <div class="i-material-symbols-folder-open-rounded text-22 lt-sm:text-15" />
         <div class="text-center leading-normal">
-          {{ i18n.t(key) }}
+          {{ $t(key, {}, { missingWarn: false }) }}
         </div>
-        <div class="badge text-12px right-20px top-12px">
+        <!-- <div class="badge text-12px right-20px top-12px">
           {{ item.total }} dir
-        </div>
+        </div> -->
       </div>
     </template>
   </div>

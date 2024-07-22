@@ -2,11 +2,11 @@
 title: Kemper（KPA）纯箱体
 date: 2023-02-10 13:00:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
----
+  - Kemper
+--- 
 
 典型的通过麦克风拾取吉他箱体的声音，使用全频监听时，高频段会比较刺耳，在舞台上使用入耳式监听时同样存在这个问题。
 

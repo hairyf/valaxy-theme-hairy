@@ -2,10 +2,10 @@
 title: Kemper（KPA）效果循环
 date: 2023-02-08 19:03:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 KPA 可以在吉他和 KPA 直接连接一个或多个单块修改器，但如果将其放在 KPA 的效果链中间，就可以保持这个单块的状态，并通过 remote 进行控制。

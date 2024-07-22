@@ -2,10 +2,10 @@
 title: Kemper（KPA）表演模式 - 基本
 date: 2023-02-09 11:54:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 演出模式设计的目的是使用 KPA 进行现场表演，它可以让现场演出组织成 `125` 个**表演组**，而每个表演组可以包含 `5` 个不同的音色，KPA 称之为**插槽（slot）**

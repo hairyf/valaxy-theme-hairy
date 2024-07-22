@@ -4,7 +4,6 @@ import dayjs from 'dayjs'
 import { withDefaults } from 'vue'
 import { last } from 'lodash-es'
 import { useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
 import { toArray } from '../../utils'
 
 withDefaults(
@@ -16,8 +15,6 @@ withDefaults(
     format: 'YYYY-MM-DD',
   },
 )
-
-const i18n = useI18n()
 
 const router = useRouter()
 
@@ -32,7 +29,7 @@ function displayCategory(keys: string | string[] = []) {
       {{ dayjs(post.date).format(format) }}
     </div>
     <HairyLink v-if="post.categories?.length" bordered type="white" @click="displayCategory(post.categories)">
-      {{ i18n.t(last(toArray(post.categories)) || '') }}
+      {{ $t(last(toArray(post.categories)) || '', {}, { missingWarn: false }) }}
     </HairyLink>
   </div>
   <a class="cursor-pointer text-size-4" @click="$router.push(post.path || '')">{{ post.title }}</a>

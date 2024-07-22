@@ -2,11 +2,12 @@
 title: Kemper（KPA）分体音箱 - 放大器
 date: 2023-02-08 19:01:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
+
 
 在“Stack 音箱”菜单中，可以找到几个选项来微调所使用的音箱克隆。
 

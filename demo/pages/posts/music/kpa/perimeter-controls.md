@@ -2,10 +2,10 @@
 title: Kemper（KPA）踏板与开关基础
 date: 2023-02-10 15:00:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 要连接表情踏板，需要一条 TRS 电缆，也被成为立体声电缆

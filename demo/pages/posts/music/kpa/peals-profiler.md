@@ -2,10 +2,10 @@
 title: Kemper（KPA）表情踏板
 date: 2023-02-10 18:00:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 可以直接将表情踏板连接到 KPA，而 REMOTE 上有四个额外的表情踏板输入，出厂默认的踏板分配如下：
@@ -37,6 +37,7 @@ tags:
 
 如果是“Post Effect效果后”，音量踏板位于信号端末端，混响和延迟信号均受影响。
 
+
 <img src="https://pic.imgdb.cn/item/63e614064757feff3328bef6.jpg">
 
 “range范围”参数设置音量踏板的控制范围。
@@ -58,6 +59,7 @@ tags:
 如果将 `range` 设为正值时，踏板的左右就像推子。
 
 在脚跟位置，可以获得正常的音色音量，在脚尖位置，将获得电平增强，设置为 `+2` 时，可最大增加 `10dB` 电平，踏板最大增强电平为 `24dB`。如果激活音量踏板锁定功能，则会对所有音色生效。
+
 
 ## Wah Pedal（哇音踏板）
 

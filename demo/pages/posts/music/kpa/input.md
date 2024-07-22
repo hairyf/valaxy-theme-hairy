@@ -2,10 +2,10 @@
 title: Kemper（KPA）输入
 date: 2023-02-08 14:00:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 <hairy-image style="display: block" src="https://p7.itc.cn/q_70/images03/20220927/2fcfb88c2936415bb9b05442cdc21079.jpeg" />

@@ -2,10 +2,10 @@
 title: Kemper（KPA）表演模式 - 编辑
 date: 2023-02-09 12:00:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 表演模式要独立的储存空间，可以在浏览池中选择 625 个音色，用来组织以用于现场表演，表演模式中对音色的任何修改都不会影响浏览池中的原始音色。

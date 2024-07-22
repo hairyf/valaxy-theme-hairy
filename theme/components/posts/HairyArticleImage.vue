@@ -3,7 +3,6 @@ import type { Post } from 'valaxy'
 import { computed, defineProps } from 'vue'
 import dayjs from 'dayjs'
 import { useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
 import { removeTags, toArray } from '../../utils'
 import { useLayoutPost } from '../../composables'
 
@@ -17,7 +16,6 @@ const layout = useLayoutPost()
 const slice = computed(() => layout.value.includes('slice'))
 const image = computed(() => props.post.image?.toString())
 const text = computed(() => removeTags(props.post.excerpt))
-const i18n = useI18n()
 function onReadMore() {
   if (props.post.path)
     router.push(props.post.path)
@@ -29,13 +27,15 @@ function displayCategory(keys: string | string[] = []) {
 </script>
 
 <template>
-  <li class="HairyArticleImage mb-10 py-2" :class="[slice && 'slice', reverse && 'reverse']">
+  <li class="HairyArticleImage mb-10 py-2 lt-sm:mb-5 lt-md:mb-6" :class="[slice && 'slice', reverse && 'reverse']">
     <article>
       <div class="flex justify-between items-center">
         <a
-          class="text-size-2xl font-bold truncate cursor-pointer lt-sm:text-size-lg"
+          class="text-size-2xl lt-sm:max-w-200px font-bold truncate cursor-pointer lt-sm:text-size-lg"
           :class="[reverse ? 'order-last' : 'order-first']" @click="onReadMore"
-        >{{ post.title }}</a>
+        >
+          {{ post.title }}
+        </a>
         <div class="flex justify-end gap-2 text-size-sm lt-sm:text-size-xs">
           <span>{{ dayjs(post.date).format('YYYY-MM-DD') }}</span>
           <span>{{ post.wordCount }}字</span>
@@ -43,22 +43,22 @@ function displayCategory(keys: string | string[] = []) {
         </div>
       </div>
       <div
-        class="h-200px lt-sm:h-150px flex bg-light-2 dark:bg-transparent rounded-5"
+        class="h-200px lt-sm:h-120px flex bg-light-2 dark:bg-transparent rounded-5"
         :class="[reverse ? 'pl-4' : 'pr-4']"
       >
         <div class="flex-1 post-image-content" :class="[reverse ? 'order-last' : 'order-first']">
           <img class="post-image rounded-1 w-full h-full object-cover cursor-pointer" :src="image" @click="onReadMore">
         </div>
-        <div class="flex-1 flex flex-col justify-between py-2 dark:py-0">
+        <div class="flex-1 lt-md:flex-[1.2] flex flex-col justify-between py-2 dark:py-0">
           <div class="flex-1 text-size-sm">
-            <div class="line-clamp-text">
+            <div class="line-clamp-text line-clamp-5 lt-sm:line-clamp-3">
               {{ text }}
             </div>
           </div>
           <div class="flex justify-between items-center">
-            <a class="cursor-pointer" :class="[reverse && 'order-1']">
+            <a class="cursor-pointer truncate lt-sm:max-w-120px" :class="[reverse && 'order-1']">
               <span v-if="post.categories?.length" @click="displayCategory(post.categories)">
-                {{ i18n.t(toArray(post.categories).at(-1) || '') }}
+                {{ $t(toArray(post.categories).at(-1) || '', {}, { missingWarn: false }) }}
               </span>
             </a>
             <div class="text-base leading-6 font-medium">
@@ -83,7 +83,6 @@ function displayCategory(keys: string | string[] = []) {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
 }
 
 .post-image {

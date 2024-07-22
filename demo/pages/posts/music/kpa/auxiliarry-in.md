@@ -2,10 +2,10 @@
 title: Kemper（KPA）辅助输入
 date: 2023-02-14 14:00:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 辅助输入允许将 Line 输出设备连接到 KPA，例如 MP3 播放器、平板电脑或采样垫或鼓机，使用外部音频文件或采样声音来 JAM。
@@ -24,9 +24,9 @@ Aux-in 信号通过 RETURN 输入和 ALTERNATIVE 输入。
 
 <hairy-image src="https://pic.imgdb.cn/item/63eb2dcff144a01007220178.jpg" />
 
-Aux In>Main: 在主输出中辅助输入信号的音量
-Aux In>Monitor: 在监听输出中辅助输入信号的音量
-Aux In>Headph: 在耳机中辅助输入信号的音量
+Aux In > Main: 在主输出中辅助输入信号的音量
+Aux In > Monitor: 在监听输出中辅助输入信号的音量
+Aux In > Headph: 在耳机中辅助输入信号的音量
 
 <!-- more -->
 
@@ -71,3 +71,5 @@ Aux In>Headph: 在耳机中辅助输入信号的音量
 然后使用 PAGE 按钮翻页至 Aux In 页面，按软按钮1“Aux>Mono"，随后调整 Aux In>Headph 参数。
 
 <hairy-image src="https://pic.imgdb.cn/item/63eb3167f144a01007290aa7.jpg" />
+
+

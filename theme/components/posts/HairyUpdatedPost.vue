@@ -35,7 +35,7 @@ function displayCategory(keys: string | string[] = []) {
       最近更新：
     </div>
     <div class="flex-1 flex items-center justify-end gap-2 flex-wrap">
-      <HairyLink :href="post.path">
+      <HairyLink class="truncate lt-sm:max-w-220px" :href="post.path">
         {{ post.title }}
       </HairyLink>
       <template v-if="post.tags?.length">
@@ -64,7 +64,7 @@ function displayCategory(keys: string | string[] = []) {
         <div class="lt-md:hidden flex items-center gap-2">
           <div class="i-material-symbols-folder-open-rounded text-14px" />
           <ElTag size="small" class="dark:bg-dark-50 cursor-pointer border-none!" @click="displayCategory(post.categories)">
-            {{ toArray(post.categories).map($t).join('/') }}
+            {{ toArray(post.categories).map((v) => $t(v, {}, { missingWarn: false })).join('/') }}
           </ElTag>
         </div>
       </template>

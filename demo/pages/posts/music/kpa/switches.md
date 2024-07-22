@@ -2,10 +2,10 @@
 title: Kemper（KPA）脚踏开关
 date: 2023-02-13 18:00:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 如果要在没有 REMOTE 的情况下使用 KPA，可以将双踩开关直接连接到 KPA，要切换音色，只需要使用 TRS 电缆将双踩开关连接到 KPA 背面的输入。

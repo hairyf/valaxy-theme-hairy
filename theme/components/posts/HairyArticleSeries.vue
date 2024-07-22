@@ -57,6 +57,7 @@ async function changePost(path = '') {
   line-height: 28px;
   color: var(--va-c-text-light);
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
   transition: color 0.5s;
   cursor: pointer;

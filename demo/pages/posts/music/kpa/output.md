@@ -2,10 +2,10 @@
 title: Kemper（KPA）输出
 date: 2023-02-08 16:00:00
 categories:
-  - Notes
-  - Guitar
+  - Music
+  - Kemper
 tags:
-  - guitar
+  - Kemper
 ---
 
 KPA 提供了多种输出，可以在录音或演出时使用，每一种输出都可以承载不同类型的信号
@@ -55,7 +55,7 @@ KPA 为每个模拟输出以及返回输入提供了一个接地断开的开关�
 
 如果你想使用数字录音，需要将 KPA 连接的 spdif out 连接到声卡的 spdif input
 
-- KPA S/PDIF Out ------------ S/PDIF In(Audio Interface 声卡)
+- KPA S/PDIF Out ------------ S/PDIF In(Audio Interface 声卡) 
 
 按下 OUTPUT 设置输出选项，翻到输出菜单的第四个选项（SPDIF Output 数字输出）滚轮调整为 master stereo
 
@@ -110,7 +110,7 @@ Direct Output 设置为 Git Analog，这是直接来自输入的，没有任何�
 - KPA Main Out R(主输出 R)  ------------ Input 2(Audio Interface 声卡)
 - KPA Monitor Out(监听输出) ------------ Input 3(Audio Interface 声卡)
 - KPA Direct out(直接输出)  ------------ Input 4(Audio Interface 声卡)
-- KPA S/PDIF Out  ------------ S/PDIF In(Audio Interface 声卡)
+- KPA S/PDIF Out  ------------ S/PDIF In(Audio Interface 声卡) 
 
 按下 OUTPUT 设置输出选项
 
