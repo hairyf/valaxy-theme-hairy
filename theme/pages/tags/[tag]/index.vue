@@ -4,7 +4,7 @@ import { usePostList } from 'valaxy'
 import { ElTimeline, ElTimelineItem } from 'element-plus'
 import { useRoute } from 'vue-router'
 
-const tag = computed(() => useRoute().params.tag)
+const tag = computed(() => useRoute().params.tag as string)
 
 const posts = computed<any[]>(() =>
   usePostList().value.filter(post => post.tags?.includes(tag.value as string)),
@@ -17,7 +17,7 @@ const posts = computed<any[]>(() =>
       首页
     </HairyBreadcrumbItem>
     <HairyBreadcrumbItem>
-      {{ tag }}
+      {{ $t(tag, {}, { missingWarn: false }) }}
     </HairyBreadcrumbItem>
   </HairyBreadcrumb>
   <ElTimeline>

@@ -52,7 +52,7 @@ function displayCategory(keys: string | string[] = []) {
               class="dark:bg-dark-50 cursor-pointer border-none!"
               @click="$router.push(`/tags/${tag}`)"
             >
-              {{ tag }}
+              {{ $t(tag, {}, { missingWarn: false }) }}
             </ElTag>
           </div>
         </div>

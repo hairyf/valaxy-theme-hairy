@@ -34,7 +34,7 @@ function displayTag(tag: string) {
         </div>
         <div v-if="post.tags?.length" class="tags flex-center gap-2 mt-2">
           <ElTag v-for="(tag) in post.tags" :key="tag" class="dark:bg-dark-50 cursor-pointer" @click="displayTag(tag)">
-            {{ tag }}
+            {{ $t(tag, {}, { missingWarn: false }) }}
           </ElTag>
         </div>
       </template>
