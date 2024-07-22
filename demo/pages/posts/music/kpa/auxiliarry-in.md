@@ -71,5 +71,3 @@ Aux In > Headph: 在耳机中辅助输入信号的音量
 然后使用 PAGE 按钮翻页至 Aux In 页面，按软按钮1“Aux>Mono"，随后调整 Aux In>Headph 参数。
 
 <hairy-image src="https://pic.imgdb.cn/item/63eb3167f144a01007290aa7.jpg" />
-
-
